@@ -9,7 +9,8 @@
  */
 {
   "current": {
-    "section_vertical_spacing": "medium",
+    "section_vertical_spacing": "small",
+    "section_boxed_horizontal_spacing": "small",
     "button_border_radius": 60,
     "input_border_radius": 8,
     "block_border_radius": 24,
@@ -39,6 +40,7 @@
     "product_info_alignment": "start",
     "cart_type": "drawer",
     "cart_icon": "tote_bag",
+    "cart_show_free_shipping_threshold": true,
     "checkout_accent_color": "#f0c417",
     "checkout_button_color": "#1a1a1a",
     "content_for_index": [],
