@@ -946,7 +946,7 @@
         "eyebrow_letter_spacing": 1.5,
         "heading_size": 36,
         "heading_weight": "500",
-        "description_size": 15,
+        "description_size": 13,
         "benefit_title_size": 14,
         "benefit_text_size": 14,
         "uppercase_titles": true,
@@ -992,6 +992,39 @@
         "mobile_header_bottom_space": 28,
         "mobile_eyebrow_bottom_space": 9,
         "mobile_description_top_space": 10
+      }
+    },
+    "rich_text_aWn6yg": {
+      "type": "rich-text",
+      "blocks": {
+        "subheading_wHHpFp": {
+          "type": "subheading",
+          "settings": {
+            "text": "ILS EN PARLENT MIEUX QUE NOUS"
+          }
+        },
+        "heading_47CkbD": {
+          "type": "heading",
+          "settings": {
+            "text": "+3,000 Clients Satisfaits",
+            "heading_tag": "h2",
+            "text_color": "#BF2834",
+            "gradient": ""
+          }
+        }
+      },
+      "block_order": [
+        "subheading_wHHpFp",
+        "heading_47CkbD"
+      ],
+      "name": "Rich text",
+      "settings": {
+        "full_width": true,
+        "content_width": "small",
+        "text_position": "center",
+        "background": "",
+        "background_gradient": "",
+        "text_color": ""
       }
     },
     "logoscroll_jwYbEy": {
@@ -1063,7 +1096,7 @@
         "layout_border_color": "#121212",
         "background_color": "#ffffff",
         "border_color": "#121212",
-        "margin_top": 40,
+        "margin_top": 0,
         "margin_bottom": 0,
         "margin_horizontal": 0,
         "margin_horizontal_mobile": 0,
@@ -1265,6 +1298,7 @@
     "imgbenefice_wj7Hpf",
     "tabsvs_zb3iCM",
     "techno_MdgNn4",
+    "rich_text_aWn6yg",
     "logoscroll_jwYbEy",
     "testimonials_apR6TG",
     "faq"
