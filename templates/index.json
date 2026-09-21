@@ -1197,7 +1197,7 @@
         "item_y9KHmP"
       ],
       "settings": {
-        "full_width": false,
+        "full_width": true,
         "subheading": "",
         "title": "Questions Fréquentes",
         "content": "",
