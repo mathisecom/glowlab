@@ -241,7 +241,7 @@
           "settings": {
             "icon": "none",
             "icon_width": 20,
-            "title": "Title",
+            "title": "Contenue du Coffret",
             "content": "<p>Share some content to your customers about your products.</p>",
             "page": ""
           }
@@ -251,7 +251,7 @@
           "settings": {
             "icon": "none",
             "icon_width": 20,
-            "title": "Title",
+            "title": "Livraison, 90 jours & garanties",
             "content": "<p>Share some content to your customers about your products.</p>",
             "page": ""
           }
@@ -261,7 +261,7 @@
           "settings": {
             "icon": "none",
             "icon_width": 20,
-            "title": "Title",
+            "title": "Précautions D’usage",
             "content": "<p>Share some content to your customers about your products.</p>",
             "page": ""
           }
