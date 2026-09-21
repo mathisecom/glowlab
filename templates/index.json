@@ -66,9 +66,9 @@
         "card_width_desktop": 130,
         "card_width_mobile": 100,
         "heading_color": "#121212",
-        "layout_bg_color": "#FFFFFF",
+        "layout_bg_color": "#ffffff",
         "layout_border_color": "#121212",
-        "background_color": "#FFFFFF",
+        "background_color": "#ffffff",
         "border_color": "#121212",
         "margin_top": 0,
         "margin_bottom": 0,
@@ -224,6 +224,106 @@
         "input_text_color": ""
       }
     },
+    "resultavantapres_DqJjxe": {
+      "type": "resultavantapres",
+      "blocks": {
+        "result_ip3Rkx": {
+          "type": "result",
+          "settings": {
+            "before_label": "Avant",
+            "after_label": "Après",
+            "title": "Une peau visiblement plus uniforme",
+            "customer_name": "Marie",
+            "verified_text": "Cliente vérifiée",
+            "show_verified": true,
+            "testimonial": "<p>« Je suis très satisfaite du résultat. La différence est réellement visible. »</p>"
+          }
+        },
+        "result_MYr36i": {
+          "type": "result",
+          "settings": {
+            "before_label": "Avant",
+            "after_label": "Après",
+            "title": "Des résultats visibles",
+            "customer_name": "Laura",
+            "verified_text": "Cliente vérifiée",
+            "show_verified": true,
+            "testimonial": "<p>« Je suis très satisfaite du résultat. La différence est réellement visible. »</p>"
+          }
+        },
+        "result_J3T8hG": {
+          "type": "result",
+          "settings": {
+            "before_label": "Avant",
+            "after_label": "Après",
+            "title": "Une routine qui fait la différence",
+            "customer_name": "Sophie",
+            "verified_text": "Cliente vérifiée",
+            "show_verified": true,
+            "testimonial": "<p>« Je suis très satisfaite du résultat. La différence est réellement visible. »</p>"
+          }
+        },
+        "result_g9gPrT": {
+          "type": "result",
+          "settings": {
+            "before_label": "Avant",
+            "after_label": "Après",
+            "title": "Une vraie différence au quotidien",
+            "customer_name": "Emma",
+            "verified_text": "Cliente vérifiée",
+            "show_verified": true,
+            "testimonial": "<p>« Je suis très satisfaite du résultat. La différence est réellement visible. »</p>"
+          }
+        }
+      },
+      "block_order": [
+        "result_ip3Rkx",
+        "result_MYr36i",
+        "result_J3T8hG",
+        "result_g9gPrT"
+      ],
+      "name": "Résultats avant / après",
+      "settings": {
+        "eyebrow": "RÉSULTATS AUTHENTIQUES",
+        "heading": "Résultats avant après",
+        "description": "",
+        "max_width": 1420,
+        "desktop_gap": 26,
+        "image_height": 440,
+        "image_radius": 20,
+        "eyebrow_size": 13,
+        "heading_size": 32,
+        "description_size": 15,
+        "card_title_size": 19,
+        "customer_size": 16,
+        "testimonial_size": 15,
+        "padding_top": 48,
+        "padding_bottom": 60,
+        "header_bottom_space": 28,
+        "description_top_space": 14,
+        "card_text_top_space": 16,
+        "mobile_card_width": 87,
+        "mobile_gap": 14,
+        "mobile_image_height": 410,
+        "mobile_heading_size": 28,
+        "mobile_eyebrow_size": 12,
+        "mobile_description_size": 13,
+        "mobile_card_title_size": 17,
+        "mobile_customer_size": 14,
+        "mobile_testimonial_size": 14,
+        "mobile_padding_top": 40,
+        "mobile_padding_bottom": 44,
+        "mobile_header_bottom_space": 24,
+        "background_color": "#FFFFFF",
+        "text_color": "#272727",
+        "muted_color": "#797979",
+        "divider_color": "#FFFFFF",
+        "badge_background": "#F0F0F0",
+        "badge_text_color": "#333333",
+        "show_arrows": true,
+        "show_mobile_dots": true
+      }
+    },
     "faq": {
       "type": "faq",
       "blocks": {
@@ -280,6 +380,7 @@
   "order": [
     "logoscroll_dfeKJn",
     "featured_product_wexK8U",
+    "resultavantapres_DqJjxe",
     "faq"
   ]
 }
