@@ -1,0 +1,1453 @@
+{% liquid
+  assign survey_id = 'survey-results-' | append: section.id
+%}
+
+<section
+  id="{{ survey_id }}"
+  class="survey-results"
+  style="
+    --survey-bg: {{ section.settings.background_color }};
+    --survey-box-bg: {{ section.settings.box_background }};
+    --survey-text: {{ section.settings.text_color }};
+    --survey-muted: {{ section.settings.muted_color }};
+    --survey-accent: {{ section.settings.accent_color }};
+    --survey-ring: {{ section.settings.ring_color }};
+    --survey-ring-bg: {{ section.settings.ring_background }};
+    --survey-border: {{ section.settings.border_color }};
+    --survey-separator: {{ section.settings.separator_color }};
+    --survey-max-width: {{ section.settings.max_width }}px;
+  "
+>
+
+  <div class="survey-results__container">
+
+    <div class="survey-results__box">
+
+      <!-- =========================
+           EN-TÊTE
+      ========================== -->
+
+      <div class="survey-results__header">
+
+        {% if section.settings.eyebrow != blank %}
+          <div class="survey-results__eyebrow">
+            {{ section.settings.eyebrow }}
+          </div>
+        {% endif %}
+
+
+        <div class="survey-results__heading-wrap">
+
+          {% if section.settings.heading != blank %}
+            <h2 class="survey-results__heading">
+              {{ section.settings.heading }}
+            </h2>
+          {% endif %}
+
+          {% if section.settings.heading_accent != blank %}
+            <div class="survey-results__heading-accent">
+              {{ section.settings.heading_accent }}
+            </div>
+          {% endif %}
+
+        </div>
+
+
+        {% if section.settings.description != blank %}
+          <div class="survey-results__description">
+            {{ section.settings.description }}
+          </div>
+        {% endif %}
+
+      </div>
+
+
+      <!-- =========================
+           RÉSULTATS
+      ========================== -->
+
+      <div class="survey-results__grid">
+
+        {% for block in section.blocks %}
+
+          <div
+            class="survey-results__item"
+            {{ block.shopify_attributes }}
+          >
+
+            <!-- CERCLE -->
+            <div
+              class="survey-results__circle"
+              style="--progress: {{ block.settings.percentage }};"
+            >
+
+              <div class="survey-results__circle-inner">
+
+                <span class="survey-results__percentage">
+                  {{ block.settings.percentage }}%
+                </span>
+
+              </div>
+
+            </div>
+
+
+            <!-- TEXTE -->
+            {% if block.settings.title != blank %}
+              <div class="survey-results__item-title">
+                {{ block.settings.title }}
+              </div>
+            {% endif %}
+
+          </div>
+
+        {% endfor %}
+
+      </div>
+
+
+      <!-- =========================
+           NOTE
+      ========================== -->
+
+      {% if section.settings.footnote != blank %}
+        <div class="survey-results__footnote">
+          {{ section.settings.footnote }}
+        </div>
+      {% endif %}
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<style>
+
+  /* =====================================================
+     SECTION
+  ====================================================== */
+
+  #{{ survey_id }} {
+    width: 100%;
+    overflow: hidden;
+
+    background: var(--survey-bg);
+
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+  }
+
+
+  #{{ survey_id }} *,
+  #{{ survey_id }} *::before,
+  #{{ survey_id }} *::after {
+    box-sizing: border-box;
+  }
+
+
+  #{{ survey_id }} .survey-results__container {
+    width: 100%;
+    max-width: var(--survey-max-width);
+
+    margin: 0 auto;
+
+    padding-left: {{ section.settings.side_padding }}px;
+    padding-right: {{ section.settings.side_padding }}px;
+  }
+
+
+
+  /* =====================================================
+     BLOC PRINCIPAL
+  ====================================================== */
+
+  #{{ survey_id }} .survey-results__box {
+    width: 100%;
+
+    background: var(--survey-box-bg);
+
+    border:
+      {{ section.settings.border_width }}px
+      solid
+      var(--survey-border);
+
+    border-radius: {{ section.settings.border_radius }}px;
+
+    padding:
+      {{ section.settings.box_padding_top }}px
+      {{ section.settings.box_padding_horizontal }}px
+      {{ section.settings.box_padding_bottom }}px;
+  }
+
+
+
+  /* =====================================================
+     HEADER
+  ====================================================== */
+
+  #{{ survey_id }} .survey-results__header {
+    width: 100%;
+
+    max-width: {{ section.settings.header_width }}px;
+
+    margin:
+      0
+      auto
+      {{ section.settings.header_bottom_space }}px;
+
+    text-align: center;
+  }
+
+
+  #{{ survey_id }} .survey-results__eyebrow {
+    margin-bottom: {{ section.settings.eyebrow_bottom_space }}px;
+
+    color: var(--survey-accent);
+
+    font-size: {{ section.settings.eyebrow_size }}px;
+    font-weight: 700;
+
+    line-height: 1.2;
+
+    letter-spacing: {{ section.settings.eyebrow_spacing }}px;
+
+    text-transform: uppercase;
+  }
+
+
+  #{{ survey_id }} .survey-results__heading-wrap {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    column-gap: 8px;
+    row-gap: 0;
+  }
+
+
+  #{{ survey_id }} .survey-results__heading {
+    margin: 0;
+
+    color: var(--survey-text);
+
+    font-size: {{ section.settings.heading_size }}px;
+
+    font-weight: {{ section.settings.heading_weight }};
+
+    line-height: 1.08;
+
+    letter-spacing: -1px;
+  }
+
+
+  #{{ survey_id }} .survey-results__heading-accent {
+    color: var(--survey-accent);
+
+    font-size: {{ section.settings.heading_size }}px;
+
+    font-weight: 400;
+
+    font-style:
+      {% if section.settings.accent_italic %}
+        italic
+      {% else %}
+        normal
+      {% endif %};
+
+    line-height: 1.08;
+
+    letter-spacing: -1px;
+  }
+
+
+  #{{ survey_id }} .survey-results__description {
+    max-width: {{ section.settings.description_width }}px;
+
+    margin:
+      {{ section.settings.description_top_space }}px
+      auto
+      0;
+
+    color: var(--survey-muted);
+
+    font-size: {{ section.settings.description_size }}px;
+
+    line-height: 1.45;
+  }
+
+
+  #{{ survey_id }} .survey-results__description p {
+    margin: 0;
+  }
+
+
+
+  /* =====================================================
+     GRID
+  ====================================================== */
+
+  #{{ survey_id }} .survey-results__grid {
+    display: grid;
+
+    grid-template-columns:
+      repeat({{ section.blocks.size }}, minmax(0, 1fr));
+
+    align-items: start;
+
+    width: 100%;
+
+    max-width: {{ section.settings.results_width }}px;
+
+    margin: 0 auto;
+  }
+
+
+
+  /* =====================================================
+     ITEM
+  ====================================================== */
+
+  #{{ survey_id }} .survey-results__item {
+    position: relative;
+
+    min-width: 0;
+
+    padding:
+      0
+      {{ section.settings.item_horizontal_padding }}px;
+
+    text-align: center;
+  }
+
+
+  #{{ survey_id }}
+  .survey-results__item:not(:last-child)::after {
+    content: "";
+
+    position: absolute;
+
+    top: 50%;
+
+    right: 0;
+
+    width: 1px;
+
+    height: {{ section.settings.separator_height }}px;
+
+    background: var(--survey-separator);
+
+    transform: translateY(-50%);
+  }
+
+
+
+  /* =====================================================
+     CERCLE PROGRESSION
+  ====================================================== */
+
+  #{{ survey_id }} .survey-results__circle {
+    position: relative;
+
+    width: {{ section.settings.circle_size }}px;
+    height: {{ section.settings.circle_size }}px;
+
+    margin:
+      0
+      auto
+      {{ section.settings.circle_bottom_space }}px;
+
+    border-radius: 50%;
+
+    background:
+      conic-gradient(
+        var(--survey-ring) calc(var(--progress) * 1%),
+        var(--survey-ring-bg) 0
+      );
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transform: rotate(-90deg);
+  }
+
+
+  #{{ survey_id }} .survey-results__circle-inner {
+    width: calc(100% - {{ section.settings.ring_thickness }}px);
+    height: calc(100% - {{ section.settings.ring_thickness }}px);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: var(--survey-box-bg);
+
+    transform: rotate(90deg);
+  }
+
+
+  #{{ survey_id }} .survey-results__percentage {
+    color: var(--survey-accent);
+
+    font-size: {{ section.settings.percentage_size }}px;
+    font-weight: 700;
+
+    line-height: 1;
+  }
+
+
+
+  /* =====================================================
+     TITRE RÉSULTAT
+  ====================================================== */
+
+  #{{ survey_id }} .survey-results__item-title {
+    max-width: {{ section.settings.item_text_width }}px;
+
+    margin: 0 auto;
+
+    color: var(--survey-text);
+
+    font-size: {{ section.settings.item_title_size }}px;
+
+    font-weight: 700;
+
+    line-height: 1.35;
+  }
+
+
+
+  /* =====================================================
+     NOTE
+  ====================================================== */
+
+  #{{ survey_id }} .survey-results__footnote {
+    margin-top: {{ section.settings.footnote_top_space }}px;
+
+    color: var(--survey-muted);
+
+    font-size: {{ section.settings.footnote_size }}px;
+
+    line-height: 1.4;
+
+    text-align: center;
+  }
+
+
+  #{{ survey_id }} .survey-results__footnote p {
+    margin: 0;
+  }
+
+
+
+  /* =====================================================
+     TABLETTE
+  ====================================================== */
+
+  @media screen and (max-width: 989px) {
+
+    #{{ survey_id }} .survey-results__heading,
+    #{{ survey_id }} .survey-results__heading-accent {
+      font-size: calc({{ section.settings.heading_size }}px * 0.85);
+    }
+
+
+    #{{ survey_id }} .survey-results__circle {
+      width: calc({{ section.settings.circle_size }}px * 0.88);
+      height: calc({{ section.settings.circle_size }}px * 0.88);
+    }
+
+
+    #{{ survey_id }} .survey-results__percentage {
+      font-size: calc({{ section.settings.percentage_size }}px * 0.9);
+    }
+
+  }
+
+
+
+  /* =====================================================
+     MOBILE
+  ====================================================== */
+
+  @media screen and (max-width: 749px) {
+
+    #{{ survey_id }} {
+      padding-top: {{ section.settings.mobile_padding_top }}px;
+      padding-bottom: {{ section.settings.mobile_padding_bottom }}px;
+    }
+
+
+    #{{ survey_id }} .survey-results__container {
+      padding-left: {{ section.settings.mobile_side_padding }}px;
+      padding-right: {{ section.settings.mobile_side_padding }}px;
+    }
+
+
+    #{{ survey_id }} .survey-results__box {
+      border-radius: {{ section.settings.mobile_border_radius }}px;
+
+      padding:
+        {{ section.settings.mobile_box_padding_top }}px
+        {{ section.settings.mobile_box_padding_horizontal }}px
+        {{ section.settings.mobile_box_padding_bottom }}px;
+    }
+
+
+
+    /* HEADER */
+
+    #{{ survey_id }} .survey-results__header {
+      max-width: none;
+
+      margin-bottom: {{ section.settings.mobile_header_bottom_space }}px;
+    }
+
+
+    #{{ survey_id }} .survey-results__eyebrow {
+      margin-bottom: {{ section.settings.mobile_eyebrow_bottom_space }}px;
+
+      font-size: {{ section.settings.mobile_eyebrow_size }}px;
+
+      letter-spacing: 1.2px;
+    }
+
+
+    #{{ survey_id }} .survey-results__heading-wrap {
+      column-gap: 6px;
+    }
+
+
+    #{{ survey_id }} .survey-results__heading,
+    #{{ survey_id }} .survey-results__heading-accent {
+      font-size: {{ section.settings.mobile_heading_size }}px;
+
+      line-height: 1.08;
+
+      letter-spacing: -0.5px;
+    }
+
+
+    #{{ survey_id }} .survey-results__description {
+      margin-top: {{ section.settings.mobile_description_top_space }}px;
+
+      font-size: {{ section.settings.mobile_description_size }}px;
+    }
+
+
+
+    /* RÉSULTATS */
+
+    #{{ survey_id }} .survey-results__grid {
+      display: flex;
+
+      flex-direction: column;
+
+      max-width: none;
+
+      gap: {{ section.settings.mobile_item_gap }}px;
+    }
+
+
+    #{{ survey_id }} .survey-results__item {
+      width: 100%;
+
+      padding:
+        0
+        0
+        {{ section.settings.mobile_item_padding_bottom }}px;
+    }
+
+
+    #{{ survey_id }}
+    .survey-results__item:not(:last-child)::after {
+      top: auto;
+
+      right: 50%;
+      bottom: 0;
+
+      width: {{ section.settings.mobile_separator_width }}px;
+      height: 1px;
+
+      transform: translateX(50%);
+    }
+
+
+    #{{ survey_id }} .survey-results__circle {
+      width: {{ section.settings.mobile_circle_size }}px;
+      height: {{ section.settings.mobile_circle_size }}px;
+
+      margin-bottom: {{ section.settings.mobile_circle_bottom_space }}px;
+    }
+
+
+    #{{ survey_id }} .survey-results__circle-inner {
+      width: calc(100% - {{ section.settings.mobile_ring_thickness }}px);
+      height: calc(100% - {{ section.settings.mobile_ring_thickness }}px);
+    }
+
+
+    #{{ survey_id }} .survey-results__percentage {
+      font-size: {{ section.settings.mobile_percentage_size }}px;
+    }
+
+
+    #{{ survey_id }} .survey-results__item-title {
+      max-width: {{ section.settings.mobile_item_text_width }}px;
+
+      font-size: {{ section.settings.mobile_item_title_size }}px;
+    }
+
+
+    #{{ survey_id }} .survey-results__footnote {
+      margin-top: {{ section.settings.mobile_footnote_top_space }}px;
+
+      font-size: {{ section.settings.mobile_footnote_size }}px;
+    }
+
+  }
+
+</style>
+
+
+{% schema %}
+{
+  "name": "Résultats enquête",
+  "tag": "section",
+  "class": "section-survey-results",
+
+  "settings": [
+
+    {
+      "type": "header",
+      "content": "En-tête"
+    },
+
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Petit titre",
+      "default": "DONNÉES D'ENQUÊTE"
+    },
+
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Titre principal",
+      "default": "Ce que nos clients"
+    },
+
+    {
+      "type": "text",
+      "id": "heading_accent",
+      "label": "Partie colorée du titre",
+      "default": "rapportent"
+    },
+
+    {
+      "type": "checkbox",
+      "id": "accent_italic",
+      "label": "Mettre la partie colorée en italique",
+      "default": true
+    },
+
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description",
+      "default": "<p>Résultats déclarés par nos clients après plusieurs semaines d'utilisation.</p>"
+    },
+
+
+    {
+      "type": "header",
+      "content": "Dimensions générales"
+    },
+
+    {
+      "type": "range",
+      "id": "max_width",
+      "label": "Largeur maximale de la section",
+      "min": 800,
+      "max": 1600,
+      "step": 20,
+      "unit": "px",
+      "default": 1180
+    },
+
+    {
+      "type": "range",
+      "id": "header_width",
+      "label": "Largeur de l'en-tête",
+      "min": 400,
+      "max": 900,
+      "step": 10,
+      "unit": "px",
+      "default": 650
+    },
+
+    {
+      "type": "range",
+      "id": "description_width",
+      "label": "Largeur description",
+      "min": 300,
+      "max": 700,
+      "step": 10,
+      "unit": "px",
+      "default": 480
+    },
+
+    {
+      "type": "range",
+      "id": "results_width",
+      "label": "Largeur des résultats",
+      "min": 600,
+      "max": 1200,
+      "step": 20,
+      "unit": "px",
+      "default": 900
+    },
+
+
+    {
+      "type": "header",
+      "content": "Bloc principal"
+    },
+
+    {
+      "type": "range",
+      "id": "border_width",
+      "label": "Épaisseur bordure",
+      "min": 0,
+      "max": 4,
+      "step": 1,
+      "unit": "px",
+      "default": 1
+    },
+
+    {
+      "type": "range",
+      "id": "border_radius",
+      "label": "Arrondi du bloc",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 20
+    },
+
+    {
+      "type": "range",
+      "id": "box_padding_top",
+      "label": "Marge intérieure haute",
+      "min": 20,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "default": 50
+    },
+
+    {
+      "type": "range",
+      "id": "box_padding_bottom",
+      "label": "Marge intérieure basse",
+      "min": 20,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "default": 45
+    },
+
+    {
+      "type": "range",
+      "id": "box_padding_horizontal",
+      "label": "Marges intérieures latérales",
+      "min": 10,
+      "max": 80,
+      "step": 5,
+      "unit": "px",
+      "default": 40
+    },
+
+
+    {
+      "type": "header",
+      "content": "Typographie"
+    },
+
+    {
+      "type": "range",
+      "id": "eyebrow_size",
+      "label": "Taille petit titre",
+      "min": 8,
+      "max": 18,
+      "step": 1,
+      "unit": "px",
+      "default": 10
+    },
+
+    {
+      "type": "range",
+      "id": "eyebrow_spacing",
+      "label": "Espacement lettres",
+      "min": 0,
+      "max": 4,
+      "step": 0.5,
+      "unit": "px",
+      "default": 1.5
+    },
+
+    {
+      "type": "range",
+      "id": "heading_size",
+      "label": "Taille du titre",
+      "min": 26,
+      "max": 60,
+      "step": 1,
+      "unit": "px",
+      "default": 38
+    },
+
+    {
+      "type": "select",
+      "id": "heading_weight",
+      "label": "Graisse du titre",
+      "options": [
+        {
+          "value": "400",
+          "label": "Normal"
+        },
+        {
+          "value": "500",
+          "label": "Medium"
+        },
+        {
+          "value": "600",
+          "label": "Semi-gras"
+        },
+        {
+          "value": "700",
+          "label": "Gras"
+        }
+      ],
+      "default": "500"
+    },
+
+    {
+      "type": "range",
+      "id": "description_size",
+      "label": "Taille description",
+      "min": 11,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+
+    {
+      "type": "range",
+      "id": "percentage_size",
+      "label": "Taille pourcentages",
+      "min": 20,
+      "max": 48,
+      "step": 1,
+      "unit": "px",
+      "default": 30
+    },
+
+    {
+      "type": "range",
+      "id": "item_title_size",
+      "label": "Taille texte résultats",
+      "min": 12,
+      "max": 22,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+
+    {
+      "type": "range",
+      "id": "footnote_size",
+      "label": "Taille note",
+      "min": 9,
+      "max": 16,
+      "step": 1,
+      "unit": "px",
+      "default": 11
+    },
+
+
+    {
+      "type": "header",
+      "content": "Cercles"
+    },
+
+    {
+      "type": "range",
+      "id": "circle_size",
+      "label": "Taille cercles PC",
+      "min": 70,
+      "max": 160,
+      "step": 5,
+      "unit": "px",
+      "default": 105
+    },
+
+    {
+      "type": "range",
+      "id": "ring_thickness",
+      "label": "Épaisseur anneau PC",
+      "min": 6,
+      "max": 30,
+      "step": 2,
+      "unit": "px",
+      "default": 12
+    },
+
+    {
+      "type": "range",
+      "id": "circle_bottom_space",
+      "label": "Espace sous cercle",
+      "min": 8,
+      "max": 30,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+
+    {
+      "type": "range",
+      "id": "item_text_width",
+      "label": "Largeur texte résultat",
+      "min": 160,
+      "max": 320,
+      "step": 10,
+      "unit": "px",
+      "default": 240
+    },
+
+    {
+      "type": "range",
+      "id": "separator_height",
+      "label": "Hauteur séparateurs PC",
+      "min": 40,
+      "max": 160,
+      "step": 5,
+      "unit": "px",
+      "default": 95
+    },
+
+    {
+      "type": "range",
+      "id": "item_horizontal_padding",
+      "label": "Espacement horizontal résultats",
+      "min": 5,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 15
+    },
+
+
+    {
+      "type": "header",
+      "content": "Espacements"
+    },
+
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Marge haute section",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 40
+    },
+
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Marge basse section",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 40
+    },
+
+    {
+      "type": "range",
+      "id": "side_padding",
+      "label": "Marges latérales",
+      "min": 10,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "default": 20
+    },
+
+    {
+      "type": "range",
+      "id": "header_bottom_space",
+      "label": "Espace sous en-tête",
+      "min": 20,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "default": 32
+    },
+
+    {
+      "type": "range",
+      "id": "eyebrow_bottom_space",
+      "label": "Espace sous petit titre",
+      "min": 4,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "default": 10
+    },
+
+    {
+      "type": "range",
+      "id": "description_top_space",
+      "label": "Espace avant description",
+      "min": 5,
+      "max": 25,
+      "step": 1,
+      "unit": "px",
+      "default": 10
+    },
+
+    {
+      "type": "range",
+      "id": "footnote_top_space",
+      "label": "Espace avant note",
+      "min": 15,
+      "max": 50,
+      "step": 1,
+      "unit": "px",
+      "default": 28
+    },
+
+
+    {
+      "type": "header",
+      "content": "Couleurs"
+    },
+
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Fond extérieur",
+      "default": "#FFF7F7"
+    },
+
+    {
+      "type": "color",
+      "id": "box_background",
+      "label": "Fond du bloc",
+      "default": "#FFF7F7"
+    },
+
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Texte principal",
+      "default": "#111111"
+    },
+
+    {
+      "type": "color",
+      "id": "muted_color",
+      "label": "Texte secondaire",
+      "default": "#6D6868"
+    },
+
+    {
+      "type": "color",
+      "id": "accent_color",
+      "label": "Couleur accent",
+      "default": "#C43F49"
+    },
+
+    {
+      "type": "color",
+      "id": "ring_color",
+      "label": "Couleur anneaux",
+      "default": "#FF949B"
+    },
+
+    {
+      "type": "color",
+      "id": "ring_background",
+      "label": "Partie vide des anneaux",
+      "default": "#F6DCDC"
+    },
+
+    {
+      "type": "color",
+      "id": "border_color",
+      "label": "Bordure",
+      "default": "#FF969D"
+    },
+
+    {
+      "type": "color",
+      "id": "separator_color",
+      "label": "Séparateurs",
+      "default": "#EBDDDD"
+    },
+
+
+    {
+      "type": "header",
+      "content": "Mobile"
+    },
+
+    {
+      "type": "range",
+      "id": "mobile_heading_size",
+      "label": "Taille titre mobile",
+      "min": 24,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 30
+    },
+
+    {
+      "type": "range",
+      "id": "mobile_eyebrow_size",
+      "label": "Petit titre mobile",
+      "min": 8,
+      "max": 14,
+      "step": 1,
+      "unit": "px",
+      "default": 9
+    },
+
+    {
+      "type": "range",
+      "id": "mobile_description_size",
+      "label": "Description mobile",
+      "min": 11,
+      "max": 18,
+      "step": 1,
+      "unit": "px",
+      "default": 13
+    },
+
+    {
+      "type": "range",
+      "id": "mobile_circle_size",
+      "label": "Taille cercle mobile",
+      "min": 80,
+      "max": 150,
+      "step": 5,
+      "unit": "px",
+      "default": 105
+    },
+
+    {
+      "type": "range",
+      "id": "mobile_ring_thickness",
+      "label": "Épaisseur anneau mobile",
+      "min": 6,
+      "max": 30,
+      "step": 2,
+      "unit": "px",
+      "default": 12
+    },
+
+    {
+      "type": "range",
+      "id": "mobile_percentage_size",
+      "label": "Pourcentage mobile",
+      "min": 20,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 28
+    },
+
+    {
+      "type": "range",
+      "id": "mobile_item_title_size",
+      "label": "Texte résultat mobile",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "default": 15
+    },
+
+    {
+      "type": "range",
+      "id": "mobile_item_text_width",
+      "label": "Largeur texte mobile",
+      "min": 180,
+      "max": 320,
+      "step": 10,
+      "unit": "px",
+      "default": 260
+    },
+
+    {
+      "type": "range",
+      "id": "mobile_item_gap",
+      "label": "Espace entre résultats",
+      "min": 15,
+      "max": 50,
+      "step": 1,
+      "unit": "px",
+      "default": 28
+    },
+
+    {
+      "type": "range",
+      "id": "mobile_item_padding_bottom",
+      "label": "Marge basse résultats",
+      "min": 10,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 22
+    },
+
+    {
+      "type": "range",
+      "id": "mobile_separator_width",
+      "label": "Largeur séparateur mobile",
+      "min": 40,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 70
+    },
+
+    {
+      "type": "range",
+      "id": "mobile_circle_bottom_space",
+      "label": "Espace sous cercle mobile",
+      "min": 8,
+      "max": 25,
+      "step": 1,
+      "unit": "px",
+      "default": 12
+    },
+
+    {
+      "type": "range",
+      "id": "mobile_footnote_size",
+      "label": "Taille note mobile",
+      "min": 9,
+      "max": 14,
+      "step": 1,
+      "unit": "px",
+      "default": 10
+    },
+
+    {
+      "type": "range",
+      "id": "mobile_footnote_top_space",
+      "label": "Espace avant note mobile",
+      "min": 15,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 24
+    },
+
+    {
+      "type": "range",
+      "id": "mobile_border_radius",
+      "label": "Arrondi bloc mobile",
+      "min": 0,
+      "max": 30,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+
+    {
+      "type": "range",
+      "id": "mobile_box_padding_top",
+      "label": "Marge intérieure haute mobile",
+      "min": 20,
+      "max": 70,
+      "step": 5,
+      "unit": "px",
+      "default": 35
+    },
+
+    {
+      "type": "range",
+      "id": "mobile_box_padding_bottom",
+      "label": "Marge intérieure basse mobile",
+      "min": 20,
+      "max": 70,
+      "step": 5,
+      "unit": "px",
+      "default": 35
+    },
+
+    {
+      "type": "range",
+      "id": "mobile_box_padding_horizontal",
+      "label": "Marges internes mobile",
+      "min": 10,
+      "max": 35,
+      "step": 1,
+      "unit": "px",
+      "default": 18
+    },
+
+    {
+      "type": "range",
+      "id": "mobile_header_bottom_space",
+      "label": "Espace sous en-tête mobile",
+      "min": 20,
+      "max": 50,
+      "step": 1,
+      "unit": "px",
+      "default": 30
+    },
+
+    {
+      "type": "range",
+      "id": "mobile_eyebrow_bottom_space",
+      "label": "Espace petit titre mobile",
+      "min": 4,
+      "max": 18,
+      "step": 1,
+      "unit": "px",
+      "default": 9
+    },
+
+    {
+      "type": "range",
+      "id": "mobile_description_top_space",
+      "label": "Espace description mobile",
+      "min": 5,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "default": 9
+    },
+
+    {
+      "type": "range",
+      "id": "mobile_padding_top",
+      "label": "Marge haute section mobile",
+      "min": 0,
+      "max": 80,
+      "step": 4,
+      "unit": "px",
+      "default": 28
+    },
+
+    {
+      "type": "range",
+      "id": "mobile_padding_bottom",
+      "label": "Marge basse section mobile",
+      "min": 0,
+      "max": 80,
+      "step": 4,
+      "unit": "px",
+      "default": 28
+    },
+
+    {
+      "type": "range",
+      "id": "mobile_side_padding",
+      "label": "Marges latérales mobile",
+      "min": 10,
+      "max": 30,
+      "step": 1,
+      "unit": "px",
+      "default": 15
+    }
+
+  ],
+
+  "blocks": [
+
+    {
+      "type": "result",
+      "name": "Résultat",
+
+      "settings": [
+
+        {
+          "type": "range",
+          "id": "percentage",
+          "label": "Pourcentage",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "unit": "%",
+          "default": 96
+        },
+
+        {
+          "type": "textarea",
+          "id": "title",
+          "label": "Résultat",
+          "default": "constatent une amélioration visible"
+        }
+
+      ]
+
+    }
+
+  ],
+
+  "max_blocks": 4,
+
+  "presets": [
+
+    {
+      "name": "Résultats enquête",
+
+      "blocks": [
+
+        {
+          "type": "result",
+          "settings": {
+            "percentage": 96,
+            "title": "constatent une peau visiblement plus lisse"
+          }
+        },
+
+        {
+          "type": "result",
+          "settings": {
+            "percentage": 94,
+            "title": "constatent un teint plus uniforme"
+          }
+        },
+
+        {
+          "type": "result",
+          "settings": {
+            "percentage": 91,
+            "title": "constatent une amélioration globale de l'apparence de leur peau"
+          }
+        }
+
+      ]
+
+    }
+
+  ]
+
+}
+{% endschema %}
