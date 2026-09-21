@@ -1,0 +1,1716 @@
+{% liquid
+  assign compare_id = 'fp-comparison-' | append: section.id
+%}
+
+<section
+  id="{{ compare_id }}"
+  class="fp-comparison"
+  style="
+    --cmp-bg: {{ section.settings.background_color }};
+    --cmp-text: {{ section.settings.text_color }};
+    --cmp-muted: {{ section.settings.muted_color }};
+    --cmp-accent: {{ section.settings.accent_color }};
+    --cmp-highlight-bg: {{ section.settings.highlight_background }};
+    --cmp-border: {{ section.settings.border_color }};
+    --cmp-green: {{ section.settings.price_color }};
+    --cmp-max-width: {{ section.settings.max_width }}px;
+    --cmp-radius: {{ section.settings.highlight_radius }}px;
+  "
+>
+
+  <div class="fp-comparison__container">
+
+    <!-- ==================================================
+         EN-TÊTE
+    =================================================== -->
+    <div class="fp-comparison__header">
+
+      {% if section.settings.eyebrow != blank %}
+        <div class="fp-comparison__eyebrow">
+          {{ section.settings.eyebrow }}
+        </div>
+      {% endif %}
+
+      <div class="fp-comparison__heading-wrap">
+
+        {% if section.settings.heading != blank %}
+          <h2 class="fp-comparison__heading">
+            {{ section.settings.heading }}
+          </h2>
+        {% endif %}
+
+        {% if section.settings.heading_accent != blank %}
+          <div class="fp-comparison__heading-accent">
+            {{ section.settings.heading_accent }}
+          </div>
+        {% endif %}
+
+      </div>
+
+      {% if section.settings.description != blank %}
+        <div class="fp-comparison__description">
+          {{ section.settings.description }}
+        </div>
+      {% endif %}
+
+    </div>
+
+
+    <!-- ==================================================
+         TABLEAU
+    =================================================== -->
+    <div class="fp-comparison__table-wrap">
+
+      <div class="fp-comparison__table">
+
+        <!-- HEADER TABLEAU -->
+        <div class="fp-comparison__row fp-comparison__row--header">
+
+          <div class="fp-comparison__cell fp-comparison__cell--benefit">
+            {{ section.settings.benefit_heading }}
+          </div>
+
+
+          <div class="fp-comparison__cell fp-comparison__cell--ours fp-comparison__cell--ours-header">
+
+            <div class="fp-comparison__brand-name">
+              {{ section.settings.our_brand }}
+            </div>
+
+            {% if section.settings.our_subtitle != blank %}
+              <div class="fp-comparison__brand-subtitle">
+                {{ section.settings.our_subtitle }}
+              </div>
+            {% endif %}
+
+          </div>
+
+
+          <div class="fp-comparison__cell fp-comparison__cell--others">
+
+            <div class="fp-comparison__brand-name">
+              {{ section.settings.other_brand }}
+            </div>
+
+            {% if section.settings.other_subtitle != blank %}
+              <div class="fp-comparison__brand-subtitle">
+                {{ section.settings.other_subtitle }}
+              </div>
+            {% endif %}
+
+          </div>
+
+        </div>
+
+
+        <!-- LIGNES -->
+        {% for block in section.blocks %}
+
+          <div
+            class="fp-comparison__row"
+            {{ block.shopify_attributes }}
+          >
+
+            <!-- BÉNÉFICE -->
+            <div class="fp-comparison__cell fp-comparison__cell--benefit">
+              {{ block.settings.benefit }}
+            </div>
+
+
+            <!-- NOTRE PRODUIT -->
+            <div class="fp-comparison__cell fp-comparison__cell--ours">
+
+              {% case block.settings.our_value_type %}
+
+                {% when 'check' %}
+
+                  <span
+                    class="fp-comparison__status fp-comparison__status--check"
+                    aria-label="Oui"
+                  >
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <path d="M8 12.2l2.5 2.6L16.5 9"></path>
+                    </svg>
+                  </span>
+
+
+                {% when 'cross' %}
+
+                  <span
+                    class="fp-comparison__status fp-comparison__status--cross"
+                    aria-label="Non"
+                  >
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <circle cx="12" cy="12" r="9"></circle>
+                      <path d="M9 9l6 6M15 9l-6 6"></path>
+                    </svg>
+                  </span>
+
+
+                {% when 'text' %}
+
+                  <span
+                    class="
+                      fp-comparison__value
+                      {% if block.settings.our_value_emphasis %}
+                        fp-comparison__value--accent
+                      {% endif %}
+                      {% if block.settings.our_value_price %}
+                        fp-comparison__value--price
+                      {% endif %}
+                    "
+                  >
+                    {{ block.settings.our_value }}
+                  </span>
+
+              {% endcase %}
+
+            </div>
+
+
+            <!-- AUTRES MARQUES -->
+            <div class="fp-comparison__cell fp-comparison__cell--others">
+
+              {% case block.settings.other_value_type %}
+
+                {% when 'check' %}
+
+                  <span
+                    class="fp-comparison__status fp-comparison__status--check-other"
+                    aria-label="Oui"
+                  >
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <circle cx="12" cy="12" r="9"></circle>
+                      <path d="M8 12.2l2.5 2.6L16.5 9"></path>
+                    </svg>
+                  </span>
+
+
+                {% when 'cross' %}
+
+                  <span
+                    class="fp-comparison__status fp-comparison__status--cross"
+                    aria-label="Non"
+                  >
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <circle cx="12" cy="12" r="9"></circle>
+                      <path d="M9 9l6 6M15 9l-6 6"></path>
+                    </svg>
+                  </span>
+
+
+                {% when 'text' %}
+
+                  <span class="fp-comparison__value fp-comparison__value--other">
+                    {{ block.settings.other_value }}
+                  </span>
+
+              {% endcase %}
+
+            </div>
+
+          </div>
+
+        {% endfor %}
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<style>
+
+  /* ======================================================
+     SECTION
+  ====================================================== */
+
+  #{{ compare_id }} {
+    width: 100%;
+    overflow: hidden;
+
+    background: var(--cmp-bg);
+    color: var(--cmp-text);
+
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+  }
+
+
+  #{{ compare_id }} *,
+  #{{ compare_id }} *::before,
+  #{{ compare_id }} *::after {
+    box-sizing: border-box;
+  }
+
+
+  #{{ compare_id }} .fp-comparison__container {
+    width: 100%;
+    max-width: var(--cmp-max-width);
+
+    margin: 0 auto;
+
+    padding-left: {{ section.settings.side_padding }}px;
+    padding-right: {{ section.settings.side_padding }}px;
+  }
+
+
+
+  /* ======================================================
+     HEADER
+  ====================================================== */
+
+  #{{ compare_id }} .fp-comparison__header {
+    width: 100%;
+
+    max-width: {{ section.settings.header_width }}px;
+
+    margin:
+      0
+      auto
+      {{ section.settings.header_bottom_space }}px;
+  }
+
+
+  #{{ compare_id }} .fp-comparison__eyebrow {
+    margin: 0 0 {{ section.settings.eyebrow_bottom_space }}px;
+
+    color: var(--cmp-accent);
+
+    font-size: {{ section.settings.eyebrow_size }}px;
+    font-weight: 700;
+    line-height: 1.2;
+
+    letter-spacing: {{ section.settings.eyebrow_spacing }}px;
+
+    text-transform: uppercase;
+  }
+
+
+  #{{ compare_id }} .fp-comparison__heading-wrap {
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+
+    gap: 0 9px;
+  }
+
+
+  #{{ compare_id }} .fp-comparison__heading {
+    margin: 0;
+
+    color: var(--cmp-text);
+
+    font-size: {{ section.settings.heading_size }}px;
+    font-weight: {{ section.settings.heading_weight }};
+
+    line-height: 1.06;
+
+    letter-spacing: -1px;
+  }
+
+
+  #{{ compare_id }} .fp-comparison__heading-accent {
+    color: var(--cmp-accent);
+
+    font-size: {{ section.settings.heading_size }}px;
+    font-weight: 400;
+    font-style: italic;
+
+    line-height: 1.06;
+
+    letter-spacing: -1px;
+  }
+
+
+  #{{ compare_id }} .fp-comparison__description {
+    max-width: {{ section.settings.description_width }}px;
+
+    margin-top: {{ section.settings.description_top_space }}px;
+
+    color: var(--cmp-text);
+
+    font-size: {{ section.settings.description_size }}px;
+    font-weight: 400;
+
+    line-height: 1.45;
+  }
+
+
+  #{{ compare_id }} .fp-comparison__description p {
+    margin: 0;
+  }
+
+
+
+  /* ======================================================
+     TABLEAU
+  ====================================================== */
+
+  #{{ compare_id }} .fp-comparison__table-wrap {
+    width: 100%;
+
+    max-width: {{ section.settings.table_width }}px;
+
+    margin: 0 auto;
+
+    overflow: visible;
+  }
+
+
+  #{{ compare_id }} .fp-comparison__table {
+    position: relative;
+
+    width: 100%;
+  }
+
+
+  #{{ compare_id }} .fp-comparison__row {
+    display: grid;
+
+    grid-template-columns:
+      minmax(0, {{ section.settings.benefit_column_width }}fr)
+      minmax(0, 1fr)
+      minmax(0, 1fr);
+
+    min-height: {{ section.settings.row_height }}px;
+  }
+
+
+  #{{ compare_id }} .fp-comparison__cell {
+    min-width: 0;
+
+    display: flex;
+    align-items: center;
+
+    border-top: 1px solid var(--cmp-border);
+  }
+
+
+
+  /* ======================================================
+     COLONNE BÉNÉFICE
+  ====================================================== */
+
+  #{{ compare_id }} .fp-comparison__cell--benefit {
+    padding:
+      {{ section.settings.cell_vertical_padding }}px
+      {{ section.settings.cell_horizontal_padding }}px;
+
+    color: var(--cmp-text);
+
+    font-size: {{ section.settings.benefit_text_size }}px;
+    font-weight: 500;
+
+    line-height: 1.28;
+  }
+
+
+
+  /* ======================================================
+     COLONNE NOTRE PRODUIT
+  ====================================================== */
+
+  #{{ compare_id }} .fp-comparison__cell--ours {
+    position: relative;
+
+    justify-content: center;
+    text-align: center;
+
+    padding:
+      {{ section.settings.cell_vertical_padding }}px
+      12px;
+
+    background: var(--cmp-highlight-bg);
+
+    border-top-color: transparent;
+  }
+
+
+  #{{ compare_id }} .fp-comparison__row:first-child
+  .fp-comparison__cell--ours {
+    border-radius:
+      var(--cmp-radius)
+      var(--cmp-radius)
+      0
+      0;
+  }
+
+
+  #{{ compare_id }} .fp-comparison__row:last-child
+  .fp-comparison__cell--ours {
+    border-radius:
+      0
+      0
+      var(--cmp-radius)
+      var(--cmp-radius);
+  }
+
+
+
+  /* ======================================================
+     AUTRES MARQUES
+  ====================================================== */
+
+  #{{ compare_id }} .fp-comparison__cell--others {
+    justify-content: center;
+
+    padding:
+      {{ section.settings.cell_vertical_padding }}px
+      12px;
+
+    text-align: center;
+  }
+
+
+
+  /* ======================================================
+     HEADER TABLEAU
+  ====================================================== */
+
+  #{{ compare_id }} .fp-comparison__row--header {
+    min-height: {{ section.settings.header_row_height }}px;
+  }
+
+
+  #{{ compare_id }} .fp-comparison__row--header
+  .fp-comparison__cell--benefit {
+    color: var(--cmp-muted);
+
+    font-size: {{ section.settings.table_header_size }}px;
+    font-weight: 600;
+  }
+
+
+  #{{ compare_id }} .fp-comparison__cell--ours-header,
+  #{{ compare_id }} .fp-comparison__row--header
+  .fp-comparison__cell--others {
+    flex-direction: column;
+
+    justify-content: center;
+
+    gap: 4px;
+  }
+
+
+  #{{ compare_id }} .fp-comparison__brand-name {
+    color: var(--cmp-text);
+
+    font-size: {{ section.settings.brand_name_size }}px;
+    font-weight: 700;
+
+    line-height: 1.2;
+  }
+
+
+  #{{ compare_id }} .fp-comparison__brand-subtitle {
+    color: var(--cmp-muted);
+
+    font-size: {{ section.settings.brand_subtitle_size }}px;
+    font-weight: 400;
+
+    line-height: 1.2;
+  }
+
+
+
+  /* ======================================================
+     ICÔNES
+  ====================================================== */
+
+  #{{ compare_id }} .fp-comparison__status {
+    width: {{ section.settings.status_size }}px;
+    height: {{ section.settings.status_size }}px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+
+  #{{ compare_id }} .fp-comparison__status svg {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+  }
+
+
+
+  /* CHECK ROUGE */
+
+  #{{ compare_id }} .fp-comparison__status--check circle {
+    fill: var(--cmp-accent);
+    stroke: var(--cmp-accent);
+  }
+
+
+  #{{ compare_id }} .fp-comparison__status--check path {
+    fill: none;
+
+    stroke: #ffffff;
+    stroke-width: 2.2;
+
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+
+
+  /* CHECK AUTRE */
+
+  #{{ compare_id }} .fp-comparison__status--check-other circle {
+    fill: none;
+
+    stroke: var(--cmp-muted);
+    stroke-width: 1.3;
+  }
+
+
+  #{{ compare_id }} .fp-comparison__status--check-other path {
+    fill: none;
+
+    stroke: var(--cmp-muted);
+    stroke-width: 1.6;
+
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+
+
+  /* CROIX */
+
+  #{{ compare_id }} .fp-comparison__status--cross circle {
+    fill: transparent;
+
+    stroke: var(--cmp-muted);
+    stroke-width: 1.3;
+  }
+
+
+  #{{ compare_id }} .fp-comparison__status--cross path {
+    fill: none;
+
+    stroke: var(--cmp-muted);
+    stroke-width: 1.5;
+
+    stroke-linecap: round;
+  }
+
+
+
+  /* ======================================================
+     VALEURS
+  ====================================================== */
+
+  #{{ compare_id }} .fp-comparison__value {
+    color: var(--cmp-text);
+
+    font-size: {{ section.settings.value_size }}px;
+    font-weight: 500;
+
+    line-height: 1.25;
+  }
+
+
+  #{{ compare_id }} .fp-comparison__value--accent {
+    color: var(--cmp-accent);
+
+    font-weight: 700;
+  }
+
+
+  #{{ compare_id }} .fp-comparison__value--price {
+    color: var(--cmp-green);
+
+    font-weight: 700;
+  }
+
+
+  #{{ compare_id }} .fp-comparison__value--other {
+    color: var(--cmp-muted);
+  }
+
+
+
+  /* ======================================================
+     TABLETTE
+  ====================================================== */
+
+  @media screen and (max-width: 989px) {
+
+    #{{ compare_id }} .fp-comparison__heading,
+    #{{ compare_id }} .fp-comparison__heading-accent {
+      font-size: calc({{ section.settings.heading_size }}px * 0.86);
+    }
+
+  }
+
+
+
+  /* ======================================================
+     MOBILE
+  ====================================================== */
+
+  @media screen and (max-width: 749px) {
+
+    #{{ compare_id }} {
+      padding-top: {{ section.settings.mobile_padding_top }}px;
+      padding-bottom: {{ section.settings.mobile_padding_bottom }}px;
+    }
+
+
+    #{{ compare_id }} .fp-comparison__container {
+      padding-left: {{ section.settings.mobile_side_padding }}px;
+      padding-right: {{ section.settings.mobile_side_padding }}px;
+    }
+
+
+    /* HEADER */
+
+    #{{ compare_id }} .fp-comparison__header {
+      margin-bottom: {{ section.settings.mobile_header_bottom_space }}px;
+    }
+
+
+    #{{ compare_id }} .fp-comparison__eyebrow {
+      margin-bottom: {{ section.settings.mobile_eyebrow_bottom_space }}px;
+
+      font-size: {{ section.settings.mobile_eyebrow_size }}px;
+
+      letter-spacing: 1.3px;
+    }
+
+
+    #{{ compare_id }} .fp-comparison__heading-wrap {
+      gap: 0 6px;
+    }
+
+
+    #{{ compare_id }} .fp-comparison__heading,
+    #{{ compare_id }} .fp-comparison__heading-accent {
+      font-size: {{ section.settings.mobile_heading_size }}px;
+
+      line-height: 1.06;
+
+      letter-spacing: -0.6px;
+    }
+
+
+    #{{ compare_id }} .fp-comparison__description {
+      margin-top: {{ section.settings.mobile_description_top_space }}px;
+
+      font-size: {{ section.settings.mobile_description_size }}px;
+
+      line-height: 1.42;
+    }
+
+
+
+    /* TABLEAU */
+
+    #{{ compare_id }} .fp-comparison__table-wrap {
+      width: 100%;
+      max-width: none;
+
+      overflow: visible;
+    }
+
+
+    #{{ compare_id }} .fp-comparison__row {
+      grid-template-columns:
+        minmax(0, {{ section.settings.mobile_benefit_column_width }}fr)
+        minmax(0, 1fr)
+        minmax(0, 1fr);
+
+      min-height: {{ section.settings.mobile_row_height }}px;
+    }
+
+
+    #{{ compare_id }} .fp-comparison__row--header {
+      min-height: {{ section.settings.mobile_header_row_height }}px;
+    }
+
+
+    #{{ compare_id }} .fp-comparison__cell--benefit {
+      padding:
+        {{ section.settings.mobile_cell_vertical_padding }}px
+        {{ section.settings.mobile_cell_horizontal_padding }}px
+        {{ section.settings.mobile_cell_vertical_padding }}px
+        2px;
+
+      font-size: {{ section.settings.mobile_benefit_text_size }}px;
+
+      line-height: 1.25;
+    }
+
+
+    #{{ compare_id }} .fp-comparison__cell--ours,
+    #{{ compare_id }} .fp-comparison__cell--others {
+      padding:
+        {{ section.settings.mobile_cell_vertical_padding }}px
+        5px;
+    }
+
+
+
+    /* HEADER DU TABLEAU */
+
+    #{{ compare_id }} .fp-comparison__row--header
+    .fp-comparison__cell--benefit {
+      font-size: {{ section.settings.mobile_table_header_size }}px;
+    }
+
+
+    #{{ compare_id }} .fp-comparison__brand-name {
+      font-size: {{ section.settings.mobile_brand_name_size }}px;
+    }
+
+
+    #{{ compare_id }} .fp-comparison__brand-subtitle {
+      max-width: 90px;
+
+      font-size: {{ section.settings.mobile_brand_subtitle_size }}px;
+
+      line-height: 1.15;
+    }
+
+
+
+    /* VALEURS */
+
+    #{{ compare_id }} .fp-comparison__value {
+      font-size: {{ section.settings.mobile_value_size }}px;
+    }
+
+
+    #{{ compare_id }} .fp-comparison__status {
+      width: {{ section.settings.mobile_status_size }}px;
+      height: {{ section.settings.mobile_status_size }}px;
+    }
+
+  }
+
+
+
+  /* ======================================================
+     PETITS MOBILES
+  ====================================================== */
+
+  @media screen and (max-width: 390px) {
+
+    #{{ compare_id }} .fp-comparison__cell--benefit {
+      font-size: calc({{ section.settings.mobile_benefit_text_size }}px - 1px);
+    }
+
+
+    #{{ compare_id }} .fp-comparison__value {
+      font-size: calc({{ section.settings.mobile_value_size }}px - 1px);
+    }
+
+  }
+
+</style>
+
+
+{% schema %}
+{
+  "name": "Tableau comparatif",
+  "tag": "section",
+  "class": "section-product-comparison",
+
+  "settings": [
+
+    {
+      "type": "header",
+      "content": "En-tête"
+    },
+
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Petit titre",
+      "default": "UNE TECHNOLOGIE QUI SE DÉMARQUE"
+    },
+
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Titre principal",
+      "default": "Pourquoi nous"
+    },
+
+    {
+      "type": "text",
+      "id": "heading_accent",
+      "label": "Partie du titre en couleur",
+      "default": "nous démarquons"
+    },
+
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description",
+      "default": "<p>Comparez notre solution aux autres produits du marché et découvrez ce qui fait réellement la différence.</p>"
+    },
+
+
+    {
+      "type": "header",
+      "content": "Colonnes"
+    },
+
+    {
+      "type": "text",
+      "id": "benefit_heading",
+      "label": "Titre colonne caractéristiques",
+      "default": "Caractéristiques"
+    },
+
+    {
+      "type": "text",
+      "id": "our_brand",
+      "label": "Nom de votre produit",
+      "default": "Notre produit"
+    },
+
+    {
+      "type": "text",
+      "id": "our_subtitle",
+      "label": "Sous-titre de votre produit",
+      "default": "Technologie LED"
+    },
+
+    {
+      "type": "text",
+      "id": "other_brand",
+      "label": "Nom colonne concurrente",
+      "default": "Autres marques"
+    },
+
+    {
+      "type": "text",
+      "id": "other_subtitle",
+      "label": "Sous-titre concurrent",
+      "default": "Produits similaires"
+    },
+
+
+    {
+      "type": "header",
+      "content": "Largeurs PC"
+    },
+
+    {
+      "type": "range",
+      "id": "max_width",
+      "label": "Largeur maximale de la section",
+      "min": 900,
+      "max": 1800,
+      "step": 20,
+      "unit": "px",
+      "default": 1200
+    },
+
+    {
+      "type": "range",
+      "id": "header_width",
+      "label": "Largeur de l'en-tête",
+      "min": 400,
+      "max": 1000,
+      "step": 20,
+      "unit": "px",
+      "default": 720
+    },
+
+    {
+      "type": "range",
+      "id": "description_width",
+      "label": "Largeur description",
+      "min": 350,
+      "max": 900,
+      "step": 10,
+      "unit": "px",
+      "default": 700
+    },
+
+    {
+      "type": "range",
+      "id": "table_width",
+      "label": "Largeur du tableau",
+      "min": 700,
+      "max": 1400,
+      "step": 20,
+      "unit": "px",
+      "default": 960
+    },
+
+    {
+      "type": "range",
+      "id": "benefit_column_width",
+      "label": "Largeur colonne caractéristiques",
+      "min": 1,
+      "max": 3,
+      "step": 0.1,
+      "default": 1.5
+    },
+
+
+    {
+      "type": "header",
+      "content": "Typographie PC"
+    },
+
+    {
+      "type": "range",
+      "id": "eyebrow_size",
+      "label": "Taille petit titre",
+      "min": 9,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "default": 11
+    },
+
+    {
+      "type": "range",
+      "id": "eyebrow_spacing",
+      "label": "Espacement lettres",
+      "min": 0,
+      "max": 4,
+      "step": 0.5,
+      "unit": "px",
+      "default": 1.5
+    },
+
+    {
+      "type": "range",
+      "id": "heading_size",
+      "label": "Taille du titre",
+      "min": 26,
+      "max": 64,
+      "step": 1,
+      "unit": "px",
+      "default": 42
+    },
+
+    {
+      "type": "select",
+      "id": "heading_weight",
+      "label": "Graisse titre",
+      "options": [
+        {
+          "value": "400",
+          "label": "Normal"
+        },
+        {
+          "value": "500",
+          "label": "Medium"
+        },
+        {
+          "value": "600",
+          "label": "Semi-gras"
+        },
+        {
+          "value": "700",
+          "label": "Gras"
+        }
+      ],
+      "default": "500"
+    },
+
+    {
+      "type": "range",
+      "id": "description_size",
+      "label": "Taille description",
+      "min": 12,
+      "max": 22,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+
+    {
+      "type": "range",
+      "id": "benefit_text_size",
+      "label": "Taille caractéristiques",
+      "min": 12,
+      "max": 22,
+      "step": 1,
+      "unit": "px",
+      "default": 15
+    },
+
+    {
+      "type": "range",
+      "id": "table_header_size",
+      "label": "Titre colonne caractéristiques",
+      "min": 10,
+      "max": 18,
+      "step": 1,
+      "unit": "px",
+      "default": 12
+    },
+
+    {
+      "type": "range",
+      "id": "brand_name_size",
+      "label": "Nom des marques",
+      "min": 11,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+
+    {
+      "type": "range",
+      "id": "brand_subtitle_size",
+      "label": "Sous-titres des marques",
+      "min": 9,
+      "max": 16,
+      "step": 1,
+      "unit": "px",
+      "default": 11
+    },
+
+    {
+      "type": "range",
+      "id": "value_size",
+      "label": "Taille valeurs",
+      "min": 11,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+
+
+    {
+      "type": "header",
+      "content": "Dimensions du tableau"
+    },
+
+    {
+      "type": "range",
+      "id": "row_height",
+      "label": "Hauteur minimum des lignes",
+      "min": 45,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "default": 55
+    },
+
+    {
+      "type": "range",
+      "id": "header_row_height",
+      "label": "Hauteur en-tête tableau",
+      "min": 55,
+      "max": 120,
+      "step": 5,
+      "unit": "px",
+      "default": 75
+    },
+
+    {
+      "type": "range",
+      "id": "cell_vertical_padding",
+      "label": "Marge verticale cellules",
+      "min": 5,
+      "max": 30,
+      "step": 1,
+      "unit": "px",
+      "default": 10
+    },
+
+    {
+      "type": "range",
+      "id": "cell_horizontal_padding",
+      "label": "Marge horizontale caractéristiques",
+      "min": 5,
+      "max": 30,
+      "step": 1,
+      "unit": "px",
+      "default": 8
+    },
+
+    {
+      "type": "range",
+      "id": "status_size",
+      "label": "Taille icônes Oui / Non",
+      "min": 18,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "default": 24
+    },
+
+    {
+      "type": "range",
+      "id": "highlight_radius",
+      "label": "Arrondi colonne mise en avant",
+      "min": 0,
+      "max": 30,
+      "step": 1,
+      "unit": "px",
+      "default": 10
+    },
+
+
+    {
+      "type": "header",
+      "content": "Espacements PC"
+    },
+
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Marge haute",
+      "min": 0,
+      "max": 150,
+      "step": 5,
+      "unit": "px",
+      "default": 65
+    },
+
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Marge basse",
+      "min": 0,
+      "max": 150,
+      "step": 5,
+      "unit": "px",
+      "default": 65
+    },
+
+    {
+      "type": "range",
+      "id": "side_padding",
+      "label": "Marges latérales",
+      "min": 10,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "default": 20
+    },
+
+    {
+      "type": "range",
+      "id": "header_bottom_space",
+      "label": "Espace en-tête / tableau",
+      "min": 20,
+      "max": 80,
+      "step": 2,
+      "unit": "px",
+      "default": 42
+    },
+
+    {
+      "type": "range",
+      "id": "eyebrow_bottom_space",
+      "label": "Espace sous petit titre",
+      "min": 4,
+      "max": 25,
+      "step": 1,
+      "unit": "px",
+      "default": 10
+    },
+
+    {
+      "type": "range",
+      "id": "description_top_space",
+      "label": "Espace avant description",
+      "min": 5,
+      "max": 35,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+
+
+    {
+      "type": "header",
+      "content": "Couleurs"
+    },
+
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Fond section",
+      "default": "#FFFFFF"
+    },
+
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Texte principal",
+      "default": "#171717"
+    },
+
+    {
+      "type": "color",
+      "id": "muted_color",
+      "label": "Texte secondaire",
+      "default": "#777777"
+    },
+
+    {
+      "type": "color",
+      "id": "accent_color",
+      "label": "Couleur principale",
+      "default": "#C93C46"
+    },
+
+    {
+      "type": "color",
+      "id": "highlight_background",
+      "label": "Fond colonne produit",
+      "default": "#FBE1E2"
+    },
+
+    {
+      "type": "color",
+      "id": "border_color",
+      "label": "Séparateurs",
+      "default": "#DCDCDC"
+    },
+
+    {
+      "type": "color",
+      "id": "price_color",
+      "label": "Couleur prix mis en avant",
+      "default": "#568B62"
+    },
+
+
+    {
+      "type": "header",
+      "content": "Mobile"
+    },
+
+    {
+      "type": "range",
+      "id": "mobile_heading_size",
+      "label": "Taille titre mobile",
+      "min": 24,
+      "max": 42,
+      "step": 1,
+      "unit": "px",
+      "default": 30
+    },
+
+    {
+      "type": "range",
+      "id": "mobile_eyebrow_size",
+      "label": "Petit titre mobile",
+      "min": 8,
+      "max": 16,
+      "step": 1,
+      "unit": "px",
+      "default": 10
+    },
+
+    {
+      "type": "range",
+      "id": "mobile_description_size",
+      "label": "Description mobile",
+      "min": 12,
+      "max": 18,
+      "step": 1,
+      "unit": "px",
+      "default": 15
+    },
+
+    {
+      "type": "range",
+      "id": "mobile_benefit_text_size",
+      "label": "Caractéristiques mobile",
+      "min": 10,
+      "max": 17,
+      "step": 1,
+      "unit": "px",
+      "default": 13
+    },
+
+    {
+      "type": "range",
+      "id": "mobile_value_size",
+      "label": "Valeurs mobile",
+      "min": 10,
+      "max": 17,
+      "step": 1,
+      "unit": "px",
+      "default": 12
+    },
+
+    {
+      "type": "range",
+      "id": "mobile_table_header_size",
+      "label": "Titre caractéristiques mobile",
+      "min": 9,
+      "max": 15,
+      "step": 1,
+      "unit": "px",
+      "default": 11
+    },
+
+    {
+      "type": "range",
+      "id": "mobile_brand_name_size",
+      "label": "Nom marques mobile",
+      "min": 10,
+      "max": 16,
+      "step": 1,
+      "unit": "px",
+      "default": 12
+    },
+
+    {
+      "type": "range",
+      "id": "mobile_brand_subtitle_size",
+      "label": "Sous-titre marques mobile",
+      "min": 8,
+      "max": 13,
+      "step": 1,
+      "unit": "px",
+      "default": 9
+    },
+
+    {
+      "type": "range",
+      "id": "mobile_benefit_column_width",
+      "label": "Largeur caractéristiques mobile",
+      "min": 1,
+      "max": 2,
+      "step": 0.1,
+      "default": 1.3
+    },
+
+    {
+      "type": "range",
+      "id": "mobile_row_height",
+      "label": "Hauteur lignes mobile",
+      "min": 50,
+      "max": 110,
+      "step": 5,
+      "unit": "px",
+      "default": 60
+    },
+
+    {
+      "type": "range",
+      "id": "mobile_header_row_height",
+      "label": "Hauteur en-tête tableau mobile",
+      "min": 55,
+      "max": 110,
+      "step": 5,
+      "unit": "px",
+      "default": 70
+    },
+
+    {
+      "type": "range",
+      "id": "mobile_cell_vertical_padding",
+      "label": "Marge verticale cellules mobile",
+      "min": 4,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "default": 9
+    },
+
+    {
+      "type": "range",
+      "id": "mobile_cell_horizontal_padding",
+      "label": "Marge horizontale mobile",
+      "min": 2,
+      "max": 15,
+      "step": 1,
+      "unit": "px",
+      "default": 5
+    },
+
+    {
+      "type": "range",
+      "id": "mobile_status_size",
+      "label": "Taille icônes mobile",
+      "min": 18,
+      "max": 32,
+      "step": 2,
+      "unit": "px",
+      "default": 22
+    },
+
+    {
+      "type": "range",
+      "id": "mobile_padding_top",
+      "label": "Marge haute mobile",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "default": 36
+    },
+
+    {
+      "type": "range",
+      "id": "mobile_padding_bottom",
+      "label": "Marge basse mobile",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "default": 36
+    },
+
+    {
+      "type": "range",
+      "id": "mobile_side_padding",
+      "label": "Marges latérales mobile",
+      "min": 10,
+      "max": 30,
+      "step": 1,
+      "unit": "px",
+      "default": 18
+    },
+
+    {
+      "type": "range",
+      "id": "mobile_header_bottom_space",
+      "label": "Espace avant tableau mobile",
+      "min": 15,
+      "max": 60,
+      "step": 1,
+      "unit": "px",
+      "default": 28
+    },
+
+    {
+      "type": "range",
+      "id": "mobile_eyebrow_bottom_space",
+      "label": "Espace petit titre mobile",
+      "min": 4,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "default": 9
+    },
+
+    {
+      "type": "range",
+      "id": "mobile_description_top_space",
+      "label": "Espace description mobile",
+      "min": 5,
+      "max": 25,
+      "step": 1,
+      "unit": "px",
+      "default": 10
+    }
+
+  ],
+
+
+  "blocks": [
+
+    {
+      "type": "comparison_row",
+      "name": "Ligne de comparaison",
+
+      "settings": [
+
+        {
+          "type": "textarea",
+          "id": "benefit",
+          "label": "Caractéristique",
+          "default": "Caractéristique du produit"
+        },
+
+        {
+          "type": "header",
+          "content": "Votre produit"
+        },
+
+        {
+          "type": "select",
+          "id": "our_value_type",
+          "label": "Type de valeur",
+          "options": [
+            {
+              "value": "check",
+              "label": "Oui ✓"
+            },
+            {
+              "value": "cross",
+              "label": "Non ✕"
+            },
+            {
+              "value": "text",
+              "label": "Texte"
+            }
+          ],
+          "default": "check"
+        },
+
+        {
+          "type": "text",
+          "id": "our_value",
+          "label": "Valeur texte",
+          "default": "Oui"
+        },
+
+        {
+          "type": "checkbox",
+          "id": "our_value_emphasis",
+          "label": "Mettre la valeur en couleur principale",
+          "default": true
+        },
+
+        {
+          "type": "checkbox",
+          "id": "our_value_price",
+          "label": "Afficher comme un prix",
+          "default": false
+        },
+
+
+        {
+          "type": "header",
+          "content": "Autres marques"
+        },
+
+        {
+          "type": "select",
+          "id": "other_value_type",
+          "label": "Type de valeur",
+          "options": [
+            {
+              "value": "check",
+              "label": "Oui ✓"
+            },
+            {
+              "value": "cross",
+              "label": "Non ✕"
+            },
+            {
+              "value": "text",
+              "label": "Texte"
+            }
+          ],
+          "default": "cross"
+        },
+
+        {
+          "type": "text",
+          "id": "other_value",
+          "label": "Valeur texte",
+          "default": "Variable"
+        }
+
+      ]
+
+    }
+
+  ],
+
+
+  "max_blocks": 12,
+
+
+  "presets": [
+
+    {
+      "name": "Tableau comparatif",
+
+      "blocks": [
+
+        {
+          "type": "comparison_row",
+          "settings": {
+            "benefit": "Plusieurs technologies réunies dans un seul appareil",
+            "our_value_type": "check",
+            "other_value_type": "cross"
+          }
+        },
+
+        {
+          "type": "comparison_row",
+          "settings": {
+            "benefit": "Technologie pensée pour une utilisation complète",
+            "our_value_type": "check",
+            "other_value_type": "cross"
+          }
+        },
+
+        {
+          "type": "comparison_row",
+          "settings": {
+            "benefit": "Plusieurs modes d'utilisation disponibles",
+            "our_value_type": "check",
+            "other_value_type": "cross"
+          }
+        },
+
+        {
+          "type": "comparison_row",
+          "settings": {
+            "benefit": "Nombre de LED",
+            "our_value_type": "text",
+            "our_value": "240",
+            "our_value_emphasis": true,
+            "other_value_type": "text",
+            "other_value": "≈105"
+          }
+        },
+
+        {
+          "type": "comparison_row",
+          "settings": {
+            "benefit": "Puissance",
+            "our_value_type": "text",
+            "our_value": "65 mW/cm²",
+            "our_value_emphasis": true,
+            "other_value_type": "text",
+            "other_value": "30 mW/cm²"
+          }
+        },
+
+        {
+          "type": "comparison_row",
+          "settings": {
+            "benefit": "Garantie satisfait ou remboursé",
+            "our_value_type": "text",
+            "our_value": "30 jours",
+            "our_value_emphasis": true,
+            "other_value_type": "text",
+            "other_value": "Variable"
+          }
+        },
+
+        {
+          "type": "comparison_row",
+          "settings": {
+            "benefit": "Prix",
+            "our_value_type": "text",
+            "our_value": "265 €",
+            "our_value_emphasis": false,
+            "our_value_price": true,
+            "other_value_type": "text",
+            "other_value": "300 € – 400 €+"
+          }
+        }
+
+      ]
+
+    }
+
+  ]
+
+}
+{% endschema %}
