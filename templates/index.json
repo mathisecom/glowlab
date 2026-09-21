@@ -1062,29 +1062,69 @@
         "166442457738b23caf-0": {
           "type": "item",
           "settings": {
-            "title": "Do you ship overseas?",
-            "content": "<p>Yes, we ship all over the world. Shipping costs will apply, and will be added at checkout. We run discounts and promotions all year, so stay tuned for exclusive deals.</p>"
+            "title": "La luminothérapie LED fonctionne-t-elle vraiment ?",
+            "content": "<p>Oui. La photothérapie LED fait l’objet de recherches cliniques publiées depuis des décennies, notamment sur l’acné, les signes de l’âge et la cicatrisation. Il s’agit du même type de lumière utilisé dans certains cabinets dermatologiques, désormais accessible à domicile.</p>"
           }
         },
         "166442457738b23caf-1": {
           "type": "item",
           "settings": {
-            "title": "How long will it take to get my orders?",
-            "content": "<p>It depends on where you are. Orders processed here will take 5-7 business days to arrive. Overseas deliveries can take anywhere from 7-16 days. Delivery details will be provided in your confirmation email.</p>"
+            "title": "Comment fonctionne GlowLAB ?",
+            "content": "<p>GlowLAB utilise <strong>quatre longueurs d’onde</strong>, chacune ayant un rôle différent.<br/><br/>La lumière bleue (415 nm) cible les bactéries associées aux imperfections. La lumière jaune (590 nm) agit sur l’uniformité du teint, les rougeurs et les effets visibles du soleil. La lumière rouge (630 nm) atteint les couches de la peau où le collagène est produit. Enfin, le proche infrarouge (830 nm) pénètre plus profondément et peut être combiné aux autres couleurs grâce au bouton NIR de la télécommande.</p>"
           }
         },
         "166442457738b23caf-2": {
           "type": "item",
           "settings": {
-            "title": "Any question?",
-            "content": "<p>You can contact us through our contact page! We will be happy to assist you.</p>"
+            "title": "À quelle fréquence dois-je l’utiliser ?",
+            "content": "<p>Nous recommandons des séances de <strong>15 minutes, 3 à 5 fois par semaine</strong>, pendant les 4 à 6 premières semaines. Ensuite, vous pouvez adapter la fréquence en fonction des besoins de votre peau.</p>"
+          }
+        },
+        "item_cGDTLE": {
+          "type": "item",
+          "settings": {
+            "title": "Quelle est la différence avec les autres masques LED ?",
+            "content": "<p>De nombreuses marques proposent un appareil pour l’anti-âge et un autre pour les imperfections. GlowLAB réunit <strong>lumière bleue, jaune, rouge et proche infrarouge</strong> au sein d’un seul masque équipé de 240 LED. Le proche infrarouge peut également être associé aux autres modes. <strong>Un seul masque, quatre fonctions.</strong></p>"
+          }
+        },
+        "item_BepXn4": {
+          "type": "item",
+          "settings": {
+            "title": "Puis-je l’utiliser tous les jours ?",
+            "content": "<p>Nous recommandons une utilisation <strong>3 à 5 fois par semaine</strong>, car c’est le rythme le plus couramment étudié dans les recherches disponibles. Une utilisation quotidienne n’a pas été étudiée de la même manière.</p>"
+          }
+        },
+        "item_6WrP9C": {
+          "type": "item",
+          "settings": {
+            "title": "Au bout de combien de temps vais-je voir des résultats ?",
+            "content": "<p>Avec une utilisation régulière, les premiers changements peuvent généralement commencer à apparaître <strong>autour de 4 semaines</strong>. Les résultats liés aux signes de l’âge peuvent prendre davantage de temps. Nous vous conseillons de prendre une photo avant de commencer afin de pouvoir comparer l’évolution.</p>"
+          }
+        },
+        "item_TG6aUa": {
+          "type": "item",
+          "settings": {
+            "title": "Puis-je l’utiliser avec ma routine de soins habituelle ?",
+            "content": "<p>Oui. Utilisez le masque sur une <strong>peau propre et sèche</strong>, puis appliquez ensuite vos sérums, crèmes et soins hydratants habituels. Vous n’avez pas besoin de modifier votre routine.</p>"
+          }
+        },
+        "item_y9KHmP": {
+          "type": "item",
+          "settings": {
+            "title": "Et si le produit ne me convient pas ?",
+            "content": "<p>Vous pouvez nous le retourner dans un délai de <strong>30 jours</strong> et bénéficier d’un remboursement intégral, conformément aux conditions de notre garantie.</p>"
           }
         }
       },
       "block_order": [
         "166442457738b23caf-0",
         "166442457738b23caf-1",
-        "166442457738b23caf-2"
+        "166442457738b23caf-2",
+        "item_cGDTLE",
+        "item_BepXn4",
+        "item_6WrP9C",
+        "item_TG6aUa",
+        "item_y9KHmP"
       ],
       "settings": {
         "full_width": false,
