@@ -506,9 +506,6 @@
         "mobile_percentage_size": 26,
         "mobile_item_title_size": 15,
         "mobile_item_text_width": 260,
-        "mobile_item_gap": 28,
-        "mobile_item_padding_bottom": 22,
-        "mobile_separator_width": 70,
         "mobile_circle_bottom_space": 12,
         "mobile_footnote_size": 10,
         "mobile_footnote_top_space": 24,
@@ -1052,7 +1049,7 @@
         "text_color": "",
         "heading_color": "",
         "heading_gradient": "",
-        "testimonial_card_background": "",
+        "testimonial_card_background": "#FFFCFC",
         "testimonial_card_text_color": ""
       }
     },
@@ -1144,7 +1141,7 @@
         "heading_gradient": "",
         "button_background": "",
         "button_text_color": "",
-        "accordion_background": "",
+        "accordion_background": "#FFFCFC",
         "accordion_text_color": ""
       }
     }

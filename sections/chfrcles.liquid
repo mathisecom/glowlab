@@ -44,6 +44,7 @@
             </h2>
           {% endif %}
 
+
           {% if section.settings.heading_accent != blank %}
             <div class="survey-results__heading-accent">
               {{ section.settings.heading_accent }}
@@ -76,6 +77,7 @@
           >
 
             <!-- CERCLE -->
+
             <div
               class="survey-results__circle"
               style="--progress: {{ block.settings.percentage }};"
@@ -93,6 +95,7 @@
 
 
             <!-- TEXTE -->
+
             {% if block.settings.title != blank %}
               <div class="survey-results__item-title">
                 {{ block.settings.title }}
@@ -100,6 +103,26 @@
             {% endif %}
 
           </div>
+
+        {% endfor %}
+
+      </div>
+
+
+      <!-- =========================
+           DOTS MOBILE
+      ========================== -->
+
+      <div class="survey-results__dots">
+
+        {% for block in section.blocks %}
+
+          <button
+            type="button"
+            class="survey-results__dot {% if forloop.first %}is-active{% endif %}"
+            data-survey-dot="{{ forloop.index0 }}"
+            aria-label="Voir le résultat {{ forloop.index }}"
+          ></button>
 
         {% endfor %}
 
@@ -123,6 +146,7 @@
 </section>
 
 
+
 <style>
 
   /* =====================================================
@@ -130,31 +154,41 @@
   ====================================================== */
 
   #{{ survey_id }} {
+
     width: 100%;
+
     overflow: hidden;
 
     background: var(--survey-bg);
 
     padding-top: {{ section.settings.padding_top }}px;
+
     padding-bottom: {{ section.settings.padding_bottom }}px;
+
   }
 
 
   #{{ survey_id }} *,
   #{{ survey_id }} *::before,
   #{{ survey_id }} *::after {
+
     box-sizing: border-box;
+
   }
 
 
   #{{ survey_id }} .survey-results__container {
+
     width: 100%;
+
     max-width: var(--survey-max-width);
 
     margin: 0 auto;
 
     padding-left: {{ section.settings.side_padding }}px;
+
     padding-right: {{ section.settings.side_padding }}px;
+
   }
 
 
@@ -164,6 +198,7 @@
   ====================================================== */
 
   #{{ survey_id }} .survey-results__box {
+
     width: 100%;
 
     background: var(--survey-box-bg);
@@ -179,6 +214,7 @@
       {{ section.settings.box_padding_top }}px
       {{ section.settings.box_padding_horizontal }}px
       {{ section.settings.box_padding_bottom }}px;
+
   }
 
 
@@ -188,6 +224,7 @@
   ====================================================== */
 
   #{{ survey_id }} .survey-results__header {
+
     width: 100%;
 
     max-width: {{ section.settings.header_width }}px;
@@ -198,15 +235,18 @@
       {{ section.settings.header_bottom_space }}px;
 
     text-align: center;
+
   }
 
 
   #{{ survey_id }} .survey-results__eyebrow {
+
     margin-bottom: {{ section.settings.eyebrow_bottom_space }}px;
 
     color: var(--survey-accent);
 
     font-size: {{ section.settings.eyebrow_size }}px;
+
     font-weight: 700;
 
     line-height: 1.2;
@@ -214,21 +254,29 @@
     letter-spacing: {{ section.settings.eyebrow_spacing }}px;
 
     text-transform: uppercase;
+
   }
 
 
   #{{ survey_id }} .survey-results__heading-wrap {
+
     display: flex;
+
     align-items: baseline;
+
     justify-content: center;
+
     flex-wrap: wrap;
 
     column-gap: 8px;
+
     row-gap: 0;
+
   }
 
 
   #{{ survey_id }} .survey-results__heading {
+
     margin: 0;
 
     color: var(--survey-text);
@@ -240,10 +288,12 @@
     line-height: 1.08;
 
     letter-spacing: -1px;
+
   }
 
 
   #{{ survey_id }} .survey-results__heading-accent {
+
     color: var(--survey-accent);
 
     font-size: {{ section.settings.heading_size }}px;
@@ -260,10 +310,12 @@
     line-height: 1.08;
 
     letter-spacing: -1px;
+
   }
 
 
   #{{ survey_id }} .survey-results__description {
+
     max-width: {{ section.settings.description_width }}px;
 
     margin:
@@ -276,20 +328,24 @@
     font-size: {{ section.settings.description_size }}px;
 
     line-height: 1.45;
+
   }
 
 
   #{{ survey_id }} .survey-results__description p {
+
     margin: 0;
+
   }
 
 
 
   /* =====================================================
-     GRID
+     GRID PC
   ====================================================== */
 
   #{{ survey_id }} .survey-results__grid {
+
     display: grid;
 
     grid-template-columns:
@@ -302,6 +358,7 @@
     max-width: {{ section.settings.results_width }}px;
 
     margin: 0 auto;
+
   }
 
 
@@ -311,6 +368,7 @@
   ====================================================== */
 
   #{{ survey_id }} .survey-results__item {
+
     position: relative;
 
     min-width: 0;
@@ -320,11 +378,13 @@
       {{ section.settings.item_horizontal_padding }}px;
 
     text-align: center;
+
   }
 
 
   #{{ survey_id }}
   .survey-results__item:not(:last-child)::after {
+
     content: "";
 
     position: absolute;
@@ -340,6 +400,7 @@
     background: var(--survey-separator);
 
     transform: translateY(-50%);
+
   }
 
 
@@ -349,9 +410,11 @@
   ====================================================== */
 
   #{{ survey_id }} .survey-results__circle {
+
     position: relative;
 
     width: {{ section.settings.circle_size }}px;
+
     height: {{ section.settings.circle_size }}px;
 
     margin:
@@ -368,19 +431,26 @@
       );
 
     display: flex;
+
     align-items: center;
+
     justify-content: center;
 
     transform: rotate(-90deg);
+
   }
 
 
   #{{ survey_id }} .survey-results__circle-inner {
+
     width: calc(100% - {{ section.settings.ring_thickness }}px);
+
     height: calc(100% - {{ section.settings.ring_thickness }}px);
 
     display: flex;
+
     align-items: center;
+
     justify-content: center;
 
     border-radius: 50%;
@@ -388,16 +458,20 @@
     background: var(--survey-box-bg);
 
     transform: rotate(90deg);
+
   }
 
 
   #{{ survey_id }} .survey-results__percentage {
+
     color: var(--survey-accent);
 
     font-size: {{ section.settings.percentage_size }}px;
+
     font-weight: 700;
 
     line-height: 1;
+
   }
 
 
@@ -407,6 +481,7 @@
   ====================================================== */
 
   #{{ survey_id }} .survey-results__item-title {
+
     max-width: {{ section.settings.item_text_width }}px;
 
     margin: 0 auto;
@@ -418,6 +493,19 @@
     font-weight: 700;
 
     line-height: 1.35;
+
+  }
+
+
+
+  /* =====================================================
+     DOTS
+  ====================================================== */
+
+  #{{ survey_id }} .survey-results__dots {
+
+    display: none;
+
   }
 
 
@@ -427,6 +515,7 @@
   ====================================================== */
 
   #{{ survey_id }} .survey-results__footnote {
+
     margin-top: {{ section.settings.footnote_top_space }}px;
 
     color: var(--survey-muted);
@@ -436,11 +525,14 @@
     line-height: 1.4;
 
     text-align: center;
+
   }
 
 
   #{{ survey_id }} .survey-results__footnote p {
+
     margin: 0;
+
   }
 
 
@@ -453,18 +545,25 @@
 
     #{{ survey_id }} .survey-results__heading,
     #{{ survey_id }} .survey-results__heading-accent {
+
       font-size: calc({{ section.settings.heading_size }}px * 0.85);
+
     }
 
 
     #{{ survey_id }} .survey-results__circle {
+
       width: calc({{ section.settings.circle_size }}px * 0.88);
+
       height: calc({{ section.settings.circle_size }}px * 0.88);
+
     }
 
 
     #{{ survey_id }} .survey-results__percentage {
+
       font-size: calc({{ section.settings.percentage_size }}px * 0.9);
+
     }
 
   }
@@ -478,141 +577,501 @@
   @media screen and (max-width: 749px) {
 
     #{{ survey_id }} {
+
       padding-top: {{ section.settings.mobile_padding_top }}px;
+
       padding-bottom: {{ section.settings.mobile_padding_bottom }}px;
+
     }
 
 
     #{{ survey_id }} .survey-results__container {
+
       padding-left: {{ section.settings.mobile_side_padding }}px;
+
       padding-right: {{ section.settings.mobile_side_padding }}px;
+
     }
 
 
     #{{ survey_id }} .survey-results__box {
+
       border-radius: {{ section.settings.mobile_border_radius }}px;
 
       padding:
         {{ section.settings.mobile_box_padding_top }}px
         {{ section.settings.mobile_box_padding_horizontal }}px
         {{ section.settings.mobile_box_padding_bottom }}px;
+
     }
 
 
 
-    /* HEADER */
+    /* ==================================================
+       HEADER MOBILE
+    ================================================== */
 
     #{{ survey_id }} .survey-results__header {
+
       max-width: none;
 
       margin-bottom: {{ section.settings.mobile_header_bottom_space }}px;
+
     }
 
 
     #{{ survey_id }} .survey-results__eyebrow {
+
       margin-bottom: {{ section.settings.mobile_eyebrow_bottom_space }}px;
 
       font-size: {{ section.settings.mobile_eyebrow_size }}px;
 
       letter-spacing: 1.2px;
+
     }
 
 
     #{{ survey_id }} .survey-results__heading-wrap {
+
       column-gap: 6px;
+
     }
 
 
     #{{ survey_id }} .survey-results__heading,
     #{{ survey_id }} .survey-results__heading-accent {
+
       font-size: {{ section.settings.mobile_heading_size }}px;
 
       line-height: 1.08;
 
       letter-spacing: -0.5px;
+
     }
 
 
     #{{ survey_id }} .survey-results__description {
+
       margin-top: {{ section.settings.mobile_description_top_space }}px;
 
       font-size: {{ section.settings.mobile_description_size }}px;
+
     }
 
 
 
-    /* RÉSULTATS */
+    /* ==================================================
+       SLIDER MOBILE
+    ================================================== */
 
     #{{ survey_id }} .survey-results__grid {
+
       display: flex;
 
-      flex-direction: column;
+      flex-direction: row;
+
+      align-items: stretch;
+
+      width: auto;
 
       max-width: none;
 
-      gap: {{ section.settings.mobile_item_gap }}px;
+      gap: {{ section.settings.mobile_slider_gap }}px;
+
+      margin-left:
+        calc(
+          {{ section.settings.mobile_box_padding_horizontal }}px * -1
+        );
+
+      margin-right:
+        calc(
+          {{ section.settings.mobile_box_padding_horizontal }}px * -1
+        );
+
+      padding-left:
+        {{ section.settings.mobile_box_padding_horizontal }}px;
+
+      padding-right:
+        {{ section.settings.mobile_box_padding_horizontal }}px;
+
+      overflow-x: auto;
+
+      overflow-y: hidden;
+
+      scroll-snap-type: x mandatory;
+
+      scroll-behavior: smooth;
+
+      scroll-padding-left:
+        {{ section.settings.mobile_box_padding_horizontal }}px;
+
+      scrollbar-width: none;
+
+      -ms-overflow-style: none;
+
+      overscroll-behavior-x: contain;
+
+      -webkit-overflow-scrolling: touch;
+
     }
 
+
+    #{{ survey_id }} .survey-results__grid::-webkit-scrollbar {
+
+      display: none;
+
+    }
+
+
+
+    /* ==================================================
+       SLIDES
+    ================================================== */
 
     #{{ survey_id }} .survey-results__item {
-      width: 100%;
+
+      flex:
+        0
+        0
+        {{ section.settings.mobile_slide_width }}%;
+
+      width:
+        {{ section.settings.mobile_slide_width }}%;
+
+      min-width:
+        {{ section.settings.mobile_slide_width }}%;
 
       padding:
-        0
-        0
-        {{ section.settings.mobile_item_padding_bottom }}px;
+        {{ section.settings.mobile_slide_padding_top }}px
+        10px
+        {{ section.settings.mobile_slide_padding_bottom }}px;
+
+      scroll-snap-align: start;
+
+      scroll-snap-stop: always;
+
+      text-align: center;
+
     }
 
+
+    /* Aucun séparateur vertical/horizontal dans le slider */
 
     #{{ survey_id }}
     .survey-results__item:not(:last-child)::after {
-      top: auto;
 
-      right: 50%;
-      bottom: 0;
+      display: none;
 
-      width: {{ section.settings.mobile_separator_width }}px;
-      height: 1px;
-
-      transform: translateX(50%);
     }
 
 
+
+    /* ==================================================
+       CERCLES MOBILE
+    ================================================== */
+
     #{{ survey_id }} .survey-results__circle {
+
       width: {{ section.settings.mobile_circle_size }}px;
+
       height: {{ section.settings.mobile_circle_size }}px;
 
-      margin-bottom: {{ section.settings.mobile_circle_bottom_space }}px;
+      margin:
+        0
+        auto
+        {{ section.settings.mobile_circle_bottom_space }}px;
+
     }
 
 
     #{{ survey_id }} .survey-results__circle-inner {
-      width: calc(100% - {{ section.settings.mobile_ring_thickness }}px);
-      height: calc(100% - {{ section.settings.mobile_ring_thickness }}px);
+
+      width:
+        calc(
+          100% - {{ section.settings.mobile_ring_thickness }}px
+        );
+
+      height:
+        calc(
+          100% - {{ section.settings.mobile_ring_thickness }}px
+        );
+
     }
 
 
     #{{ survey_id }} .survey-results__percentage {
-      font-size: {{ section.settings.mobile_percentage_size }}px;
+
+      font-size:
+        {{ section.settings.mobile_percentage_size }}px;
+
     }
 
+
+
+    /* ==================================================
+       TEXTE MOBILE
+    ================================================== */
 
     #{{ survey_id }} .survey-results__item-title {
-      max-width: {{ section.settings.mobile_item_text_width }}px;
 
-      font-size: {{ section.settings.mobile_item_title_size }}px;
+      max-width:
+        {{ section.settings.mobile_item_text_width }}px;
+
+      margin-left: auto;
+
+      margin-right: auto;
+
+      font-size:
+        {{ section.settings.mobile_item_title_size }}px;
+
     }
 
 
-    #{{ survey_id }} .survey-results__footnote {
-      margin-top: {{ section.settings.mobile_footnote_top_space }}px;
 
-      font-size: {{ section.settings.mobile_footnote_size }}px;
+    /* ==================================================
+       DOTS MOBILE
+    ================================================== */
+
+    #{{ survey_id }} .survey-results__dots {
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      gap: 8px;
+
+      margin-top:
+        {{ section.settings.mobile_dots_top_space }}px;
+
+    }
+
+
+    #{{ survey_id }} .survey-results__dot {
+
+      appearance: none;
+
+      -webkit-appearance: none;
+
+      display: block;
+
+      width: 7px;
+
+      height: 7px;
+
+      padding: 0;
+
+      margin: 0;
+
+      border: 0;
+
+      border-radius: 999px;
+
+      background: var(--survey-separator);
+
+      cursor: pointer;
+
+      transition:
+        width 0.25s ease,
+        background 0.25s ease,
+        transform 0.25s ease;
+
+    }
+
+
+    #{{ survey_id }} .survey-results__dot.is-active {
+
+      width: 22px;
+
+      background: var(--survey-accent);
+
+    }
+
+
+
+    /* ==================================================
+       NOTE MOBILE
+    ================================================== */
+
+    #{{ survey_id }} .survey-results__footnote {
+
+      margin-top:
+        {{ section.settings.mobile_footnote_top_space }}px;
+
+      font-size:
+        {{ section.settings.mobile_footnote_size }}px;
+
     }
 
   }
 
 </style>
+
+
+
+<script>
+
+  document.addEventListener('DOMContentLoaded', function () {
+
+    const section =
+      document.getElementById('{{ survey_id }}');
+
+
+    if (!section) return;
+
+
+    const slider =
+      section.querySelector(
+        '.survey-results__grid'
+      );
+
+
+    const items =
+      Array.from(
+        section.querySelectorAll(
+          '.survey-results__item'
+        )
+      );
+
+
+    const dots =
+      Array.from(
+        section.querySelectorAll(
+          '.survey-results__dot'
+        )
+      );
+
+
+    if (
+      !slider ||
+      !items.length ||
+      !dots.length
+    ) {
+      return;
+    }
+
+
+
+    /* =============================================
+       ACTIVE DOT
+    ============================================= */
+
+    function setActiveDot(index) {
+
+      dots.forEach(function(dot, dotIndex) {
+
+        dot.classList.toggle(
+          'is-active',
+          index === dotIndex
+        );
+
+      });
+
+    }
+
+
+
+    /* =============================================
+       CLIC SUR LES DOTS
+    ============================================= */
+
+    dots.forEach(function(dot, index) {
+
+      dot.addEventListener(
+        'click',
+        function () {
+
+          if (!items[index]) return;
+
+
+          const targetLeft =
+            items[index].offsetLeft -
+            slider.offsetLeft;
+
+
+          slider.scrollTo({
+            left: targetLeft,
+            behavior: 'smooth'
+          });
+
+
+          setActiveDot(index);
+
+        }
+      );
+
+    });
+
+
+
+    /* =============================================
+       DÉTECTION DU SLIDE ACTIF
+    ============================================= */
+
+    let scrollTimer;
+
+
+    slider.addEventListener(
+      'scroll',
+      function () {
+
+        clearTimeout(scrollTimer);
+
+
+        scrollTimer =
+          setTimeout(
+            function () {
+
+              let closestIndex = 0;
+
+              let closestDistance =
+                Infinity;
+
+
+              items.forEach(
+                function(item, index) {
+
+                  const distance =
+                    Math.abs(
+                      item.offsetLeft -
+                      slider.offsetLeft -
+                      slider.scrollLeft
+                    );
+
+
+                  if (
+                    distance <
+                    closestDistance
+                  ) {
+
+                    closestDistance =
+                      distance;
+
+                    closestIndex =
+                      index;
+
+                  }
+
+                }
+              );
+
+
+              setActiveDot(
+                closestIndex
+              );
+
+            },
+            70
+          );
+
+      }
+    );
+
+  });
+
+</script>
+
 
 
 {% schema %}
@@ -1202,39 +1661,6 @@
 
     {
       "type": "range",
-      "id": "mobile_item_gap",
-      "label": "Espace entre résultats",
-      "min": 15,
-      "max": 50,
-      "step": 1,
-      "unit": "px",
-      "default": 28
-    },
-
-    {
-      "type": "range",
-      "id": "mobile_item_padding_bottom",
-      "label": "Marge basse résultats",
-      "min": 10,
-      "max": 40,
-      "step": 1,
-      "unit": "px",
-      "default": 22
-    },
-
-    {
-      "type": "range",
-      "id": "mobile_separator_width",
-      "label": "Largeur séparateur mobile",
-      "min": 40,
-      "max": 100,
-      "step": 5,
-      "unit": "%",
-      "default": 70
-    },
-
-    {
-      "type": "range",
       "id": "mobile_circle_bottom_space",
       "label": "Espace sous cercle mobile",
       "min": 8,
@@ -1243,6 +1669,68 @@
       "unit": "px",
       "default": 12
     },
+
+
+    {
+      "type": "header",
+      "content": "Slider mobile"
+    },
+
+    {
+      "type": "range",
+      "id": "mobile_slide_width",
+      "label": "Largeur d'une slide",
+      "min": 70,
+      "max": 95,
+      "step": 1,
+      "unit": "%",
+      "default": 82
+    },
+
+    {
+      "type": "range",
+      "id": "mobile_slider_gap",
+      "label": "Espace entre les slides",
+      "min": 5,
+      "max": 30,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+
+    {
+      "type": "range",
+      "id": "mobile_slide_padding_top",
+      "label": "Marge haute des slides",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 12
+    },
+
+    {
+      "type": "range",
+      "id": "mobile_slide_padding_bottom",
+      "label": "Marge basse des slides",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+
+    {
+      "type": "range",
+      "id": "mobile_dots_top_space",
+      "label": "Espace avant les points",
+      "min": 5,
+      "max": 30,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+
 
     {
       "type": "range",
@@ -1378,6 +1866,7 @@
 
   ],
 
+
   "blocks": [
 
     {
@@ -1401,7 +1890,7 @@
           "type": "textarea",
           "id": "title",
           "label": "Résultat",
-          "default": "constatent une amélioration visible"
+          "default": "Peau visiblement plus lisse"
         }
 
       ]
@@ -1410,7 +1899,9 @@
 
   ],
 
+
   "max_blocks": 4,
+
 
   "presets": [
 
@@ -1423,7 +1914,7 @@
           "type": "result",
           "settings": {
             "percentage": 96,
-            "title": "constatent une peau visiblement plus lisse"
+            "title": "Peau visiblement plus lisse"
           }
         },
 
@@ -1431,7 +1922,7 @@
           "type": "result",
           "settings": {
             "percentage": 94,
-            "title": "constatent un teint plus uniforme"
+            "title": "Teint plus uniforme"
           }
         },
 
@@ -1439,7 +1930,7 @@
           "type": "result",
           "settings": {
             "percentage": 91,
-            "title": "constatent une amélioration globale de l'apparence de leur peau"
+            "title": "Amélioration globale de la peau"
           }
         }
 
