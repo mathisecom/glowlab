@@ -1000,12 +1000,14 @@
         "image_efmnc3": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/BANNER_MOBILE_92.png",
             "url": ""
           }
         },
         "image_mibnVM": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/BANNER_MOBILE_93.png",
             "url": ""
           }
         },
@@ -1038,14 +1040,14 @@
         "heading_size": 18,
         "heading_size_mobile": 18,
         "heading_height": 130,
-        "scrolling_velocity": 30,
-        "scrolling_velocity_mobile": 30,
+        "scrolling_velocity": 16,
+        "scrolling_velocity_mobile": 22,
         "scrolling_direction": "left",
         "pause_hover": false,
-        "scrolling_gap": 70,
-        "scrolling_gap_mobile": 30,
-        "card_width_desktop": 130,
-        "card_width_mobile": 100,
+        "scrolling_gap": 34,
+        "scrolling_gap_mobile": 20,
+        "card_width_desktop": 180,
+        "card_width_mobile": 140,
         "heading_color": "#121212",
         "layout_bg_color": "#ffffff",
         "layout_border_color": "#121212",
@@ -1059,8 +1061,8 @@
         "padding_bottom": 0,
         "padding_horizontal": 5,
         "padding_horizontal_mobile": 0,
-        "full_width": false,
-        "content_width": 1200,
+        "full_width": true,
+        "content_width": 1300,
         "border_thickness": 0,
         "section_radius": 0,
         "lazy": true
