@@ -436,14 +436,14 @@
           "type": "result",
           "settings": {
             "percentage": 94,
-            "title": "constatent un teint plus uniforme"
+            "title": "Teint plus uniforme"
           }
         },
         "result_ztiaGw": {
           "type": "result",
           "settings": {
             "percentage": 91,
-            "title": "constatent une amélioration globale de l'apparence de leur peau"
+            "title": "Amélioration globale de la peau"
           }
         }
       },
@@ -470,11 +470,11 @@
         "box_padding_horizontal": 10,
         "eyebrow_size": 10,
         "eyebrow_spacing": 1.5,
-        "heading_size": 35,
+        "heading_size": 37,
         "heading_weight": "500",
         "description_size": 14,
-        "percentage_size": 30,
-        "item_title_size": 14,
+        "percentage_size": 27,
+        "item_title_size": 15,
         "footnote_size": 11,
         "circle_size": 105,
         "ring_thickness": 12,
