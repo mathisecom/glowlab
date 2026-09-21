@@ -422,6 +422,100 @@
         "show_mobile_dots": true
       }
     },
+    "image_resultats_J7NPNC": {
+      "type": "image-resultats",
+      "blocks": {
+        "result_ajfzhB": {
+          "type": "result",
+          "settings": {
+            "percentage": "93%",
+            "text": "<p>ont constaté une réduction visible des rides et ridules.</p>"
+          }
+        },
+        "result_QjreqL": {
+          "type": "result",
+          "settings": {
+            "percentage": "91%",
+            "text": "<p>ont constaté une peau visiblement plus lisse et un teint plus uniforme.</p>"
+          }
+        },
+        "result_mVHinY": {
+          "type": "result",
+          "settings": {
+            "percentage": "87%",
+            "text": "<p>ont constaté une amélioration visible de l'apparence de leur peau.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "result_ajfzhB",
+        "result_QjreqL",
+        "result_mVHinY"
+      ],
+      "name": "Image + résultats",
+      "settings": {
+        "image_column": 1,
+        "image_height": 500,
+        "image_radius": 10,
+        "image_fit": "cover",
+        "image_position": "center",
+        "eyebrow": "RÉSULTATS OBSERVÉS",
+        "heading": "Des résultats visibles en seulement quelques semaines",
+        "description": "",
+        "footnote": "",
+        "eyebrow_size": 11,
+        "eyebrow_spacing": 1.5,
+        "heading_size": 36,
+        "heading_weight": "600",
+        "heading_line_height": 1.1,
+        "description_size": 15,
+        "percentage_size": 54,
+        "percentage_weight": "600",
+        "stat_text_size": 16,
+        "stat_text_weight": "400",
+        "footnote_size": 11,
+        "percentage_column_width": 130,
+        "stat_gap": 20,
+        "stat_min_height": 105,
+        "stat_padding_vertical": 14,
+        "separator_width": 1,
+        "max_width": 1280,
+        "content_width": 620,
+        "desktop_gap": 70,
+        "side_padding": 24,
+        "padding_top": 60,
+        "padding_bottom": 60,
+        "eyebrow_bottom_space": 10,
+        "heading_bottom_space": 24,
+        "description_bottom_space": 16,
+        "footnote_top_space": 20,
+        "background_color": "#FFFFFF",
+        "text_color": "#1A1A1A",
+        "accent_color": "#C42F3B",
+        "muted_color": "#666666",
+        "border_color": "#E7E1E1",
+        "mobile_image_height": 400,
+        "mobile_image_radius": 10,
+        "mobile_heading_size": 29,
+        "mobile_heading_line_height": 1.1,
+        "mobile_eyebrow_size": 10,
+        "mobile_description_size": 14,
+        "mobile_percentage_size": 40,
+        "mobile_percentage_column_width": 85,
+        "mobile_stat_text_size": 14,
+        "mobile_stat_gap": 14,
+        "mobile_stat_padding_vertical": 14,
+        "mobile_gap": 28,
+        "mobile_eyebrow_bottom_space": 9,
+        "mobile_heading_bottom_space": 22,
+        "mobile_description_bottom_space": 14,
+        "mobile_footnote_size": 10,
+        "mobile_footnote_top_space": 18,
+        "mobile_side_padding": 16,
+        "mobile_padding_top": 32,
+        "mobile_padding_bottom": 32
+      }
+    },
     "imgbenefice_wj7Hpf": {
       "type": "imgbenefice",
       "blocks": {
@@ -795,7 +889,7 @@
         "header_bottom_space": 38,
         "eyebrow_bottom_space": 10,
         "description_top_space": 12,
-        "background_color": "#FFFCFC",
+        "background_color": "#fffcfc",
         "text_color": "#171717",
         "muted_color": "#747474",
         "accent_color": "#c43f49",
@@ -875,9 +969,9 @@
         "card_width_desktop": 130,
         "card_width_mobile": 100,
         "heading_color": "#121212",
-        "layout_bg_color": "#FFFFFF",
+        "layout_bg_color": "#ffffff",
         "layout_border_color": "#121212",
-        "background_color": "#FFFFFF",
+        "background_color": "#ffffff",
         "border_color": "#121212",
         "margin_top": 0,
         "margin_bottom": 0,
@@ -950,7 +1044,7 @@
         "text_color": "",
         "heading_color": "",
         "heading_gradient": "",
-        "testimonial_card_background": "#FFFCFC",
+        "testimonial_card_background": "#fffcfc",
         "testimonial_card_text_color": ""
       }
     },
@@ -1042,7 +1136,7 @@
         "heading_gradient": "",
         "button_background": "",
         "button_text_color": "",
-        "accordion_background": "#FFFCFC",
+        "accordion_background": "#fffcfc",
         "accordion_text_color": ""
       }
     }
@@ -1052,6 +1146,7 @@
     "featured_product_wexK8U",
     "scrollbenfice_mnLhJX",
     "resultavantapres_DqJjxe",
+    "image_resultats_J7NPNC",
     "imgbenefice_wj7Hpf",
     "tabsvs_zb3iCM",
     "techno_MdgNn4",
