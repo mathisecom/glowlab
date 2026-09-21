@@ -1014,12 +1014,21 @@
         "image_KzJK6g": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/BANNER_MOBILE_96.png",
             "url": ""
           }
         },
         "image_kB9Nwk": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/BANNER_MOBILE_95.png",
+            "url": ""
+          }
+        },
+        "image_iXpYDf": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/BANNER_MOBILE_94.png",
             "url": ""
           }
         }
@@ -1028,7 +1037,8 @@
         "image_efmnc3",
         "image_mibnVM",
         "image_KzJK6g",
-        "image_kB9Nwk"
+        "image_kB9Nwk",
+        "image_iXpYDf"
       ],
       "name": "SS - Scrolling logo cloud #5",
       "settings": {
