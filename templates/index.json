@@ -15,7 +15,7 @@
         "liquid_F8gbXY": {
           "type": "liquid",
           "settings": {
-            "liquid": ""
+            "liquid": "<div class=\"product-info__block-item\" data-block-id=\"liquid_7V8A6R\" data-block-type=\"liquid\"><div class=\"product-info__liquid\">\n              <div class=\"pajama-product-badges\">\n\n  <span class=\"pajama-product-badge pajama-product-badge--dark\">\n    CONFORT OPTIMAL\n  </span>\n\n  <span class=\"pajama-product-badge\">\n    BEST-SELLER\n  </span>\n\n</div>\n\n<style>\n\n  .pajama-product-badges {\n    display: flex;\n    align-items: center;\n    gap: 12px;\n\n    margin: 0 0 12px 0;\n    padding: 0;\n\n    font-family: \"Bricolage Grotesque\", sans-serif;\n  }\n\n\n  .pajama-product-badge {\n    display: inline-flex;\n    align-items: center;\n    justify-content: center;\n\n    min-height: 38px;\n    padding: 7px 17px;\n\n    background: transparent;\n\n    border: 1px solid #1A1A1A;\n    border-radius: 999px;\n\n    color: #1A1A1A;\n\n    font-family: \"Bricolage Grotesque\", sans-serif;\n\n    font-size: 14px;\n    font-weight: 500;\n    line-height: 1;\n\n    letter-spacing: 0.7px;\n\n    text-transform: uppercase;\n\n    white-space: nowrap;\n  }\n\n\n  /* PILULE CONFORT OPTIMAL */\n\n  .pajama-product-badge--dark {\n    background: #1A1A1A;\n    border-color: #1A1A1A;\n    color: #FFFFFF;\n  }\n\n\n  /* MOBILE */\n\n  @media screen and (max-width: 749px) {\n\n    .pajama-product-badges {\n      gap: 9px;\n      margin-bottom: 10px;\n    }\n\n    .pajama-product-badge {\n      min-height: 34px;\n      padding: 6px 15px;\n\n      font-size: 12px;\n      letter-spacing: 0.6px;\n    }\n\n  }\n\n</style>\n            </div></div>"
           }
         },
         "liquid_d66JKQ": {
@@ -60,8 +60,8 @@
         "buy_buttons_iHNdbd": {
           "type": "buy_buttons",
           "settings": {
-            "show_payment_button": true,
-            "show_gift_card_recipient": true,
+            "show_payment_button": false,
+            "show_gift_card_recipient": false,
             "atc_button_background": "",
             "atc_button_text_color": "",
             "payment_button_background": "",
@@ -129,7 +129,7 @@
       "name": "Featured product",
       "settings": {
         "full_width": true,
-        "product": "",
+        "product": "masque-de-phototherapie-led-7-couleurs",
         "desktop_media_width": 45,
         "desktop_media_layout": "carousel_thumbnails_left",
         "mobile_media_size": "contained",
