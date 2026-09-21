@@ -1,0 +1,1638 @@
+{% liquid
+  assign section_dom_id = 'benefits-image-' | append: section.id
+%}
+
+<section
+  id="{{ section_dom_id }}"
+  class="fp-benefits-image"
+  style="
+    --fp-bg: {{ section.settings.background_color }};
+    --fp-text: {{ section.settings.text_color }};
+    --fp-accent: {{ section.settings.accent_color }};
+    --fp-muted: {{ section.settings.muted_color }};
+    --fp-icon-bg: {{ section.settings.icon_background }};
+    --fp-icon-border: {{ section.settings.icon_border_color }};
+    --fp-max-width: {{ section.settings.max_width }}px;
+    --fp-image-width: {{ section.settings.image_width }}%;
+    --fp-gap: {{ section.settings.desktop_gap }}px;
+    --fp-radius: {{ section.settings.image_radius }}px;
+  "
+>
+
+  <div class="fp-benefits-image__container">
+
+    <div class="fp-benefits-image__grid">
+
+      <!-- =========================
+           IMAGE
+      ========================== -->
+      <div class="fp-benefits-image__visual">
+
+        {% if section.settings.image != blank %}
+
+          {{
+            section.settings.image
+            | image_url: width: 1800
+            | image_tag:
+              loading: 'lazy',
+              widths: '500, 700, 900, 1200, 1500, 1800',
+              sizes: '(max-width: 749px) 100vw, 50vw',
+              class: 'fp-benefits-image__image'
+          }}
+
+        {% else %}
+
+          {{ 'image' | placeholder_svg_tag: 'fp-benefits-image__placeholder' }}
+
+        {% endif %}
+
+      </div>
+
+
+      <!-- =========================
+           CONTENU
+      ========================== -->
+      <div class="fp-benefits-image__content">
+
+        {% if section.settings.eyebrow != blank %}
+          <div class="fp-benefits-image__eyebrow">
+            {{ section.settings.eyebrow }}
+          </div>
+        {% endif %}
+
+
+        <div class="fp-benefits-image__heading-wrap">
+
+          {% if section.settings.heading != blank %}
+            <h2 class="fp-benefits-image__heading">
+              {{ section.settings.heading }}
+            </h2>
+          {% endif %}
+
+
+          {% if section.settings.heading_emphasis != blank %}
+            <div class="fp-benefits-image__heading-emphasis">
+              {{ section.settings.heading_emphasis }}
+            </div>
+          {% endif %}
+
+        </div>
+
+
+        {% if section.settings.description != blank %}
+          <div class="fp-benefits-image__intro">
+            {{ section.settings.description }}
+          </div>
+        {% endif %}
+
+
+        <!-- =========================
+             BÉNÉFICES
+        ========================== -->
+        <div class="fp-benefits-image__list">
+
+          {% for block in section.blocks %}
+
+            <div
+              class="fp-benefits-image__item"
+              {{ block.shopify_attributes }}
+            >
+
+              <!-- ICÔNE -->
+              <div class="fp-benefits-image__icon">
+
+                {% if block.settings.custom_icon != blank %}
+
+                  {{
+                    block.settings.custom_icon
+                    | image_url: width: 120
+                    | image_tag:
+                      loading: 'lazy',
+                      widths: '40, 60, 80, 100, 120',
+                      class: 'fp-benefits-image__custom-icon'
+                  }}
+
+                {% else %}
+
+                  {% case block.settings.icon %}
+
+                    {% when 'waves' %}
+
+                      <svg viewBox="0 0 40 40" aria-hidden="true">
+                        <path d="M8 14c4-3 8-3 12 0s8 3 12 0"></path>
+                        <path d="M8 20c4-3 8-3 12 0s8 3 12 0"></path>
+                        <path d="M8 26c4-3 8-3 12 0s8 3 12 0"></path>
+                      </svg>
+
+                    {% when 'dots' %}
+
+                      <svg viewBox="0 0 40 40" aria-hidden="true">
+                        <circle cx="12" cy="12" r="2"></circle>
+                        <circle cx="20" cy="12" r="2"></circle>
+                        <circle cx="28" cy="12" r="2"></circle>
+
+                        <circle cx="12" cy="20" r="2"></circle>
+                        <circle cx="20" cy="20" r="2"></circle>
+                        <circle cx="28" cy="20" r="2"></circle>
+
+                        <circle cx="12" cy="28" r="2"></circle>
+                        <circle cx="20" cy="28" r="2"></circle>
+                        <circle cx="28" cy="28" r="2"></circle>
+                      </svg>
+
+                    {% when 'target' %}
+
+                      <svg viewBox="0 0 40 40" aria-hidden="true">
+                        <circle cx="20" cy="20" r="11"></circle>
+                        <circle cx="20" cy="20" r="6"></circle>
+                        <circle cx="20" cy="20" r="2"></circle>
+
+                        <path d="M20 5v4"></path>
+                        <path d="M20 31v4"></path>
+                        <path d="M5 20h4"></path>
+                        <path d="M31 20h4"></path>
+                      </svg>
+
+                    {% when 'face' %}
+
+                      <svg viewBox="0 0 40 40" aria-hidden="true">
+                        <path d="M20 7c6 0 10 5 10 13s-4 13-10 13-10-5-10-13S14 7 20 7z"></path>
+                        <path d="M16 18h1"></path>
+                        <path d="M23 18h1"></path>
+                        <path d="M17 25c2 1 4 1 6 0"></path>
+                      </svg>
+
+                    {% when 'sparkles' %}
+
+                      <svg viewBox="0 0 40 40" aria-hidden="true">
+                        <path d="M20 6l2 7 7 2-7 2-2 7-2-7-7-2 7-2z"></path>
+                        <path d="M29 24l1.2 4 4 1.2-4 1.2-1.2 4-1.2-4-4-1.2 4-1.2z"></path>
+                      </svg>
+
+                    {% when 'check' %}
+
+                      <svg viewBox="0 0 40 40" aria-hidden="true">
+                        <circle cx="20" cy="20" r="12"></circle>
+                        <path d="M14 20l4 4 8-9"></path>
+                      </svg>
+
+                    {% when 'heart' %}
+
+                      <svg viewBox="0 0 40 40" aria-hidden="true">
+                        <path d="M20 31S8 24 8 15c0-4 3-7 7-7 3 0 5 2 5 4 0-2 2-4 5-4 4 0 7 3 7 7 0 9-12 16-12 16z"></path>
+                      </svg>
+
+                  {% endcase %}
+
+                {% endif %}
+
+              </div>
+
+
+              <!-- TEXTE -->
+              <div class="fp-benefits-image__item-content">
+
+                {% if block.settings.title != blank %}
+                  <h3 class="fp-benefits-image__item-title">
+                    {{ block.settings.title }}
+                  </h3>
+                {% endif %}
+
+
+                {% if block.settings.text != blank %}
+                  <div class="fp-benefits-image__item-text">
+                    {{ block.settings.text }}
+                  </div>
+                {% endif %}
+
+              </div>
+
+            </div>
+
+          {% endfor %}
+
+        </div>
+
+
+        {% if section.settings.button_label != blank %}
+          <a
+            class="fp-benefits-image__button"
+            {% if section.settings.button_link != blank %}
+              href="{{ section.settings.button_link }}"
+            {% endif %}
+          >
+            {{ section.settings.button_label }}
+          </a>
+        {% endif %}
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<style>
+
+  /* =====================================================
+     SECTION
+  ====================================================== */
+
+  #{{ section_dom_id }} {
+    width: 100%;
+
+    background: var(--fp-bg);
+    color: var(--fp-text);
+
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+
+    overflow: hidden;
+  }
+
+
+  #{{ section_dom_id }} *,
+  #{{ section_dom_id }} *::before,
+  #{{ section_dom_id }} *::after {
+    box-sizing: border-box;
+  }
+
+
+  #{{ section_dom_id }} .fp-benefits-image__container {
+    width: 100%;
+    max-width: var(--fp-max-width);
+
+    margin: 0 auto;
+
+    padding-left: {{ section.settings.side_padding }}px;
+    padding-right: {{ section.settings.side_padding }}px;
+  }
+
+
+
+  /* =====================================================
+     LAYOUT PC
+  ====================================================== */
+
+  #{{ section_dom_id }} .fp-benefits-image__grid {
+    display: grid;
+
+    grid-template-columns:
+      minmax(0, var(--fp-image-width))
+      minmax(0, calc(100% - var(--fp-image-width)));
+
+    align-items: center;
+
+    gap: var(--fp-gap);
+  }
+
+
+
+  /* =====================================================
+     IMAGE
+  ====================================================== */
+
+  #{{ section_dom_id }} .fp-benefits-image__visual {
+    width: 100%;
+
+    height: {{ section.settings.image_height }}px;
+
+    overflow: hidden;
+
+    border-radius: var(--fp-radius);
+
+    background: #f3f3f3;
+  }
+
+
+  #{{ section_dom_id }} .fp-benefits-image__image {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: {{ section.settings.image_fit }};
+    object-position: {{ section.settings.image_position }};
+  }
+
+
+  #{{ section_dom_id }} .fp-benefits-image__placeholder {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    background: #f3f3f3;
+  }
+
+
+
+  /* =====================================================
+     CONTENU
+  ====================================================== */
+
+  #{{ section_dom_id }} .fp-benefits-image__content {
+    width: 100%;
+
+    max-width: {{ section.settings.content_max_width }}px;
+
+    {% if section.settings.content_alignment == 'center' %}
+      margin-left: auto;
+      margin-right: auto;
+    {% endif %}
+  }
+
+
+
+  /* =====================================================
+     PETIT TITRE
+  ====================================================== */
+
+  #{{ section_dom_id }} .fp-benefits-image__eyebrow {
+    margin-bottom: {{ section.settings.eyebrow_bottom_space }}px;
+
+    color: var(--fp-accent);
+
+    font-size: {{ section.settings.eyebrow_size }}px;
+
+    font-weight: 700;
+
+    line-height: 1.2;
+
+    letter-spacing: {{ section.settings.eyebrow_letter_spacing }}px;
+
+    text-transform: uppercase;
+  }
+
+
+
+  /* =====================================================
+     TITRE
+  ====================================================== */
+
+  #{{ section_dom_id }} .fp-benefits-image__heading-wrap {
+    margin-bottom: {{ section.settings.heading_bottom_space }}px;
+  }
+
+
+  #{{ section_dom_id }} .fp-benefits-image__heading {
+    margin: 0;
+
+    color: var(--fp-text);
+
+    font-size: {{ section.settings.heading_size }}px;
+
+    font-weight: {{ section.settings.heading_weight }};
+
+    line-height: {{ section.settings.heading_line_height }};
+
+    letter-spacing: -1px;
+  }
+
+
+  #{{ section_dom_id }} .fp-benefits-image__heading-emphasis {
+    margin-top: {{ section.settings.emphasis_top_space }}px;
+
+    color: var(--fp-accent);
+
+    font-size: {{ section.settings.heading_size }}px;
+
+    font-weight: 400;
+
+    font-style: italic;
+
+    line-height: {{ section.settings.heading_line_height }};
+
+    letter-spacing: -1px;
+  }
+
+
+
+  /* =====================================================
+     INTRO
+  ====================================================== */
+
+  #{{ section_dom_id }} .fp-benefits-image__intro {
+    margin-bottom: {{ section.settings.intro_bottom_space }}px;
+
+    color: var(--fp-muted);
+
+    font-size: {{ section.settings.intro_size }}px;
+
+    line-height: 1.5;
+  }
+
+
+  #{{ section_dom_id }} .fp-benefits-image__intro p {
+    margin: 0;
+  }
+
+
+
+  /* =====================================================
+     LISTE BÉNÉFICES
+  ====================================================== */
+
+  #{{ section_dom_id }} .fp-benefits-image__list {
+    display: flex;
+    flex-direction: column;
+
+    gap: {{ section.settings.item_gap }}px;
+  }
+
+
+  #{{ section_dom_id }} .fp-benefits-image__item {
+    display: flex;
+
+    align-items: center;
+
+    gap: {{ section.settings.icon_text_gap }}px;
+
+    width: 100%;
+  }
+
+
+
+  /* =====================================================
+     ICÔNES
+  ====================================================== */
+
+  #{{ section_dom_id }} .fp-benefits-image__icon {
+    width: {{ section.settings.icon_size }}px;
+    height: {{ section.settings.icon_size }}px;
+
+    flex: 0 0 {{ section.settings.icon_size }}px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border:
+      {{ section.settings.icon_border_width }}px
+      solid
+      var(--fp-icon-border);
+
+    border-radius: 50%;
+
+    background: var(--fp-icon-bg);
+
+    color: var(--fp-accent);
+  }
+
+
+  #{{ section_dom_id }} .fp-benefits-image__icon svg {
+    width: {{ section.settings.icon_inner_size }}px;
+    height: {{ section.settings.icon_inner_size }}px;
+
+    fill: none;
+
+    stroke: currentColor;
+
+    stroke-width: 1.5;
+
+    stroke-linecap: round;
+
+    stroke-linejoin: round;
+  }
+
+
+  #{{ section_dom_id }} .fp-benefits-image__icon svg circle {
+    fill: none;
+  }
+
+
+  #{{ section_dom_id }} .fp-benefits-image__custom-icon {
+    width: {{ section.settings.icon_inner_size }}px;
+    height: {{ section.settings.icon_inner_size }}px;
+
+    display: block;
+
+    object-fit: contain;
+  }
+
+
+
+  /* =====================================================
+     TEXTE BÉNÉFICE
+  ====================================================== */
+
+  #{{ section_dom_id }} .fp-benefits-image__item-content {
+    flex: 1;
+
+    min-width: 0;
+  }
+
+
+  #{{ section_dom_id }} .fp-benefits-image__item-title {
+    margin: 0 0 {{ section.settings.item_title_bottom_space }}px;
+
+    color: var(--fp-text);
+
+    font-size: {{ section.settings.item_title_size }}px;
+
+    font-weight: 700;
+
+    line-height: 1.25;
+  }
+
+
+  #{{ section_dom_id }} .fp-benefits-image__item-text {
+    color: var(--fp-text);
+
+    font-size: {{ section.settings.item_text_size }}px;
+
+    font-weight: 400;
+
+    line-height: 1.4;
+  }
+
+
+  #{{ section_dom_id }} .fp-benefits-image__item-text p {
+    margin: 0;
+  }
+
+
+
+  /* =====================================================
+     BOUTON
+  ====================================================== */
+
+  #{{ section_dom_id }} .fp-benefits-image__button {
+    width: fit-content;
+
+    min-height: 50px;
+
+    margin-top: {{ section.settings.button_top_space }}px;
+
+    padding: 12px 26px;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border:
+      {{ section.settings.button_border_width }}px
+      solid
+      {{ section.settings.button_border_color }};
+
+    border-radius: {{ section.settings.button_radius }}px;
+
+    background: {{ section.settings.button_background }};
+
+    color: {{ section.settings.button_text_color }};
+
+    font-size: {{ section.settings.button_text_size }}px;
+
+    font-weight: 600;
+
+    line-height: 1;
+
+    text-decoration: none;
+
+    cursor: pointer;
+
+    transition:
+      opacity 0.2s ease,
+      transform 0.2s ease;
+  }
+
+
+  #{{ section_dom_id }} .fp-benefits-image__button:hover {
+    opacity: 0.88;
+
+    transform: translateY(-1px);
+  }
+
+
+
+  /* =====================================================
+     TABLETTE
+  ====================================================== */
+
+  @media screen and (max-width: 989px) {
+
+    #{{ section_dom_id }} .fp-benefits-image__grid {
+      gap: 45px;
+    }
+
+
+    #{{ section_dom_id }} .fp-benefits-image__heading,
+    #{{ section_dom_id }} .fp-benefits-image__heading-emphasis {
+      font-size: calc({{ section.settings.heading_size }}px * 0.82);
+    }
+
+
+    #{{ section_dom_id }} .fp-benefits-image__visual {
+      height: calc({{ section.settings.image_height }}px * 0.82);
+    }
+
+
+    #{{ section_dom_id }} .fp-benefits-image__icon {
+      width: calc({{ section.settings.icon_size }}px * 0.9);
+      height: calc({{ section.settings.icon_size }}px * 0.9);
+
+      flex-basis: calc({{ section.settings.icon_size }}px * 0.9);
+    }
+
+  }
+
+
+
+  /* =====================================================
+     MOBILE
+  ====================================================== */
+
+  @media screen and (max-width: 749px) {
+
+    #{{ section_dom_id }} {
+      padding-top: {{ section.settings.mobile_padding_top }}px;
+      padding-bottom: {{ section.settings.mobile_padding_bottom }}px;
+    }
+
+
+    #{{ section_dom_id }} .fp-benefits-image__container {
+      padding-left: {{ section.settings.mobile_side_padding }}px;
+      padding-right: {{ section.settings.mobile_side_padding }}px;
+    }
+
+
+    #{{ section_dom_id }} .fp-benefits-image__grid {
+      display: flex;
+
+      flex-direction:
+        {% if section.settings.mobile_image_position == 'top' %}
+          column
+        {% else %}
+          column-reverse
+        {% endif %};
+
+      gap: {{ section.settings.mobile_gap }}px;
+    }
+
+
+    #{{ section_dom_id }} .fp-benefits-image__visual {
+      width: 100%;
+
+      height: {{ section.settings.mobile_image_height }}px;
+
+      border-radius: {{ section.settings.mobile_image_radius }}px;
+    }
+
+
+    #{{ section_dom_id }} .fp-benefits-image__content {
+      max-width: none;
+    }
+
+
+    #{{ section_dom_id }} .fp-benefits-image__eyebrow {
+      margin-bottom: {{ section.settings.mobile_eyebrow_bottom_space }}px;
+
+      font-size: {{ section.settings.mobile_eyebrow_size }}px;
+    }
+
+
+    #{{ section_dom_id }} .fp-benefits-image__heading-wrap {
+      margin-bottom: {{ section.settings.mobile_heading_bottom_space }}px;
+    }
+
+
+    #{{ section_dom_id }} .fp-benefits-image__heading,
+    #{{ section_dom_id }} .fp-benefits-image__heading-emphasis {
+      font-size: {{ section.settings.mobile_heading_size }}px;
+
+      line-height: {{ section.settings.mobile_heading_line_height }};
+
+      letter-spacing: -0.6px;
+    }
+
+
+    #{{ section_dom_id }} .fp-benefits-image__heading-emphasis {
+      margin-top: {{ section.settings.mobile_emphasis_top_space }}px;
+    }
+
+
+    #{{ section_dom_id }} .fp-benefits-image__intro {
+      margin-bottom: {{ section.settings.mobile_intro_bottom_space }}px;
+
+      font-size: {{ section.settings.mobile_intro_size }}px;
+    }
+
+
+    #{{ section_dom_id }} .fp-benefits-image__list {
+      gap: {{ section.settings.mobile_item_gap }}px;
+    }
+
+
+    #{{ section_dom_id }} .fp-benefits-image__item {
+      align-items: flex-start;
+
+      gap: {{ section.settings.mobile_icon_text_gap }}px;
+    }
+
+
+    #{{ section_dom_id }} .fp-benefits-image__icon {
+      width: {{ section.settings.mobile_icon_size }}px;
+      height: {{ section.settings.mobile_icon_size }}px;
+
+      flex-basis: {{ section.settings.mobile_icon_size }}px;
+    }
+
+
+    #{{ section_dom_id }} .fp-benefits-image__icon svg,
+    #{{ section_dom_id }} .fp-benefits-image__custom-icon {
+      width: {{ section.settings.mobile_icon_inner_size }}px;
+      height: {{ section.settings.mobile_icon_inner_size }}px;
+    }
+
+
+    #{{ section_dom_id }} .fp-benefits-image__item-title {
+      margin-bottom: 4px;
+
+      font-size: {{ section.settings.mobile_item_title_size }}px;
+    }
+
+
+    #{{ section_dom_id }} .fp-benefits-image__item-text {
+      font-size: {{ section.settings.mobile_item_text_size }}px;
+
+      line-height: 1.4;
+    }
+
+
+    #{{ section_dom_id }} .fp-benefits-image__button {
+      {% if section.settings.mobile_full_button %}
+        width: 100%;
+      {% endif %}
+
+      margin-top: {{ section.settings.mobile_button_top_space }}px;
+    }
+
+  }
+
+</style>
+
+
+{% schema %}
+{
+  "name": "Image + bénéfices",
+  "tag": "section",
+  "class": "section-image-benefits",
+  "settings": [
+
+    {
+      "type": "header",
+      "content": "Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image principale"
+    },
+    {
+      "type": "range",
+      "id": "image_width",
+      "label": "Largeur image sur PC",
+      "min": 35,
+      "max": 60,
+      "step": 1,
+      "unit": "%",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "image_height",
+      "label": "Hauteur image sur PC",
+      "min": 400,
+      "max": 850,
+      "step": 10,
+      "unit": "px",
+      "default": 690
+    },
+    {
+      "type": "range",
+      "id": "image_radius",
+      "label": "Arrondi image",
+      "min": 0,
+      "max": 50,
+      "step": 1,
+      "unit": "px",
+      "default": 8
+    },
+    {
+      "type": "select",
+      "id": "image_fit",
+      "label": "Adaptation image",
+      "options": [
+        {
+          "value": "cover",
+          "label": "Remplir"
+        },
+        {
+          "value": "contain",
+          "label": "Image entière"
+        }
+      ],
+      "default": "cover"
+    },
+    {
+      "type": "select",
+      "id": "image_position",
+      "label": "Position image",
+      "options": [
+        {
+          "value": "center",
+          "label": "Centre"
+        },
+        {
+          "value": "top",
+          "label": "Haut"
+        },
+        {
+          "value": "bottom",
+          "label": "Bas"
+        },
+        {
+          "value": "left",
+          "label": "Gauche"
+        },
+        {
+          "value": "right",
+          "label": "Droite"
+        }
+      ],
+      "default": "center"
+    },
+
+    {
+      "type": "header",
+      "content": "Titres"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Petit titre",
+      "default": "CE QU'IL FAIT"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Titre principal",
+      "default": "Quatre préoccupations,"
+    },
+    {
+      "type": "text",
+      "id": "heading_emphasis",
+      "label": "Titre italique",
+      "default": "une habitude de quinze minutes"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Texte sous le titre"
+    },
+
+    {
+      "type": "header",
+      "content": "Typographie PC"
+    },
+    {
+      "type": "range",
+      "id": "eyebrow_size",
+      "label": "Taille petit titre",
+      "min": 9,
+      "max": 22,
+      "step": 1,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "eyebrow_letter_spacing",
+      "label": "Espacement lettres petit titre",
+      "min": 0,
+      "max": 5,
+      "step": 0.5,
+      "unit": "px",
+      "default": 2
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "label": "Taille titre",
+      "min": 28,
+      "max": 72,
+      "step": 1,
+      "unit": "px",
+      "default": 44
+    },
+    {
+      "type": "select",
+      "id": "heading_weight",
+      "label": "Graisse du titre",
+      "options": [
+        {
+          "value": "400",
+          "label": "Normal"
+        },
+        {
+          "value": "500",
+          "label": "Medium"
+        },
+        {
+          "value": "600",
+          "label": "Semi-gras"
+        },
+        {
+          "value": "700",
+          "label": "Gras"
+        }
+      ],
+      "default": "500"
+    },
+    {
+      "type": "range",
+      "id": "heading_line_height",
+      "label": "Interligne titre",
+      "min": 0.9,
+      "max": 1.5,
+      "step": 0.1,
+      "default": 1.1
+    },
+    {
+      "type": "range",
+      "id": "intro_size",
+      "label": "Taille description",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "item_title_size",
+      "label": "Titre bénéfice",
+      "min": 14,
+      "max": 26,
+      "step": 1,
+      "unit": "px",
+      "default": 17
+    },
+    {
+      "type": "range",
+      "id": "item_text_size",
+      "label": "Texte bénéfice",
+      "min": 12,
+      "max": 22,
+      "step": 1,
+      "unit": "px",
+      "default": 15
+    },
+
+    {
+      "type": "header",
+      "content": "Icônes"
+    },
+    {
+      "type": "range",
+      "id": "icon_size",
+      "label": "Taille cercle",
+      "min": 40,
+      "max": 90,
+      "step": 2,
+      "unit": "px",
+      "default": 58
+    },
+    {
+      "type": "range",
+      "id": "icon_inner_size",
+      "label": "Taille icône",
+      "min": 16,
+      "max": 50,
+      "step": 2,
+      "unit": "px",
+      "default": 28
+    },
+    {
+      "type": "range",
+      "id": "icon_border_width",
+      "label": "Épaisseur bordure",
+      "min": 0,
+      "max": 4,
+      "step": 1,
+      "unit": "px",
+      "default": 1
+    },
+
+    {
+      "type": "header",
+      "content": "Espacements PC"
+    },
+    {
+      "type": "range",
+      "id": "max_width",
+      "label": "Largeur maximale section",
+      "min": 1000,
+      "max": 1800,
+      "step": 20,
+      "unit": "px",
+      "default": 1180
+    },
+    {
+      "type": "range",
+      "id": "content_max_width",
+      "label": "Largeur maximale contenu",
+      "min": 350,
+      "max": 800,
+      "step": 10,
+      "unit": "px",
+      "default": 560
+    },
+    {
+      "type": "range",
+      "id": "desktop_gap",
+      "label": "Espace image / texte",
+      "min": 30,
+      "max": 140,
+      "step": 5,
+      "unit": "px",
+      "default": 55
+    },
+    {
+      "type": "range",
+      "id": "side_padding",
+      "label": "Marge latérale",
+      "min": 10,
+      "max": 80,
+      "step": 2,
+      "unit": "px",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Marge haute",
+      "min": 0,
+      "max": 160,
+      "step": 4,
+      "unit": "px",
+      "default": 68
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Marge basse",
+      "min": 0,
+      "max": 160,
+      "step": 4,
+      "unit": "px",
+      "default": 68
+    },
+    {
+      "type": "range",
+      "id": "eyebrow_bottom_space",
+      "label": "Espace sous petit titre",
+      "min": 4,
+      "max": 35,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "heading_bottom_space",
+      "label": "Espace sous titre",
+      "min": 10,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "default": 30
+    },
+    {
+      "type": "range",
+      "id": "emphasis_top_space",
+      "label": "Espace titre / italique",
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "default": 3
+    },
+    {
+      "type": "range",
+      "id": "intro_bottom_space",
+      "label": "Espace sous description",
+      "min": 0,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "default": 26
+    },
+    {
+      "type": "range",
+      "id": "item_gap",
+      "label": "Espace entre bénéfices",
+      "min": 10,
+      "max": 50,
+      "step": 2,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "icon_text_gap",
+      "label": "Espace icône / texte",
+      "min": 8,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "item_title_bottom_space",
+      "label": "Espace titre / texte bénéfice",
+      "min": 0,
+      "max": 15,
+      "step": 1,
+      "unit": "px",
+      "default": 4
+    },
+
+    {
+      "type": "header",
+      "content": "Couleurs"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Fond section",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Texte principal",
+      "default": "#111111"
+    },
+    {
+      "type": "color",
+      "id": "muted_color",
+      "label": "Texte secondaire",
+      "default": "#555555"
+    },
+    {
+      "type": "color",
+      "id": "accent_color",
+      "label": "Couleur accent",
+      "default": "#BF2834"
+    },
+    {
+      "type": "color",
+      "id": "icon_background",
+      "label": "Fond icône",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "icon_border_color",
+      "label": "Bordure icône",
+      "default": "#F1C8CC"
+    },
+
+    {
+      "type": "header",
+      "content": "Bouton"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Texte bouton"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Lien bouton"
+    },
+    {
+      "type": "color",
+      "id": "button_background",
+      "label": "Fond bouton",
+      "default": "#111111"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Texte bouton",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "button_border_color",
+      "label": "Bordure bouton",
+      "default": "#111111"
+    },
+    {
+      "type": "range",
+      "id": "button_border_width",
+      "label": "Épaisseur bordure bouton",
+      "min": 0,
+      "max": 4,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "button_radius",
+      "label": "Arrondi bouton",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "default": 4
+    },
+    {
+      "type": "range",
+      "id": "button_text_size",
+      "label": "Taille texte bouton",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "default": 15
+    },
+    {
+      "type": "range",
+      "id": "button_top_space",
+      "label": "Espace avant bouton",
+      "min": 10,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "default": 28
+    },
+
+    {
+      "type": "header",
+      "content": "Mobile"
+    },
+    {
+      "type": "select",
+      "id": "mobile_image_position",
+      "label": "Position image mobile",
+      "options": [
+        {
+          "value": "top",
+          "label": "Image en haut"
+        },
+        {
+          "value": "bottom",
+          "label": "Image en bas"
+        }
+      ],
+      "default": "top"
+    },
+    {
+      "type": "range",
+      "id": "mobile_image_height",
+      "label": "Hauteur image mobile",
+      "min": 260,
+      "max": 650,
+      "step": 10,
+      "unit": "px",
+      "default": 440
+    },
+    {
+      "type": "range",
+      "id": "mobile_image_radius",
+      "label": "Arrondi image mobile",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 8
+    },
+    {
+      "type": "range",
+      "id": "mobile_heading_size",
+      "label": "Taille titre mobile",
+      "min": 24,
+      "max": 48,
+      "step": 1,
+      "unit": "px",
+      "default": 34
+    },
+    {
+      "type": "range",
+      "id": "mobile_heading_line_height",
+      "label": "Interligne titre mobile",
+      "min": 0.9,
+      "max": 1.5,
+      "step": 0.1,
+      "default": 1.1
+    },
+    {
+      "type": "range",
+      "id": "mobile_eyebrow_size",
+      "label": "Petit titre mobile",
+      "min": 9,
+      "max": 18,
+      "step": 1,
+      "unit": "px",
+      "default": 11
+    },
+    {
+      "type": "range",
+      "id": "mobile_intro_size",
+      "label": "Description mobile",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "default": 15
+    },
+    {
+      "type": "range",
+      "id": "mobile_item_title_size",
+      "label": "Titre bénéfice mobile",
+      "min": 14,
+      "max": 22,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "mobile_item_text_size",
+      "label": "Texte bénéfice mobile",
+      "min": 12,
+      "max": 19,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "mobile_icon_size",
+      "label": "Taille cercle icône mobile",
+      "min": 38,
+      "max": 70,
+      "step": 2,
+      "unit": "px",
+      "default": 52
+    },
+    {
+      "type": "range",
+      "id": "mobile_icon_inner_size",
+      "label": "Taille icône mobile",
+      "min": 16,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "mobile_gap",
+      "label": "Espace image / contenu mobile",
+      "min": 20,
+      "max": 70,
+      "step": 2,
+      "unit": "px",
+      "default": 34
+    },
+    {
+      "type": "range",
+      "id": "mobile_item_gap",
+      "label": "Espace bénéfices mobile",
+      "min": 12,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "mobile_icon_text_gap",
+      "label": "Espace icône / texte mobile",
+      "min": 8,
+      "max": 30,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "mobile_side_padding",
+      "label": "Marge latérale mobile",
+      "min": 10,
+      "max": 35,
+      "step": 1,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_top",
+      "label": "Marge haute mobile",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_bottom",
+      "label": "Marge basse mobile",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "mobile_eyebrow_bottom_space",
+      "label": "Espace sous petit titre mobile",
+      "min": 4,
+      "max": 25,
+      "step": 1,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "mobile_heading_bottom_space",
+      "label": "Espace sous titre mobile",
+      "min": 10,
+      "max": 50,
+      "step": 2,
+      "unit": "px",
+      "default": 26
+    },
+    {
+      "type": "range",
+      "id": "mobile_emphasis_top_space",
+      "label": "Espace titre italique mobile",
+      "min": 0,
+      "max": 15,
+      "step": 1,
+      "unit": "px",
+      "default": 2
+    },
+    {
+      "type": "range",
+      "id": "mobile_intro_bottom_space",
+      "label": "Espace description mobile",
+      "min": 0,
+      "max": 50,
+      "step": 2,
+      "unit": "px",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "mobile_button_top_space",
+      "label": "Espace avant bouton mobile",
+      "min": 10,
+      "max": 50,
+      "step": 2,
+      "unit": "px",
+      "default": 24
+    },
+    {
+      "type": "checkbox",
+      "id": "mobile_full_button",
+      "label": "Bouton pleine largeur sur mobile",
+      "default": false
+    },
+
+    {
+      "type": "select",
+      "id": "content_alignment",
+      "label": "Position du contenu",
+      "options": [
+        {
+          "value": "left",
+          "label": "Aligné à gauche"
+        },
+        {
+          "value": "center",
+          "label": "Centré dans sa colonne"
+        }
+      ],
+      "default": "left"
+    }
+
+  ],
+
+  "blocks": [
+    {
+      "type": "benefit",
+      "name": "Bénéfice",
+      "settings": [
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Icône",
+          "options": [
+            {
+              "value": "waves",
+              "label": "Lignes / rides"
+            },
+            {
+              "value": "dots",
+              "label": "Texture / pores"
+            },
+            {
+              "value": "target",
+              "label": "Cible"
+            },
+            {
+              "value": "face",
+              "label": "Visage"
+            },
+            {
+              "value": "sparkles",
+              "label": "Éclat"
+            },
+            {
+              "value": "check",
+              "label": "Validation"
+            },
+            {
+              "value": "heart",
+              "label": "Cœur"
+            }
+          ],
+          "default": "waves"
+        },
+        {
+          "type": "image_picker",
+          "id": "custom_icon",
+          "label": "Icône personnalisée"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Titre",
+          "default": "Un bénéfice visible"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Description",
+          "default": "<p>Décrivez ici clairement le principal bénéfice de votre produit.</p>"
+        }
+      ]
+    }
+  ],
+
+  "max_blocks": 8,
+
+  "presets": [
+    {
+      "name": "Image + bénéfices",
+      "blocks": [
+        {
+          "type": "benefit",
+          "settings": {
+            "icon": "waves",
+            "title": "Les ridules paraissent atténuées",
+            "text": "<p>Une routine simple pensée pour améliorer visiblement l'apparence de la peau.</p>"
+          }
+        },
+        {
+          "type": "benefit",
+          "settings": {
+            "icon": "dots",
+            "title": "Une texture plus uniforme",
+            "text": "<p>La peau paraît plus lisse et plus régulière au quotidien.</p>"
+          }
+        },
+        {
+          "type": "benefit",
+          "settings": {
+            "icon": "target",
+            "title": "Les imperfections sont ciblées",
+            "text": "<p>Une routine adaptée aux zones qui nécessitent davantage d'attention.</p>"
+          }
+        },
+        {
+          "type": "benefit",
+          "settings": {
+            "icon": "face",
+            "title": "Un teint plus uniforme",
+            "text": "<p>Pour une peau visuellement plus équilibrée et lumineuse.</p>"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
