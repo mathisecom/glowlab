@@ -43,7 +43,7 @@
         "button_text_size": 15,
         "button_radius": 30,
         "button_border_width": 0,
-        "button_border_color": "#1A1A1A",
+        "button_border_color": "#1a1a1a",
         "max_width": 1600,
         "content_width": 1,
         "content_max_width": 650,
@@ -55,13 +55,13 @@
         "eyebrow_bottom_space": 10,
         "heading_bottom_space": 28,
         "description_bottom_space": 28,
-        "background_color": "#FFFCFC",
-        "text_color": "#1A1A1A",
-        "accent_color": "#C42F3B",
+        "background_color": "#fffcfc",
+        "text_color": "#1a1a1a",
+        "accent_color": "#c42f3b",
         "muted_color": "#666666",
-        "star_color": "#00B67A",
-        "button_background": "#1A1A1A",
-        "button_text_color": "#FFFFFF",
+        "star_color": "#00b67a",
+        "button_background": "#1a1a1a",
+        "button_text_color": "#ffffff",
         "mobile_image_first": false,
         "mobile_text_alignment": "center",
         "mobile_image_height": 410,
@@ -185,7 +185,6 @@
         },
         "price_aqWUjD": {
           "type": "price",
-          "disabled": true,
           "settings": {
             "show_taxes_notice": false
           }
@@ -204,7 +203,6 @@
         },
         "quantity_selector_NcVkJp": {
           "type": "quantity_selector",
-          "disabled": true,
           "settings": {}
         },
         "liquid_X3TrQF": {
@@ -1008,7 +1006,7 @@
           "settings": {
             "text": "+3,000 Clients Satisfaits",
             "heading_tag": "h2",
-            "text_color": "#BF2834",
+            "text_color": "#bf2834",
             "gradient": ""
           }
         }
