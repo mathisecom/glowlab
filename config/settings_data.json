@@ -43,6 +43,7 @@
     "cart_type": "drawer",
     "cart_icon": "tote_bag",
     "cart_show_free_shipping_threshold": true,
+    "favicon": "shopify://shop_images/e0edc308-336a-4243-85ef-ee2bc3c98991.png",
     "checkout_accent_color": "#f0c417",
     "checkout_button_color": "#1a1a1a",
     "content_for_index": [],
