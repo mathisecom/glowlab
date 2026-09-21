@@ -314,14 +314,132 @@
         "mobile_padding_top": 40,
         "mobile_padding_bottom": 44,
         "mobile_header_bottom_space": 24,
-        "background_color": "#FFFFFF",
+        "background_color": "#ffffff",
         "text_color": "#272727",
         "muted_color": "#797979",
-        "divider_color": "#FFFFFF",
-        "badge_background": "#F0F0F0",
+        "divider_color": "#ffffff",
+        "badge_background": "#f0f0f0",
         "badge_text_color": "#333333",
         "show_arrows": true,
         "show_mobile_dots": true
+      }
+    },
+    "imgbenefice_wj7Hpf": {
+      "type": "imgbenefice",
+      "blocks": {
+        "benefit_7VbHHW": {
+          "type": "benefit",
+          "settings": {
+            "icon": "waves",
+            "title": "Les ridules paraissent atténuées",
+            "text": "<p>Une routine simple pensée pour améliorer visiblement l'apparence de la peau.</p>"
+          }
+        },
+        "benefit_b9VnAD": {
+          "type": "benefit",
+          "settings": {
+            "icon": "dots",
+            "title": "Une texture plus uniforme",
+            "text": "<p>La peau paraît plus lisse et plus régulière au quotidien.</p>"
+          }
+        },
+        "benefit_DrT4er": {
+          "type": "benefit",
+          "settings": {
+            "icon": "target",
+            "title": "Les imperfections sont ciblées",
+            "text": "<p>Une routine adaptée aux zones qui nécessitent davantage d'attention.</p>"
+          }
+        },
+        "benefit_ADnAXj": {
+          "type": "benefit",
+          "settings": {
+            "icon": "face",
+            "title": "Un teint plus uniforme",
+            "text": "<p>Pour une peau visuellement plus équilibrée et lumineuse.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "benefit_7VbHHW",
+        "benefit_b9VnAD",
+        "benefit_DrT4er",
+        "benefit_ADnAXj"
+      ],
+      "name": "Image + bénéfices",
+      "settings": {
+        "image_width": 48,
+        "image_height": 690,
+        "image_radius": 8,
+        "image_fit": "cover",
+        "image_position": "center",
+        "eyebrow": "CE QU'IL FAIT",
+        "heading": "Quatre préoccupations,",
+        "heading_emphasis": "une habitude de quinze minutes",
+        "description": "",
+        "eyebrow_size": 12,
+        "eyebrow_letter_spacing": 2,
+        "heading_size": 37,
+        "heading_weight": "500",
+        "heading_line_height": 1.1,
+        "intro_size": 16,
+        "item_title_size": 17,
+        "item_text_size": 15,
+        "icon_size": 58,
+        "icon_inner_size": 28,
+        "icon_border_width": 1,
+        "max_width": 1180,
+        "content_max_width": 560,
+        "desktop_gap": 55,
+        "side_padding": 24,
+        "padding_top": 68,
+        "padding_bottom": 68,
+        "eyebrow_bottom_space": 16,
+        "heading_bottom_space": 30,
+        "emphasis_top_space": 3,
+        "intro_bottom_space": 26,
+        "item_gap": 20,
+        "icon_text_gap": 16,
+        "item_title_bottom_space": 4,
+        "background_color": "#FFFBFB",
+        "text_color": "#111111",
+        "muted_color": "#555555",
+        "accent_color": "#BF2834",
+        "icon_background": "#FFFFFF",
+        "icon_border_color": "#F1C8CC",
+        "button_label": "",
+        "button_link": "",
+        "button_background": "#111111",
+        "button_text_color": "#FFFFFF",
+        "button_border_color": "#111111",
+        "button_border_width": 0,
+        "button_radius": 4,
+        "button_text_size": 15,
+        "button_top_space": 28,
+        "mobile_image_position": "top",
+        "mobile_image_height": 440,
+        "mobile_image_radius": 8,
+        "mobile_heading_size": 30,
+        "mobile_heading_line_height": 1.1,
+        "mobile_eyebrow_size": 11,
+        "mobile_intro_size": 15,
+        "mobile_item_title_size": 16,
+        "mobile_item_text_size": 14,
+        "mobile_icon_size": 52,
+        "mobile_icon_inner_size": 24,
+        "mobile_gap": 34,
+        "mobile_item_gap": 20,
+        "mobile_icon_text_gap": 14,
+        "mobile_side_padding": 20,
+        "mobile_padding_top": 40,
+        "mobile_padding_bottom": 40,
+        "mobile_eyebrow_bottom_space": 12,
+        "mobile_heading_bottom_space": 26,
+        "mobile_emphasis_top_space": 2,
+        "mobile_intro_bottom_space": 24,
+        "mobile_button_top_space": 24,
+        "mobile_full_button": false,
+        "content_alignment": "left"
       }
     },
     "faq": {
@@ -381,6 +499,7 @@
     "logoscroll_dfeKJn",
     "featured_product_wexK8U",
     "resultavantapres_DqJjxe",
+    "imgbenefice_wj7Hpf",
     "faq"
   ]
 }
