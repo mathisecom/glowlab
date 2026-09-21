@@ -422,6 +422,108 @@
         "show_mobile_dots": true
       }
     },
+    "chfrcles_CYQ6TU": {
+      "type": "chfrcles",
+      "blocks": {
+        "result_TyAxbE": {
+          "type": "result",
+          "settings": {
+            "percentage": 96,
+            "title": "constatent une peau visiblement plus lisse"
+          }
+        },
+        "result_73rpTe": {
+          "type": "result",
+          "settings": {
+            "percentage": 94,
+            "title": "constatent un teint plus uniforme"
+          }
+        },
+        "result_ztiaGw": {
+          "type": "result",
+          "settings": {
+            "percentage": 91,
+            "title": "constatent une amélioration globale de l'apparence de leur peau"
+          }
+        }
+      },
+      "block_order": [
+        "result_TyAxbE",
+        "result_73rpTe",
+        "result_ztiaGw"
+      ],
+      "name": "Résultats enquête",
+      "settings": {
+        "eyebrow": "DONNÉES D'ENQUÊTE",
+        "heading": "Ce que nos clients",
+        "heading_accent": "rapportent",
+        "accent_italic": false,
+        "description": "",
+        "max_width": 1140,
+        "header_width": 640,
+        "description_width": 550,
+        "results_width": 1200,
+        "border_width": 1,
+        "border_radius": 10,
+        "box_padding_top": 45,
+        "box_padding_bottom": 45,
+        "box_padding_horizontal": 10,
+        "eyebrow_size": 10,
+        "eyebrow_spacing": 1.5,
+        "heading_size": 35,
+        "heading_weight": "500",
+        "description_size": 14,
+        "percentage_size": 30,
+        "item_title_size": 14,
+        "footnote_size": 11,
+        "circle_size": 105,
+        "ring_thickness": 12,
+        "circle_bottom_space": 14,
+        "item_text_width": 240,
+        "separator_height": 95,
+        "item_horizontal_padding": 15,
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "side_padding": 20,
+        "header_bottom_space": 32,
+        "eyebrow_bottom_space": 10,
+        "description_top_space": 10,
+        "footnote_top_space": 28,
+        "background_color": "#FFFFFF",
+        "box_background": "#FFFCFC",
+        "text_color": "#111111",
+        "muted_color": "#6D6868",
+        "accent_color": "#C43F49",
+        "ring_color": "#FF949B",
+        "ring_background": "#F6DCDC",
+        "border_color": "#FF969D",
+        "separator_color": "#EBDDDD",
+        "mobile_heading_size": 30,
+        "mobile_eyebrow_size": 9,
+        "mobile_description_size": 13,
+        "mobile_circle_size": 100,
+        "mobile_ring_thickness": 12,
+        "mobile_percentage_size": 26,
+        "mobile_item_title_size": 17,
+        "mobile_item_text_width": 260,
+        "mobile_item_gap": 28,
+        "mobile_item_padding_bottom": 22,
+        "mobile_separator_width": 70,
+        "mobile_circle_bottom_space": 12,
+        "mobile_footnote_size": 10,
+        "mobile_footnote_top_space": 24,
+        "mobile_border_radius": 16,
+        "mobile_box_padding_top": 35,
+        "mobile_box_padding_bottom": 35,
+        "mobile_box_padding_horizontal": 18,
+        "mobile_header_bottom_space": 30,
+        "mobile_eyebrow_bottom_space": 9,
+        "mobile_description_top_space": 9,
+        "mobile_padding_top": 28,
+        "mobile_padding_bottom": 28,
+        "mobile_side_padding": 15
+      }
+    },
     "imgbenefice_wj7Hpf": {
       "type": "imgbenefice",
       "blocks": {
@@ -768,7 +870,7 @@
         "image_radius": 10,
         "image_fit": "cover",
         "image_position": "center",
-        "image_background": "#F2F2F2",
+        "image_background": "#f2f2f2",
         "eyebrow_size": 11,
         "eyebrow_letter_spacing": 1.5,
         "heading_size": 38,
@@ -794,11 +896,11 @@
         "header_bottom_space": 38,
         "eyebrow_bottom_space": 10,
         "description_top_space": 12,
-        "background_color": "#FFF7F7",
+        "background_color": "#fff7f7",
         "text_color": "#171717",
         "muted_color": "#747474",
-        "accent_color": "#C43F49",
-        "line_color": "#E7C4C7",
+        "accent_color": "#c43f49",
+        "line_color": "#e7c4c7",
         "mobile_header_alignment": "left",
         "mobile_heading_size": 32,
         "mobile_eyebrow_size": 10,
@@ -879,6 +981,7 @@
     "featured_product_wexK8U",
     "scrollbenfice_mnLhJX",
     "resultavantapres_DqJjxe",
+    "chfrcles_CYQ6TU",
     "imgbenefice_wj7Hpf",
     "tabsvs_zb3iCM",
     "techno_MdgNn4",
