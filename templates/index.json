@@ -676,13 +676,13 @@
         "header_bottom_space": 42,
         "eyebrow_bottom_space": 10,
         "description_top_space": 14,
-        "background_color": "#FFFFFF",
+        "background_color": "#ffffff",
         "text_color": "#171717",
         "muted_color": "#777777",
-        "accent_color": "#C93C46",
-        "highlight_background": "#FBE1E2",
-        "border_color": "#DCDCDC",
-        "price_color": "#BF2834",
+        "accent_color": "#c93c46",
+        "highlight_background": "#fbe1e2",
+        "border_color": "#dcdcdc",
+        "price_color": "#bf2834",
         "mobile_heading_size": 30,
         "mobile_eyebrow_size": 10,
         "mobile_description_size": 12,
@@ -699,6 +699,122 @@
         "mobile_status_size": 22,
         "mobile_padding_top": 36,
         "mobile_padding_bottom": 36,
+        "mobile_side_padding": 18,
+        "mobile_header_bottom_space": 28,
+        "mobile_eyebrow_bottom_space": 9,
+        "mobile_description_top_space": 10
+      }
+    },
+    "techno_MdgNn4": {
+      "type": "techno",
+      "blocks": {
+        "benefit_HmQLhL": {
+          "type": "benefit",
+          "settings": {
+            "position": "left",
+            "dot_color": "#3f82d8",
+            "line_color": "#afcbea",
+            "title": "LUMIÈRE BLEUE (415 NM)",
+            "text": "<p>Une longueur d'onde ciblée pensée pour compléter votre routine et agir sur les besoins spécifiques de la peau.</p>"
+          }
+        },
+        "benefit_Yy4iBa": {
+          "type": "benefit",
+          "settings": {
+            "position": "left",
+            "dot_color": "#d34a43",
+            "line_color": "#e6aba7",
+            "title": "LUMIÈRE ROUGE (630 NM)",
+            "text": "<p>La lumière rouge est utilisée dans les routines LED destinées à améliorer visiblement l'apparence générale de la peau.</p>"
+          }
+        },
+        "benefit_ncT9Fj": {
+          "type": "benefit",
+          "settings": {
+            "position": "right",
+            "dot_color": "#e6b936",
+            "line_color": "#ebd797",
+            "title": "LUMIÈRE JAUNE (590 NM)",
+            "text": "<p>Une autre longueur d'onde permettant de compléter les différents modes disponibles dans votre routine.</p>"
+          }
+        },
+        "benefit_BU8VJU": {
+          "type": "benefit",
+          "settings": {
+            "position": "right",
+            "dot_color": "#e9e2db",
+            "line_color": "#ddd5ce",
+            "title": "PROCHE INFRAROUGE (830 NM)",
+            "text": "<p>Une lumière invisible à l'œil conçue pour fonctionner en complément des autres longueurs d'onde.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "benefit_HmQLhL",
+        "benefit_Yy4iBa",
+        "benefit_ncT9Fj",
+        "benefit_BU8VJU"
+      ],
+      "name": "Technologies & bénéfices",
+      "settings": {
+        "eyebrow": "PLUS DE BÉNÉFICES & DE COUVERTURE",
+        "heading": "Quatre longueurs d'onde,",
+        "heading_accent": "un seul masque",
+        "accent_italic": true,
+        "description": "<p>Chaque longueur d'onde cible un besoin différent pour offrir une routine plus complète.</p>",
+        "header_alignment": "left",
+        "image_column_width": 1.4,
+        "image_height": 420,
+        "image_radius": 10,
+        "image_fit": "cover",
+        "image_position": "center",
+        "image_background": "#F2F2F2",
+        "eyebrow_size": 11,
+        "eyebrow_letter_spacing": 1.5,
+        "heading_size": 38,
+        "heading_weight": "500",
+        "description_size": 15,
+        "benefit_title_size": 14,
+        "benefit_text_size": 14,
+        "uppercase_titles": true,
+        "benefit_max_width": 330,
+        "dot_size": 13,
+        "dot_title_gap": 9,
+        "line_height": 1,
+        "line_top_space": 10,
+        "line_bottom_space": 14,
+        "column_vertical_padding": 15,
+        "max_width": 1240,
+        "header_width": 650,
+        "description_width": 570,
+        "column_gap": 45,
+        "side_padding": 24,
+        "padding_top": 65,
+        "padding_bottom": 65,
+        "header_bottom_space": 38,
+        "eyebrow_bottom_space": 10,
+        "description_top_space": 12,
+        "background_color": "#FFF7F7",
+        "text_color": "#171717",
+        "muted_color": "#747474",
+        "accent_color": "#C43F49",
+        "line_color": "#E7C4C7",
+        "mobile_header_alignment": "left",
+        "mobile_heading_size": 32,
+        "mobile_eyebrow_size": 10,
+        "mobile_description_size": 14,
+        "mobile_image_height": 390,
+        "mobile_image_radius": 10,
+        "mobile_benefit_title_size": 13,
+        "mobile_benefit_text_size": 14,
+        "mobile_dot_size": 12,
+        "mobile_dot_title_gap": 8,
+        "mobile_benefit_gap": 32,
+        "mobile_image_bottom_space": 30,
+        "mobile_line_top_space": 9,
+        "mobile_line_bottom_space": 12,
+        "mobile_padding_top": 40,
+        "mobile_padding_bottom": 40,
         "mobile_side_padding": 18,
         "mobile_header_bottom_space": 28,
         "mobile_eyebrow_bottom_space": 9,
@@ -765,6 +881,7 @@
     "resultavantapres_DqJjxe",
     "imgbenefice_wj7Hpf",
     "tabsvs_zb3iCM",
+    "techno_MdgNn4",
     "faq"
   ]
 }
