@@ -368,8 +368,9 @@
       ],
       "name": "Image + bénéfices",
       "settings": {
-        "image_width": 48,
-        "image_height": 690,
+        "image": "shopify://shop_images/ChatGPT_Image_Aug_4_2026_05_54_15_PM.webp",
+        "image_width": 40,
+        "image_height": 600,
         "image_radius": 8,
         "image_fit": "cover",
         "image_position": "center",
