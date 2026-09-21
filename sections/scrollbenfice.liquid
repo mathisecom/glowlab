@@ -1,0 +1,1353 @@
+{% liquid
+  assign marquee_id = 'trust-marquee-' | append: section.id
+%}
+
+<section
+  id="{{ marquee_id }}"
+  class="trust-marquee"
+  style="
+    --tm-bg: {{ section.settings.background_color }};
+    --tm-text: {{ section.settings.text_color }};
+    --tm-icon: {{ section.settings.icon_color }};
+    --tm-gap: {{ section.settings.desktop_gap }}px;
+    --tm-speed: {{ section.settings.speed }}s;
+    --tm-icon-size: {{ section.settings.icon_size }}px;
+    --tm-font-size: {{ section.settings.text_size }}px;
+  "
+>
+
+  <div class="trust-marquee__viewport">
+
+    <div class="trust-marquee__track">
+
+      <!-- =========================================
+           GROUPE 1
+      ========================================== -->
+
+      <div class="trust-marquee__group">
+
+        {% for block in section.blocks %}
+
+          <div
+            class="trust-marquee__item"
+            {{ block.shopify_attributes }}
+          >
+
+            {% if block.settings.show_icon %}
+
+              <div class="trust-marquee__icon">
+
+                {% if block.settings.custom_icon != blank %}
+
+                  {{
+                    block.settings.custom_icon
+                    | image_url: width: 120
+                    | image_tag:
+                      loading: 'lazy',
+                      widths: '32, 48, 64, 96, 120',
+                      class: 'trust-marquee__custom-icon'
+                  }}
+
+                {% else %}
+
+                  {% case block.settings.icon %}
+
+
+                    {% when 'document' %}
+
+                      <svg
+                        viewBox="0 0 32 32"
+                        aria-hidden="true"
+                      >
+                        <rect
+                          x="7"
+                          y="4"
+                          width="15"
+                          height="20"
+                          rx="2"
+                        ></rect>
+
+                        <path d="M11 10h7"></path>
+
+                        <path d="M11 14h7"></path>
+
+                        <circle
+                          cx="22"
+                          cy="22"
+                          r="5"
+                        ></circle>
+
+                        <path
+                          d="M19.8 22l1.5 1.5 2.8-3"
+                        ></path>
+                      </svg>
+
+
+                    {% when 'badge' %}
+
+                      <svg
+                        viewBox="0 0 32 32"
+                        aria-hidden="true"
+                      >
+                        <circle
+                          cx="16"
+                          cy="14"
+                          r="8"
+                        ></circle>
+
+                        <path
+                          d="M12 22l-1 7 5-3 5 3-1-7"
+                        ></path>
+
+                        <path
+                          d="M12.5 14l2.2 2.2 4.8-5"
+                        ></path>
+                      </svg>
+
+
+                    {% when 'check' %}
+
+                      <svg
+                        viewBox="0 0 32 32"
+                        aria-hidden="true"
+                      >
+                        <rect
+                          x="5"
+                          y="4"
+                          width="22"
+                          height="24"
+                          rx="3"
+                        ></rect>
+
+                        <path
+                          d="M10 16l4 4 8-9"
+                        ></path>
+                      </svg>
+
+
+                    {% when 'dermatology' %}
+
+                      <svg
+                        viewBox="0 0 32 32"
+                        aria-hidden="true"
+                      >
+                        <circle
+                          cx="16"
+                          cy="16"
+                          r="11"
+                        ></circle>
+
+                        <path
+                          d="M12 12c2-2 6-2 8 0"
+                        ></path>
+
+                        <path
+                          d="M11 17c3 3 7 3 10 0"
+                        ></path>
+
+                        <circle
+                          cx="12"
+                          cy="11"
+                          r="1"
+                        ></circle>
+
+                        <circle
+                          cx="20"
+                          cy="11"
+                          r="1"
+                        ></circle>
+
+                        <path
+                          d="M16 7v3"
+                        ></path>
+                      </svg>
+
+
+                    {% when 'quality' %}
+
+                      <svg
+                        viewBox="0 0 32 32"
+                        aria-hidden="true"
+                      >
+                        <circle
+                          cx="16"
+                          cy="12"
+                          r="8"
+                        ></circle>
+
+                        <path
+                          d="M12 19l-2 10 6-4 6 4-2-10"
+                        ></path>
+
+                        <path
+                          d="M12 12l2.5 2.5L20 9"
+                        ></path>
+                      </svg>
+
+
+                    {% when 'award' %}
+
+                      <svg
+                        viewBox="0 0 32 32"
+                        aria-hidden="true"
+                      >
+                        <circle
+                          cx="16"
+                          cy="12"
+                          r="7"
+                        ></circle>
+
+                        <path
+                          d="M12 19l-2 10 6-4 6 4-2-10"
+                        ></path>
+
+                        <path
+                          d="M16 8l1.3 2.5 2.7.4-2 2 .5 2.8-2.5-1.3-2.5 1.3.5-2.8-2-2 2.7-.4z"
+                        ></path>
+                      </svg>
+
+
+                    {% when 'shield' %}
+
+                      <svg
+                        viewBox="0 0 32 32"
+                        aria-hidden="true"
+                      >
+                        <path
+                          d="M16 3l10 4v7c0 7-4 12-10 15C10 26 6 21 6 14V7z"
+                        ></path>
+
+                        <path
+                          d="M11 15l3 3 7-8"
+                        ></path>
+                      </svg>
+
+
+                    {% when 'star' %}
+
+                      <svg
+                        viewBox="0 0 32 32"
+                        aria-hidden="true"
+                      >
+                        <path
+                          d="M16 4l3.5 7.1 7.8 1.1-5.7 5.5 1.4 7.8-7-3.7-7 3.7 1.4-7.8-5.7-5.5 7.8-1.1z"
+                        ></path>
+                      </svg>
+
+
+                    {% when 'heart' %}
+
+                      <svg
+                        viewBox="0 0 32 32"
+                        aria-hidden="true"
+                      >
+                        <path
+                          d="M16 27S5 20 5 12c0-4 3-7 7-7 2.5 0 4 1.4 4 3 0-1.6 1.5-3 4-3 4 0 7 3 7 7 0 8-11 15-11 15z"
+                        ></path>
+                      </svg>
+
+
+                  {% endcase %}
+
+                {% endif %}
+
+              </div>
+
+            {% endif %}
+
+
+            {% if block.settings.text != blank %}
+
+              <div class="trust-marquee__text">
+                {{ block.settings.text }}
+              </div>
+
+            {% endif %}
+
+          </div>
+
+        {% endfor %}
+
+      </div>
+
+
+
+      <!-- =========================================
+           GROUPE 2
+           DUPLIQUÉ POUR CRÉER LA BOUCLE INFINIE
+      ========================================== -->
+
+      <div
+        class="trust-marquee__group"
+        aria-hidden="true"
+      >
+
+        {% for block in section.blocks %}
+
+          <div class="trust-marquee__item">
+
+            {% if block.settings.show_icon %}
+
+              <div class="trust-marquee__icon">
+
+                {% if block.settings.custom_icon != blank %}
+
+                  {{
+                    block.settings.custom_icon
+                    | image_url: width: 120
+                    | image_tag:
+                      loading: 'lazy',
+                      widths: '32, 48, 64, 96, 120',
+                      class: 'trust-marquee__custom-icon'
+                  }}
+
+                {% else %}
+
+                  {% case block.settings.icon %}
+
+
+                    {% when 'document' %}
+
+                      <svg
+                        viewBox="0 0 32 32"
+                        aria-hidden="true"
+                      >
+                        <rect
+                          x="7"
+                          y="4"
+                          width="15"
+                          height="20"
+                          rx="2"
+                        ></rect>
+
+                        <path d="M11 10h7"></path>
+
+                        <path d="M11 14h7"></path>
+
+                        <circle
+                          cx="22"
+                          cy="22"
+                          r="5"
+                        ></circle>
+
+                        <path
+                          d="M19.8 22l1.5 1.5 2.8-3"
+                        ></path>
+                      </svg>
+
+
+                    {% when 'badge' %}
+
+                      <svg
+                        viewBox="0 0 32 32"
+                        aria-hidden="true"
+                      >
+                        <circle
+                          cx="16"
+                          cy="14"
+                          r="8"
+                        ></circle>
+
+                        <path
+                          d="M12 22l-1 7 5-3 5 3-1-7"
+                        ></path>
+
+                        <path
+                          d="M12.5 14l2.2 2.2 4.8-5"
+                        ></path>
+                      </svg>
+
+
+                    {% when 'check' %}
+
+                      <svg
+                        viewBox="0 0 32 32"
+                        aria-hidden="true"
+                      >
+                        <rect
+                          x="5"
+                          y="4"
+                          width="22"
+                          height="24"
+                          rx="3"
+                        ></rect>
+
+                        <path
+                          d="M10 16l4 4 8-9"
+                        ></path>
+                      </svg>
+
+
+                    {% when 'dermatology' %}
+
+                      <svg
+                        viewBox="0 0 32 32"
+                        aria-hidden="true"
+                      >
+                        <circle
+                          cx="16"
+                          cy="16"
+                          r="11"
+                        ></circle>
+
+                        <path
+                          d="M12 12c2-2 6-2 8 0"
+                        ></path>
+
+                        <path
+                          d="M11 17c3 3 7 3 10 0"
+                        ></path>
+
+                        <circle
+                          cx="12"
+                          cy="11"
+                          r="1"
+                        ></circle>
+
+                        <circle
+                          cx="20"
+                          cy="11"
+                          r="1"
+                        ></circle>
+
+                        <path
+                          d="M16 7v3"
+                        ></path>
+                      </svg>
+
+
+                    {% when 'quality' %}
+
+                      <svg
+                        viewBox="0 0 32 32"
+                        aria-hidden="true"
+                      >
+                        <circle
+                          cx="16"
+                          cy="12"
+                          r="8"
+                        ></circle>
+
+                        <path
+                          d="M12 19l-2 10 6-4 6 4-2-10"
+                        ></path>
+
+                        <path
+                          d="M12 12l2.5 2.5L20 9"
+                        ></path>
+                      </svg>
+
+
+                    {% when 'award' %}
+
+                      <svg
+                        viewBox="0 0 32 32"
+                        aria-hidden="true"
+                      >
+                        <circle
+                          cx="16"
+                          cy="12"
+                          r="7"
+                        ></circle>
+
+                        <path
+                          d="M12 19l-2 10 6-4 6 4-2-10"
+                        ></path>
+
+                        <path
+                          d="M16 8l1.3 2.5 2.7.4-2 2 .5 2.8-2.5-1.3-2.5 1.3.5-2.8-2-2 2.7-.4z"
+                        ></path>
+                      </svg>
+
+
+                    {% when 'shield' %}
+
+                      <svg
+                        viewBox="0 0 32 32"
+                        aria-hidden="true"
+                      >
+                        <path
+                          d="M16 3l10 4v7c0 7-4 12-10 15C10 26 6 21 6 14V7z"
+                        ></path>
+
+                        <path
+                          d="M11 15l3 3 7-8"
+                        ></path>
+                      </svg>
+
+
+                    {% when 'star' %}
+
+                      <svg
+                        viewBox="0 0 32 32"
+                        aria-hidden="true"
+                      >
+                        <path
+                          d="M16 4l3.5 7.1 7.8 1.1-5.7 5.5 1.4 7.8-7-3.7-7 3.7 1.4-7.8-5.7-5.5 7.8-1.1z"
+                        ></path>
+                      </svg>
+
+
+                    {% when 'heart' %}
+
+                      <svg
+                        viewBox="0 0 32 32"
+                        aria-hidden="true"
+                      >
+                        <path
+                          d="M16 27S5 20 5 12c0-4 3-7 7-7 2.5 0 4 1.4 4 3 0-1.6 1.5-3 4-3 4 0 7 3 7 7 0 8-11 15-11 15z"
+                        ></path>
+                      </svg>
+
+
+                  {% endcase %}
+
+                {% endif %}
+
+              </div>
+
+            {% endif %}
+
+
+            {% if block.settings.text != blank %}
+
+              <div class="trust-marquee__text">
+                {{ block.settings.text }}
+              </div>
+
+            {% endif %}
+
+          </div>
+
+        {% endfor %}
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<style>
+
+  /* =====================================================
+     SECTION
+  ====================================================== */
+
+  #{{ marquee_id }} {
+
+    width: 100%;
+
+    background: var(--tm-bg);
+
+    overflow: hidden;
+
+    padding-top: {{ section.settings.padding_top }}px;
+
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+
+  }
+
+
+  #{{ marquee_id }} *,
+  #{{ marquee_id }} *::before,
+  #{{ marquee_id }} *::after {
+
+    box-sizing: border-box;
+
+  }
+
+
+
+  /* =====================================================
+     VIEWPORT
+  ====================================================== */
+
+  #{{ marquee_id }} .trust-marquee__viewport {
+
+    width: 100%;
+
+    overflow: hidden;
+
+    position: relative;
+
+  }
+
+
+
+  /* =====================================================
+     FONDU SUR LES CÔTÉS
+  ====================================================== */
+
+  {% if section.settings.show_edge_fade %}
+
+    #{{ marquee_id }} .trust-marquee__viewport {
+
+      -webkit-mask-image: linear-gradient(
+        to right,
+        transparent 0%,
+        black {{ section.settings.fade_width }}%,
+        black calc(100% - {{ section.settings.fade_width }}%),
+        transparent 100%
+      );
+
+      mask-image: linear-gradient(
+        to right,
+        transparent 0%,
+        black {{ section.settings.fade_width }}%,
+        black calc(100% - {{ section.settings.fade_width }}%),
+        transparent 100%
+      );
+
+    }
+
+  {% endif %}
+
+
+
+  /* =====================================================
+     TRACK
+  ====================================================== */
+
+  #{{ marquee_id }} .trust-marquee__track {
+
+    width: max-content;
+
+    display: flex;
+
+    align-items: center;
+
+    animation:
+      trustMarquee-{{ section.id }}
+      var(--tm-speed)
+      linear
+      infinite;
+
+    will-change: transform;
+
+  }
+
+
+
+  /* =====================================================
+     ANIMATION
+  ====================================================== */
+
+  {% if section.settings.reverse_direction %}
+
+    @keyframes trustMarquee-{{ section.id }} {
+
+      from {
+
+        transform: translateX(-50%);
+
+      }
+
+      to {
+
+        transform: translateX(0);
+
+      }
+
+    }
+
+  {% else %}
+
+    @keyframes trustMarquee-{{ section.id }} {
+
+      from {
+
+        transform: translateX(0);
+
+      }
+
+      to {
+
+        transform: translateX(-50%);
+
+      }
+
+    }
+
+  {% endif %}
+
+
+
+  /* =====================================================
+     PAUSE AU SURVOL
+  ====================================================== */
+
+  {% if section.settings.pause_on_hover %}
+
+    #{{ marquee_id }}
+    .trust-marquee__viewport:hover
+    .trust-marquee__track {
+
+      animation-play-state: paused;
+
+    }
+
+  {% endif %}
+
+
+
+  /* =====================================================
+     GROUPES
+  ====================================================== */
+
+  #{{ marquee_id }} .trust-marquee__group {
+
+    display: flex;
+
+    align-items: center;
+
+    flex-shrink: 0;
+
+    gap: var(--tm-gap);
+
+    padding-right: var(--tm-gap);
+
+  }
+
+
+
+  /* =====================================================
+     ÉLÉMENTS
+  ====================================================== */
+
+  #{{ marquee_id }} .trust-marquee__item {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    gap: {{ section.settings.icon_text_gap }}px;
+
+    white-space: nowrap;
+
+  }
+
+
+
+  /* =====================================================
+     ICÔNES
+  ====================================================== */
+
+  #{{ marquee_id }} .trust-marquee__icon {
+
+    width: var(--tm-icon-size);
+
+    height: var(--tm-icon-size);
+
+    flex: 0 0 var(--tm-icon-size);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    color: var(--tm-icon);
+
+  }
+
+
+  #{{ marquee_id }} .trust-marquee__icon svg {
+
+    width: 100%;
+
+    height: 100%;
+
+    display: block;
+
+    fill: none;
+
+    stroke: currentColor;
+
+    stroke-width: {{ section.settings.icon_stroke_width }};
+
+    stroke-linecap: round;
+
+    stroke-linejoin: round;
+
+  }
+
+
+  #{{ marquee_id }} .trust-marquee__custom-icon {
+
+    width: 100%;
+
+    height: 100%;
+
+    display: block;
+
+    object-fit: contain;
+
+  }
+
+
+
+  /* =====================================================
+     TEXTE
+  ====================================================== */
+
+  #{{ marquee_id }} .trust-marquee__text {
+
+    color: var(--tm-text);
+
+    font-size: var(--tm-font-size);
+
+    font-weight: {{ section.settings.font_weight }};
+
+    line-height: 1.2;
+
+    letter-spacing: {{ section.settings.letter_spacing }}px;
+
+    text-transform:
+      {% if section.settings.uppercase %}
+        uppercase
+      {% else %}
+        none
+      {% endif %};
+
+  }
+
+
+
+  /* =====================================================
+     MOBILE
+  ====================================================== */
+
+  @media screen and (max-width: 749px) {
+
+    #{{ marquee_id }} {
+
+      padding-top: {{ section.settings.mobile_padding_top }}px;
+
+      padding-bottom: {{ section.settings.mobile_padding_bottom }}px;
+
+      --tm-gap: {{ section.settings.mobile_gap }}px;
+
+      --tm-icon-size: {{ section.settings.mobile_icon_size }}px;
+
+      --tm-font-size: {{ section.settings.mobile_text_size }}px;
+
+    }
+
+
+    #{{ marquee_id }} .trust-marquee__item {
+
+      gap: {{ section.settings.mobile_icon_text_gap }}px;
+
+    }
+
+
+    #{{ marquee_id }} .trust-marquee__track {
+
+      animation-duration: {{ section.settings.mobile_speed }}s;
+
+    }
+
+  }
+
+
+
+  /* =====================================================
+     ACCESSIBILITÉ
+  ====================================================== */
+
+  @media (prefers-reduced-motion: reduce) {
+
+    #{{ marquee_id }} .trust-marquee__track {
+
+      animation-play-state: paused;
+
+    }
+
+  }
+
+</style>
+
+
+
+{% schema %}
+{
+  "name": "Bandeau garanties",
+  "tag": "section",
+  "class": "section-trust-marquee",
+
+  "settings": [
+
+    {
+      "type": "header",
+      "content": "Défilement"
+    },
+
+    {
+      "type": "range",
+      "id": "speed",
+      "label": "Vitesse sur ordinateur",
+      "min": 10,
+      "max": 100,
+      "step": 5,
+      "unit": "s",
+      "default": 35
+    },
+
+    {
+      "type": "range",
+      "id": "mobile_speed",
+      "label": "Vitesse sur mobile",
+      "min": 10,
+      "max": 100,
+      "step": 5,
+      "unit": "s",
+      "default": 25
+    },
+
+    {
+      "type": "checkbox",
+      "id": "reverse_direction",
+      "label": "Inverser le sens",
+      "default": false
+    },
+
+    {
+      "type": "checkbox",
+      "id": "pause_on_hover",
+      "label": "Pause au survol",
+      "default": false
+    },
+
+
+
+    {
+      "type": "header",
+      "content": "Apparence"
+    },
+
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Fond",
+      "default": "#FFFFFF"
+    },
+
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Couleur texte",
+      "default": "#4F4F4F"
+    },
+
+    {
+      "type": "color",
+      "id": "icon_color",
+      "label": "Couleur icônes",
+      "default": "#777777"
+    },
+
+    {
+      "type": "checkbox",
+      "id": "uppercase",
+      "label": "Texte en majuscules",
+      "default": true
+    },
+
+    {
+      "type": "select",
+      "id": "font_weight",
+      "label": "Graisse du texte",
+      "options": [
+        {
+          "value": "400",
+          "label": "Normal"
+        },
+        {
+          "value": "500",
+          "label": "Medium"
+        },
+        {
+          "value": "600",
+          "label": "Semi-gras"
+        },
+        {
+          "value": "700",
+          "label": "Gras"
+        }
+      ],
+      "default": "500"
+    },
+
+    {
+      "type": "range",
+      "id": "text_size",
+      "label": "Taille texte PC",
+      "min": 10,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "default": 13
+    },
+
+    {
+      "type": "range",
+      "id": "letter_spacing",
+      "label": "Espacement des lettres",
+      "min": 0,
+      "max": 2,
+      "step": 0.1,
+      "unit": "px",
+      "default": 0
+    },
+
+
+
+    {
+      "type": "header",
+      "content": "Icônes"
+    },
+
+    {
+      "type": "range",
+      "id": "icon_size",
+      "label": "Taille icônes PC",
+      "min": 18,
+      "max": 48,
+      "step": 2,
+      "unit": "px",
+      "default": 26
+    },
+
+    {
+      "type": "range",
+      "id": "icon_stroke_width",
+      "label": "Épaisseur des icônes",
+      "min": 0.5,
+      "max": 3,
+      "step": 0.5,
+      "default": 1.5
+    },
+
+    {
+      "type": "range",
+      "id": "icon_text_gap",
+      "label": "Espace icône / texte",
+      "min": 6,
+      "max": 30,
+      "step": 2,
+      "unit": "px",
+      "default": 14
+    },
+
+
+
+    {
+      "type": "header",
+      "content": "Espacements PC"
+    },
+
+    {
+      "type": "range",
+      "id": "desktop_gap",
+      "label": "Espace entre les éléments",
+      "min": 30,
+      "max": 140,
+      "step": 5,
+      "unit": "px",
+      "default": 65
+    },
+
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Marge haute",
+      "min": 0,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "default": 18
+    },
+
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Marge basse",
+      "min": 0,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "default": 18
+    },
+
+
+
+    {
+      "type": "header",
+      "content": "Effet sur les côtés"
+    },
+
+    {
+      "type": "checkbox",
+      "id": "show_edge_fade",
+      "label": "Afficher le fondu",
+      "default": true
+    },
+
+    {
+      "type": "range",
+      "id": "fade_width",
+      "label": "Largeur du fondu",
+      "min": 1,
+      "max": 12,
+      "step": 1,
+      "unit": "%",
+      "default": 4
+    },
+
+
+
+    {
+      "type": "header",
+      "content": "Mobile"
+    },
+
+    {
+      "type": "range",
+      "id": "mobile_text_size",
+      "label": "Taille texte mobile",
+      "min": 9,
+      "max": 18,
+      "step": 1,
+      "unit": "px",
+      "default": 12
+    },
+
+    {
+      "type": "range",
+      "id": "mobile_icon_size",
+      "label": "Taille icône mobile",
+      "min": 16,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "default": 24
+    },
+
+    {
+      "type": "range",
+      "id": "mobile_icon_text_gap",
+      "label": "Espace icône / texte mobile",
+      "min": 5,
+      "max": 25,
+      "step": 1,
+      "unit": "px",
+      "default": 10
+    },
+
+    {
+      "type": "range",
+      "id": "mobile_gap",
+      "label": "Espace entre éléments mobile",
+      "min": 20,
+      "max": 90,
+      "step": 5,
+      "unit": "px",
+      "default": 45
+    },
+
+    {
+      "type": "range",
+      "id": "mobile_padding_top",
+      "label": "Marge haute mobile",
+      "min": 0,
+      "max": 50,
+      "step": 2,
+      "unit": "px",
+      "default": 14
+    },
+
+    {
+      "type": "range",
+      "id": "mobile_padding_bottom",
+      "label": "Marge basse mobile",
+      "min": 0,
+      "max": 50,
+      "step": 2,
+      "unit": "px",
+      "default": 14
+    }
+
+  ],
+
+
+  "blocks": [
+
+    {
+      "type": "trust",
+      "name": "Garantie",
+
+      "settings": [
+
+        {
+          "type": "checkbox",
+          "id": "show_icon",
+          "label": "Afficher l'icône",
+          "default": true
+        },
+
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Icône",
+          "options": [
+
+            {
+              "value": "document",
+              "label": "Document vérifié"
+            },
+
+            {
+              "value": "badge",
+              "label": "Badge"
+            },
+
+            {
+              "value": "check",
+              "label": "Validation"
+            },
+
+            {
+              "value": "dermatology",
+              "label": "Dermatologie"
+            },
+
+            {
+              "value": "quality",
+              "label": "Qualité"
+            },
+
+            {
+              "value": "award",
+              "label": "Récompense"
+            },
+
+            {
+              "value": "shield",
+              "label": "Bouclier"
+            },
+
+            {
+              "value": "star",
+              "label": "Étoile"
+            },
+
+            {
+              "value": "heart",
+              "label": "Cœur"
+            }
+
+          ],
+          "default": "check"
+        },
+
+        {
+          "type": "image_picker",
+          "id": "custom_icon",
+          "label": "Icône personnalisée"
+        },
+
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Texte",
+          "default": "QUALITÉ GARANTIE"
+        }
+
+      ]
+
+    }
+
+  ],
+
+
+  "max_blocks": 12,
+
+
+  "presets": [
+
+    {
+      "name": "Bandeau garanties",
+
+      "blocks": [
+
+        {
+          "type": "trust",
+          "settings": {
+            "icon": "document",
+            "text": "TESTS INDÉPENDANTS DE PRODUITS"
+          }
+        },
+
+        {
+          "type": "trust",
+          "settings": {
+            "icon": "badge",
+            "text": "QUALITÉ CONTRÔLÉE"
+          }
+        },
+
+        {
+          "type": "trust",
+          "settings": {
+            "icon": "check",
+            "text": "TESTÉ ET APPROUVÉ"
+          }
+        },
+
+        {
+          "type": "trust",
+          "settings": {
+            "icon": "dermatology",
+            "text": "TESTÉ SOUS CONTRÔLE DERMATOLOGIQUE"
+          }
+        },
+
+        {
+          "type": "trust",
+          "settings": {
+            "icon": "quality",
+            "text": "QUALITÉ GARANTIE"
+          }
+        },
+
+        {
+          "type": "trust",
+          "settings": {
+            "icon": "award",
+            "text": "PRODUIT PRIMÉ"
+          }
+        },
+
+        {
+          "type": "trust",
+          "settings": {
+            "icon": "shield",
+            "text": "SÉCURITÉ CONTRÔLÉE"
+          }
+        }
+
+      ]
+
+    }
+
+  ]
+
+}
+{% endschema %}
