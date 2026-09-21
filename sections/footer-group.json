@@ -22,7 +22,7 @@
             "icon_width": 28,
             "icon_background_type": "none",
             "icon_background": "",
-            "icon_color": "#BF2834",
+            "icon_color": "#bf2834",
             "title": "Livraison Offerte",
             "content": ""
           }
@@ -35,7 +35,7 @@
             "icon_width": 28,
             "icon_background_type": "none",
             "icon_background": "",
-            "icon_color": "#BF2834",
+            "icon_color": "#bf2834",
             "title": "Service Client Français",
             "content": ""
           }
@@ -48,7 +48,7 @@
             "icon_width": 28,
             "icon_background_type": "none",
             "icon_background": "",
-            "icon_color": "#BF2834",
+            "icon_color": "#bf2834",
             "title": "Paiement Sécurisé",
             "content": ""
           }
@@ -66,7 +66,7 @@
         "heading_tag": "h6",
         "text_alignment": "center",
         "icon_spacing": "small",
-        "background": "#FFFCFC",
+        "background": "#fffcfc",
         "background_gradient": "",
         "text_color": ""
       }
@@ -77,7 +77,8 @@
         "newsletter": {
           "type": "newsletter",
           "settings": {
-            "image_width": 150,
+            "image": "shopify://shop_images/Nouveau_projet_75.png",
+            "image_width": 180,
             "heading_size": "h4",
             "title": "Newsletter",
             "content": ""
