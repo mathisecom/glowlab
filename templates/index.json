@@ -299,8 +299,8 @@
         "mobile_speed": 25,
         "reverse_direction": false,
         "pause_on_hover": false,
-        "background_color": "#FFFFFF",
-        "text_color": "#4F4F4F",
+        "background_color": "#ffffff",
+        "text_color": "#4f4f4f",
         "icon_color": "#777777",
         "uppercase": true,
         "font_weight": "500",
@@ -541,6 +541,170 @@
         "content_alignment": "left"
       }
     },
+    "tabsvs_zb3iCM": {
+      "type": "tabsvs",
+      "blocks": {
+        "comparison_row_A64KnB": {
+          "type": "comparison_row",
+          "settings": {
+            "benefit": "Plusieurs technologies réunies dans un seul appareil",
+            "our_value_type": "check",
+            "our_value": "Oui",
+            "our_value_emphasis": true,
+            "our_value_price": false,
+            "other_value_type": "cross",
+            "other_value": "Variable"
+          }
+        },
+        "comparison_row_CybakL": {
+          "type": "comparison_row",
+          "settings": {
+            "benefit": "Technologie pensée pour une utilisation complète",
+            "our_value_type": "check",
+            "our_value": "Oui",
+            "our_value_emphasis": true,
+            "our_value_price": false,
+            "other_value_type": "cross",
+            "other_value": "Variable"
+          }
+        },
+        "comparison_row_efKkEy": {
+          "type": "comparison_row",
+          "settings": {
+            "benefit": "Plusieurs modes d'utilisation disponibles",
+            "our_value_type": "check",
+            "our_value": "Oui",
+            "our_value_emphasis": true,
+            "our_value_price": false,
+            "other_value_type": "cross",
+            "other_value": "Variable"
+          }
+        },
+        "comparison_row_mtgjGm": {
+          "type": "comparison_row",
+          "settings": {
+            "benefit": "Nombre de LED",
+            "our_value_type": "text",
+            "our_value": "240",
+            "our_value_emphasis": true,
+            "our_value_price": false,
+            "other_value_type": "text",
+            "other_value": "≈105"
+          }
+        },
+        "comparison_row_mAigRH": {
+          "type": "comparison_row",
+          "settings": {
+            "benefit": "Puissance",
+            "our_value_type": "text",
+            "our_value": "65 mW/cm²",
+            "our_value_emphasis": true,
+            "our_value_price": false,
+            "other_value_type": "text",
+            "other_value": "30 mW/cm²"
+          }
+        },
+        "comparison_row_EQhNWP": {
+          "type": "comparison_row",
+          "settings": {
+            "benefit": "Garantie satisfait ou remboursé",
+            "our_value_type": "text",
+            "our_value": "30 jours",
+            "our_value_emphasis": true,
+            "our_value_price": false,
+            "other_value_type": "text",
+            "other_value": "Variable"
+          }
+        },
+        "comparison_row_qg9yqz": {
+          "type": "comparison_row",
+          "settings": {
+            "benefit": "Prix",
+            "our_value_type": "text",
+            "our_value": "135 €",
+            "our_value_emphasis": false,
+            "our_value_price": true,
+            "other_value_type": "text",
+            "other_value": "300 € – 400 €+"
+          }
+        }
+      },
+      "block_order": [
+        "comparison_row_A64KnB",
+        "comparison_row_CybakL",
+        "comparison_row_efKkEy",
+        "comparison_row_mtgjGm",
+        "comparison_row_mAigRH",
+        "comparison_row_EQhNWP",
+        "comparison_row_qg9yqz"
+      ],
+      "name": "Tableau comparatif",
+      "settings": {
+        "eyebrow": "UNE TECHNOLOGIE QUI SE DÉMARQUE",
+        "heading": "Pourquoi nous",
+        "heading_accent": "nous démarquons",
+        "description": "<p>Comparez notre solution aux autres produits du marché et découvrez ce qui fait réellement la différence.</p>",
+        "benefit_heading": "Caractéristiques",
+        "our_brand": "GlowLAB",
+        "our_subtitle": "Technologie LED",
+        "other_brand": "Autres marques",
+        "other_subtitle": "Produits similaires",
+        "max_width": 1200,
+        "header_width": 720,
+        "description_width": 700,
+        "table_width": 960,
+        "benefit_column_width": 1.5,
+        "eyebrow_size": 11,
+        "eyebrow_spacing": 1.5,
+        "heading_size": 42,
+        "heading_weight": "500",
+        "description_size": 16,
+        "benefit_text_size": 15,
+        "table_header_size": 12,
+        "brand_name_size": 14,
+        "brand_subtitle_size": 11,
+        "value_size": 14,
+        "row_height": 55,
+        "header_row_height": 75,
+        "cell_vertical_padding": 10,
+        "cell_horizontal_padding": 8,
+        "status_size": 24,
+        "highlight_radius": 10,
+        "padding_top": 65,
+        "padding_bottom": 65,
+        "side_padding": 20,
+        "header_bottom_space": 42,
+        "eyebrow_bottom_space": 10,
+        "description_top_space": 14,
+        "background_color": "#FFFFFF",
+        "text_color": "#171717",
+        "muted_color": "#777777",
+        "accent_color": "#C93C46",
+        "highlight_background": "#FBE1E2",
+        "border_color": "#DCDCDC",
+        "price_color": "#BF2834",
+        "mobile_heading_size": 30,
+        "mobile_eyebrow_size": 10,
+        "mobile_description_size": 15,
+        "mobile_benefit_text_size": 13,
+        "mobile_value_size": 12,
+        "mobile_table_header_size": 11,
+        "mobile_brand_name_size": 12,
+        "mobile_brand_subtitle_size": 9,
+        "mobile_benefit_column_width": 1.3,
+        "mobile_row_height": 60,
+        "mobile_header_row_height": 70,
+        "mobile_cell_vertical_padding": 9,
+        "mobile_cell_horizontal_padding": 5,
+        "mobile_status_size": 22,
+        "mobile_padding_top": 36,
+        "mobile_padding_bottom": 36,
+        "mobile_side_padding": 18,
+        "mobile_header_bottom_space": 28,
+        "mobile_eyebrow_bottom_space": 9,
+        "mobile_description_top_space": 10
+      }
+    },
     "faq": {
       "type": "faq",
       "blocks": {
@@ -600,6 +764,7 @@
     "scrollbenfice_mnLhJX",
     "resultavantapres_DqJjxe",
     "imgbenefice_wj7Hpf",
+    "tabsvs_zb3iCM",
     "faq"
   ]
 }
