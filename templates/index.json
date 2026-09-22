@@ -13,6 +13,7 @@
       "type": "herosection",
       "name": "Image + contenu premium",
       "settings": {
+        "image": "shopify://shop_images/7bca2440-60fa-418e-802a-53c6f3038f0b.png",
         "image_position": "right",
         "image_width": 1,
         "image_height": 600,
