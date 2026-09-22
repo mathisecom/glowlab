@@ -96,7 +96,7 @@
           "type": "text",
           "settings": {
             "title": "Contactez-Nous",
-            "content": "",
+            "content": "<p>contact@glowlab.com</p>",
             "enable_follow_on_shop": false
           }
         }
