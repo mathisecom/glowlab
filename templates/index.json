@@ -432,6 +432,8 @@
         "result_MYr36i": {
           "type": "result",
           "settings": {
+            "before_image": "shopify://shop_images/avant.png",
+            "after_image": "shopify://shop_images/17fc7436-412e-4526-89dc-0dd65ce59267.png",
             "before_label": "Avant",
             "after_label": "Après",
             "title": "Des résultats visibles",
