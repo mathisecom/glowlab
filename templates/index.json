@@ -179,8 +179,15 @@
         },
         "title_yNc4AH": {
           "type": "title",
+          "disabled": true,
           "settings": {
             "heading_tag": "h3"
+          }
+        },
+        "text_ax7f9B": {
+          "type": "text",
+          "settings": {
+            "text": "<h2>Masque LED Anti-Âge - GlowLAB™</h2>"
           }
         },
         "price_aqWUjD": {
@@ -275,6 +282,7 @@
         "liquid_F8gbXY",
         "liquid_d66JKQ",
         "title_yNc4AH",
+        "text_ax7f9B",
         "price_aqWUjD",
         "liquid_tFTJn7",
         "variant_picker_a99qBj",
