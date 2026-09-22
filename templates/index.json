@@ -426,7 +426,7 @@
             "customer_name": "Marie",
             "verified_text": "Cliente vérifiée",
             "show_verified": true,
-            "testimonial": "<p>« Je suis très satisfaite du résultat. La différence est réellement visible. »</p>"
+            "testimonial": "<p>« Mon teint paraît plus homogène et ma peau beaucoup plus nette. »</p>"
           }
         },
         "result_MYr36i": {
@@ -440,7 +440,7 @@
             "customer_name": "Laura",
             "verified_text": "Cliente vérifiée",
             "show_verified": true,
-            "testimonial": "<p>« Je suis très satisfaite du résultat. La différence est réellement visible. »</p>"
+            "testimonial": "<p>« Après quelques semaines, j’ai vraiment remarqué une différence sur ma peau. »</p>"
           }
         },
         "result_J3T8hG": {
@@ -454,11 +454,12 @@
             "customer_name": "Sophie",
             "verified_text": "Cliente vérifiée",
             "show_verified": true,
-            "testimonial": "<p>« Je suis très satisfaite du résultat. La différence est réellement visible. »</p>"
+            "testimonial": "<p>« Facile à intégrer à ma routine, ma peau paraît plus lumineuse et plus lisse. »</p>"
           }
         },
         "result_g9gPrT": {
           "type": "result",
+          "disabled": true,
           "settings": {
             "before_label": "Avant",
             "after_label": "Après",
