@@ -20,10 +20,18 @@
             "text": "Livraison Offerte en France dès 130€ d'achats",
             "url": ""
           }
+        },
+        "message_RRB4kc": {
+          "type": "message",
+          "settings": {
+            "text": "Solde D'Automne : 100€ Offert sur votre achats",
+            "url": ""
+          }
         }
       },
       "block_order": [
-        "message"
+        "message",
+        "message_RRB4kc"
       ],
       "settings": {
         "enable_sticky": false,
