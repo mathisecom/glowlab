@@ -418,6 +418,8 @@
         "result_ip3Rkx": {
           "type": "result",
           "settings": {
+            "before_image": "shopify://shop_images/ddfcd06b-c892-4285-821d-13f49a69d165.png",
+            "after_image": "shopify://shop_images/a566d81f-7aa3-446b-858b-77f9eb67f6bd.png",
             "before_label": "Avant",
             "after_label": "Après",
             "title": "Une peau visiblement plus uniforme",
