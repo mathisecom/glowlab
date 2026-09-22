@@ -446,6 +446,8 @@
         "result_J3T8hG": {
           "type": "result",
           "settings": {
+            "before_image": "shopify://shop_images/ec92b1b8-4c3d-41ce-97ec-e85d23948e05.png",
+            "after_image": "shopify://shop_images/a1e53505-c637-41c0-91be-e5be2e3acff2.png",
             "before_label": "Avant",
             "after_label": "Après",
             "title": "Une routine qui fait la différence",
