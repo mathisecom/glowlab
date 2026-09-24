@@ -778,11 +778,11 @@
           "settings": {
             "benefit": "Nombre de LED",
             "our_value_type": "text",
-            "our_value": "240",
+            "our_value": "258",
             "our_value_emphasis": true,
             "our_value_price": false,
             "other_value_type": "text",
-            "other_value": "≈105"
+            "other_value": "≈200"
           }
         },
         "comparison_row_mAigRH": {
