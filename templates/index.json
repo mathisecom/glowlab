@@ -200,7 +200,7 @@
         "liquid_tFTJn7": {
           "type": "liquid",
           "settings": {
-            "liquid": "<div class=\"glowlab-benefits\">\n\n  <div class=\"glowlab-benefit\">\n    <div class=\"glowlab-icon\">\n      <svg viewBox=\"0 0 24 24\" fill=\"none\">\n        <path d=\"M4 12a8 8 0 0 1 16 0M7 12a5 5 0 0 1 10 0M10 12a2 2 0 0 1 4 0\"\n          stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\"/>\n      </svg>\n    </div>\n    <span>7 longueurs d’onde LED</span>\n  </div>\n\n  <div class=\"glowlab-benefit\">\n    <div class=\"glowlab-icon\">\n      <svg viewBox=\"0 0 24 24\" fill=\"none\">\n        <circle cx=\"6\" cy=\"6\" r=\"1.7\" stroke=\"currentColor\" stroke-width=\"1.6\"/>\n        <circle cx=\"12\" cy=\"6\" r=\"1.7\" stroke=\"currentColor\" stroke-width=\"1.6\"/>\n        <circle cx=\"18\" cy=\"6\" r=\"1.7\" stroke=\"currentColor\" stroke-width=\"1.6\"/>\n        <circle cx=\"6\" cy=\"12\" r=\"1.7\" stroke=\"currentColor\" stroke-width=\"1.6\"/>\n        <circle cx=\"12\" cy=\"12\" r=\"1.7\" stroke=\"currentColor\" stroke-width=\"1.6\"/>\n        <circle cx=\"18\" cy=\"12\" r=\"1.7\" stroke=\"currentColor\" stroke-width=\"1.6\"/>\n        <circle cx=\"6\" cy=\"18\" r=\"1.7\" stroke=\"currentColor\" stroke-width=\"1.6\"/>\n        <circle cx=\"12\" cy=\"18\" r=\"1.7\" stroke=\"currentColor\" stroke-width=\"1.6\"/>\n        <circle cx=\"18\" cy=\"18\" r=\"1.7\" stroke=\"currentColor\" stroke-width=\"1.6\"/>\n      </svg>\n    </div>\n    <span>258 LED sur tout le visage</span>\n  </div>\n\n  <div class=\"glowlab-benefit\">\n    <div class=\"glowlab-icon\">\n      <svg viewBox=\"0 0 24 24\" fill=\"none\">\n        <circle cx=\"12\" cy=\"12\" r=\"9\" stroke=\"currentColor\" stroke-width=\"1.8\"/>\n        <path d=\"M12 7v5l3.5 2\" stroke=\"currentColor\" stroke-width=\"1.8\"\n          stroke-linecap=\"round\" stroke-linejoin=\"round\"/>\n      </svg>\n    </div>\n    <span>15 min • 3 à 5 fois/semaine</span>\n  </div>\n\n  <div class=\"glowlab-benefit\">\n    <div class=\"glowlab-icon\">\n      <svg viewBox=\"0 0 24 24\" fill=\"none\">\n        <path d=\"M12 3c5 0 8 4 8 9s-3.5 9-8 9-8-4-8-9 3-9 8-9Z\"\n          stroke=\"currentColor\" stroke-width=\"1.7\"/>\n        <circle cx=\"9\" cy=\"10\" r=\"1\" fill=\"currentColor\"/>\n        <circle cx=\"15\" cy=\"10\" r=\"1\" fill=\"currentColor\"/>\n        <path d=\"M9 15c1.8 1.4 4.2 1.4 6 0\"\n          stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\"/>\n      </svg>\n    </div>\n    <span>Imperfections, rides, texture & teint</span>\n  </div>\n\n</div>\n\n<style>\n.glowlab-benefits {\n  width: 100%;\n  display: flex;\n  flex-direction: column;\n  gap: 24px;\n  font-family: inherit;\n}\n\n.glowlab-benefit {\n  display: flex;\n  align-items: center;\n  gap: 20px;\n  color: #1A1A1A;\n  font-size: 20px;\n  font-weight: 500;\n  line-height: 1.35;\n}\n\n.glowlab-icon {\n  width: 34px;\n  height: 34px;\n  min-width: 34px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  color: #C42F3B;\n}\n\n.glowlab-icon svg {\n  width: 100%;\n  height: 100%;\n}\n\n/* MOBILE */\n@media screen and (max-width: 749px) {\n  .glowlab-benefits {\n    gap: 17px;\n  }\n\n  .glowlab-benefit {\n    gap: 14px;\n    font-size: 15px;\n    line-height: 1.3;\n  }\n\n  .glowlab-icon {\n    width: 27px;\n    height: 27px;\n    min-width: 27px;\n  }\n}\n</style>"
+            "liquid": "<div class=\"glowlab-benefits\">\n\n  <div class=\"glowlab-benefit\">\n    <div class=\"glowlab-icon\">\n      <svg viewBox=\"0 0 24 24\" fill=\"none\">\n        <path d=\"M4 12a8 8 0 0 1 16 0M7 12a5 5 0 0 1 10 0M10 12a2 2 0 0 1 4 0\"\n          stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\"/>\n      </svg>\n    </div>\n    <span>7 longueurs d’onde LED</span>\n  </div>\n\n  <div class=\"glowlab-benefit\">\n    <div class=\"glowlab-icon\">\n      <svg viewBox=\"0 0 24 24\" fill=\"none\">\n        <circle cx=\"6\" cy=\"6\" r=\"1.7\" stroke=\"currentColor\" stroke-width=\"1.6\"/>\n        <circle cx=\"12\" cy=\"6\" r=\"1.7\" stroke=\"currentColor\" stroke-width=\"1.6\"/>\n        <circle cx=\"18\" cy=\"6\" r=\"1.7\" stroke=\"currentColor\" stroke-width=\"1.6\"/>\n        <circle cx=\"6\" cy=\"12\" r=\"1.7\" stroke=\"currentColor\" stroke-width=\"1.6\"/>\n        <circle cx=\"12\" cy=\"12\" r=\"1.7\" stroke=\"currentColor\" stroke-width=\"1.6\"/>\n        <circle cx=\"18\" cy=\"12\" r=\"1.7\" stroke=\"currentColor\" stroke-width=\"1.6\"/>\n        <circle cx=\"6\" cy=\"18\" r=\"1.7\" stroke=\"currentColor\" stroke-width=\"1.6\"/>\n        <circle cx=\"12\" cy=\"18\" r=\"1.7\" stroke=\"currentColor\" stroke-width=\"1.6\"/>\n        <circle cx=\"18\" cy=\"18\" r=\"1.7\" stroke=\"currentColor\" stroke-width=\"1.6\"/>\n      </svg>\n    </div>\n    <span>240 LED sur tout le visage</span>\n  </div>\n\n  <div class=\"glowlab-benefit\">\n    <div class=\"glowlab-icon\">\n      <svg viewBox=\"0 0 24 24\" fill=\"none\">\n        <circle cx=\"12\" cy=\"12\" r=\"9\" stroke=\"currentColor\" stroke-width=\"1.8\"/>\n        <path d=\"M12 7v5l3.5 2\" stroke=\"currentColor\" stroke-width=\"1.8\"\n          stroke-linecap=\"round\" stroke-linejoin=\"round\"/>\n      </svg>\n    </div>\n    <span>15 min • 3 à 5 fois/semaine</span>\n  </div>\n\n  <div class=\"glowlab-benefit\">\n    <div class=\"glowlab-icon\">\n      <svg viewBox=\"0 0 24 24\" fill=\"none\">\n        <path d=\"M12 3c5 0 8 4 8 9s-3.5 9-8 9-8-4-8-9 3-9 8-9Z\"\n          stroke=\"currentColor\" stroke-width=\"1.7\"/>\n        <circle cx=\"9\" cy=\"10\" r=\"1\" fill=\"currentColor\"/>\n        <circle cx=\"15\" cy=\"10\" r=\"1\" fill=\"currentColor\"/>\n        <path d=\"M9 15c1.8 1.4 4.2 1.4 6 0\"\n          stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\"/>\n      </svg>\n    </div>\n    <span>Imperfections, rides, texture & teint</span>\n  </div>\n\n</div>\n\n<style>\n.glowlab-benefits {\n  width: 100%;\n  display: flex;\n  flex-direction: column;\n  gap: 24px;\n  font-family: inherit;\n}\n\n.glowlab-benefit {\n  display: flex;\n  align-items: center;\n  gap: 20px;\n  color: #1A1A1A;\n  font-size: 20px;\n  font-weight: 500;\n  line-height: 1.35;\n}\n\n.glowlab-icon {\n  width: 34px;\n  height: 34px;\n  min-width: 34px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  color: #C42F3B;\n}\n\n.glowlab-icon svg {\n  width: 100%;\n  height: 100%;\n}\n\n/* MOBILE */\n@media screen and (max-width: 749px) {\n  .glowlab-benefits {\n    gap: 17px;\n  }\n\n  .glowlab-benefit {\n    gap: 14px;\n    font-size: 15px;\n    line-height: 1.3;\n  }\n\n  .glowlab-icon {\n    width: 27px;\n    height: 27px;\n    min-width: 27px;\n  }\n}\n</style>"
           }
         },
         "variant_picker_a99qBj": {
@@ -745,7 +745,7 @@
             "our_value": "Oui",
             "our_value_emphasis": true,
             "our_value_price": false,
-            "other_value_type": "cross",
+            "other_value_type": "text",
             "other_value": "Variable"
           }
         },
@@ -757,7 +757,7 @@
             "our_value": "Oui",
             "our_value_emphasis": true,
             "our_value_price": false,
-            "other_value_type": "cross",
+            "other_value_type": "text",
             "other_value": "Variable"
           }
         },
@@ -769,7 +769,7 @@
             "our_value": "Oui",
             "our_value_emphasis": true,
             "our_value_price": false,
-            "other_value_type": "cross",
+            "other_value_type": "text",
             "other_value": "Variable"
           }
         },
@@ -778,7 +778,7 @@
           "settings": {
             "benefit": "Nombre de LED",
             "our_value_type": "text",
-            "our_value": "258",
+            "our_value": "240",
             "our_value_emphasis": true,
             "our_value_price": false,
             "other_value_type": "text",
@@ -790,11 +790,11 @@
           "settings": {
             "benefit": "Puissance",
             "our_value_type": "text",
-            "our_value": "65 mW/cm²",
+            "our_value": "12 W",
             "our_value_emphasis": true,
             "our_value_price": false,
             "other_value_type": "text",
-            "other_value": "30 mW/cm²"
+            "other_value": "variable"
           }
         },
         "comparison_row_EQhNWP": {
@@ -1244,7 +1244,7 @@
           "type": "item",
           "settings": {
             "title": "Quelle est la différence avec les autres masques LED ?",
-            "content": "<p>De nombreuses marques proposent un appareil pour l’anti-âge et un autre pour les imperfections. GlowLAB réunit <strong>lumière bleue, jaune, rouge et proche infrarouge</strong> au sein d’un seul masque équipé de 258 LED. Le proche infrarouge peut également être associé aux autres modes. <strong>Un seul masque, quatre fonctions.</strong></p>"
+            "content": "<p>De nombreuses marques proposent un appareil pour l’anti-âge et un autre pour les imperfections. GlowLAB réunit <strong>lumière bleue, jaune, rouge et proche infrarouge</strong> au sein d’un seul masque équipé de 240 LED. Le proche infrarouge peut également être associé aux autres modes. <strong>Un seul masque, quatre fonctions.</strong></p>"
           }
         },
         "item_BepXn4": {
