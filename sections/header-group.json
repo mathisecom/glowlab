@@ -17,14 +17,14 @@
         "message": {
           "type": "message",
           "settings": {
-            "text": "Livraison Offerte en France dès 130€ d'achats",
+            "text": "Livraison Offerte en France dès 120€ d'achats",
             "url": ""
           }
         },
         "message_RRB4kc": {
           "type": "message",
           "settings": {
-            "text": "Solde D'Automne : 100€ Offert sur votre achats",
+            "text": "Solde D'Automne : 55€ Offert sur votre achats",
             "url": ""
           }
         }
