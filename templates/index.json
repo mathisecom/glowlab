@@ -814,11 +814,11 @@
           "settings": {
             "benefit": "Prix",
             "our_value_type": "text",
-            "our_value": "124,99€",
+            "our_value": "249,99€",
             "our_value_emphasis": false,
             "our_value_price": true,
             "other_value_type": "text",
-            "other_value": "250 € – 300 €+"
+            "other_value": "400€ – 500€+"
           }
         }
       },
