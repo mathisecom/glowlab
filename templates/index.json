@@ -773,30 +773,6 @@
             "other_value": "Souvent 2 à 4 modes"
           }
         },
-        "comparison_row_mtgjGm": {
-          "type": "comparison_row",
-          "settings": {
-            "benefit": "Nombre de LED",
-            "our_value_type": "text",
-            "our_value": "86",
-            "our_value_emphasis": true,
-            "our_value_price": false,
-            "other_value_type": "text",
-            "other_value": "variable"
-          }
-        },
-        "comparison_row_mAigRH": {
-          "type": "comparison_row",
-          "settings": {
-            "benefit": "Puissance",
-            "our_value_type": "text",
-            "our_value": "12 W",
-            "our_value_emphasis": true,
-            "our_value_price": false,
-            "other_value_type": "text",
-            "other_value": "variable"
-          }
-        },
         "comparison_row_EQhNWP": {
           "type": "comparison_row",
           "settings": {
@@ -818,7 +794,7 @@
             "our_value_emphasis": false,
             "our_value_price": true,
             "other_value_type": "text",
-            "other_value": "300-400€"
+            "other_value": "200-300€"
           }
         }
       },
@@ -826,8 +802,6 @@
         "comparison_row_A64KnB",
         "comparison_row_CybakL",
         "comparison_row_efKkEy",
-        "comparison_row_mtgjGm",
-        "comparison_row_mAigRH",
         "comparison_row_EQhNWP",
         "comparison_row_qg9yqz"
       ],
