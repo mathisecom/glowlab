@@ -875,6 +875,16 @@
     "techno_MdgNn4": {
       "type": "techno",
       "blocks": {
+        "benefit_D8VDeX": {
+          "type": "benefit",
+          "settings": {
+            "position": "left",
+            "dot_color": "#7FB8F0",
+            "line_color": "#e7c4c7",
+            "title": "LUMIÈRE BLEU CLAIR",
+            "text": "<p>Un effet apaisant pour un grain de peau d'apparence affiné.</p>"
+          }
+        },
         "benefit_TFMeJ7": {
           "type": "benefit",
           "settings": {
@@ -899,7 +909,7 @@
           "type": "benefit",
           "settings": {
             "position": "left",
-            "dot_color": "#3f82d8",
+            "dot_color": "#3F3FD8",
             "line_color": "#afcbea",
             "title": "LUMIÈRE BLEUE (470 NM)",
             "text": "<p>Idéale pour les peaux mixtes à grasses et sujettes aux imperfections.</p>"
@@ -937,6 +947,7 @@
         }
       },
       "block_order": [
+        "benefit_D8VDeX",
         "benefit_TFMeJ7",
         "benefit_hNNh3R",
         "benefit_HmQLhL",
