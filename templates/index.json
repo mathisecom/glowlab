@@ -879,7 +879,7 @@
           "type": "benefit",
           "settings": {
             "position": "left",
-            "dot_color": "#7FB8F0",
+            "dot_color": "#7fb8f0",
             "line_color": "#e7c4c7",
             "title": "LUMIÈRE BLEU CLAIR",
             "text": "<p>Un effet apaisant pour un grain de peau d'apparence affiné.</p>"
@@ -889,7 +889,7 @@
           "type": "benefit",
           "settings": {
             "position": "right",
-            "dot_color": "#3FC462",
+            "dot_color": "#3fc462",
             "line_color": "#e7c4c7",
             "title": "LUMIÈRE VERTE (520 NM)",
             "text": "<p>Pour un teint d'apparence plus uniforme et une peau plus équilibrée.</p>"
@@ -899,7 +899,7 @@
           "type": "benefit",
           "settings": {
             "position": "left",
-            "dot_color": "#A73FC4",
+            "dot_color": "#a73fc4",
             "line_color": "#e7c4c7",
             "title": "LUMIÈRE VIOLETTE (ROUGE + BLEUE)",
             "text": "<p>Le meilleur des deux mondes : la lumière rouge pour l'éclat et la bleue pour les imperfections, réunies en une seule séance.</p>"
@@ -909,7 +909,7 @@
           "type": "benefit",
           "settings": {
             "position": "left",
-            "dot_color": "#3F3FD8",
+            "dot_color": "#3f3fd8",
             "line_color": "#afcbea",
             "title": "LUMIÈRE BLEUE (470 NM)",
             "text": "<p>Idéale pour les peaux mixtes à grasses et sujettes aux imperfections.</p>"
@@ -939,7 +939,7 @@
           "type": "benefit",
           "settings": {
             "position": "right",
-            "dot_color": "#33FFDD",
+            "dot_color": "#33ffdd",
             "line_color": "#ddd5ce",
             "title": "LUMIÈRE CYAN",
             "text": "<p>Pour accompagner le renouvellement naturel de la peau et raviver son éclat.</p>"
@@ -1237,7 +1237,7 @@
           "type": "item",
           "settings": {
             "title": "Comment fonctionne GlowLAB ?",
-            "content": "<p>GlowLAB utilise <strong>quatre longueurs d’onde</strong>, chacune ayant un rôle différent.<br/><br/>La lumière bleue (415 nm) cible les bactéries associées aux imperfections. La lumière jaune (590 nm) agit sur l’uniformité du teint, les rougeurs et les effets visibles du soleil. La lumière rouge (630 nm) atteint les couches de la peau où le collagène est produit. Enfin, le proche infrarouge (830 nm) pénètre plus profondément et peut être combiné aux autres couleurs grâce au bouton NIR de la télécommande.</p>"
+            "content": "<p>GlowLAB réunit 7 lumières LED dans un seul masque de 86 LED, chacune adaptée à un besoin différent de votre peau.<br/><br/>La lumière rouge (630 nm) est la lumière emblématique des routines anti-âge et éclat. La lumière bleue (470 nm) convient aux peaux mixtes à grasses et sujettes aux imperfections. La lumière jaune (590 nm) aide à apaiser visuellement les rougeurs. La lumière verte (520 nm) favorise un teint d'apparence plus uniforme. Les lumières violette, cyan et bleu clair complètent la routine. Un simple bouton permet de passer d'une couleur à l'autre.</p>"
           }
         },
         "166442457738b23caf-2": {
