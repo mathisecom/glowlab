@@ -875,14 +875,34 @@
     "techno_MdgNn4": {
       "type": "techno",
       "blocks": {
+        "benefit_TFMeJ7": {
+          "type": "benefit",
+          "settings": {
+            "position": "right",
+            "dot_color": "#3FC462",
+            "line_color": "#e7c4c7",
+            "title": "LUMIÈRE VERTE (520 NM)",
+            "text": "<p>Pour un teint d'apparence plus uniforme et une peau plus équilibrée.</p>"
+          }
+        },
+        "benefit_hNNh3R": {
+          "type": "benefit",
+          "settings": {
+            "position": "left",
+            "dot_color": "#A73FC4",
+            "line_color": "#e7c4c7",
+            "title": "LUMIÈRE VIOLETTE (ROUGE + BLEUE)",
+            "text": "<p>Le meilleur des deux mondes : la lumière rouge pour l'éclat et la bleue pour les imperfections, réunies en une seule séance.</p>"
+          }
+        },
         "benefit_HmQLhL": {
           "type": "benefit",
           "settings": {
             "position": "left",
             "dot_color": "#3f82d8",
             "line_color": "#afcbea",
-            "title": "LUMIÈRE BLEUE (415 NM)",
-            "text": "<p>Une longueur d'onde ciblée pensée pour compléter votre routine et agir sur les besoins spécifiques de la peau.</p>"
+            "title": "LUMIÈRE BLEUE (470 NM)",
+            "text": "<p>Idéale pour les peaux mixtes à grasses et sujettes aux imperfections.</p>"
           }
         },
         "benefit_Yy4iBa": {
@@ -902,21 +922,23 @@
             "dot_color": "#e6b936",
             "line_color": "#ebd797",
             "title": "LUMIÈRE JAUNE (590 NM)",
-            "text": "<p>Une autre longueur d'onde permettant de compléter les différents modes disponibles dans votre routine.</p>"
+            "text": "<p>Aide à apaiser visuellement les rougeurs pour une peau plus douce.</p>"
           }
         },
         "benefit_BU8VJU": {
           "type": "benefit",
           "settings": {
             "position": "right",
-            "dot_color": "#e9e2db",
+            "dot_color": "#33FFDD",
             "line_color": "#ddd5ce",
-            "title": "PROCHE INFRAROUGE (830 NM)",
-            "text": "<p>Une lumière invisible à l'œil conçue pour fonctionner en complément des autres longueurs d'onde.</p>"
+            "title": "LUMIÈRE CYAN",
+            "text": "<p>Pour accompagner le renouvellement naturel de la peau et raviver son éclat.</p>"
           }
         }
       },
       "block_order": [
+        "benefit_TFMeJ7",
+        "benefit_hNNh3R",
         "benefit_HmQLhL",
         "benefit_Yy4iBa",
         "benefit_ncT9Fj",
